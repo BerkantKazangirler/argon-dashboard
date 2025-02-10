@@ -1,7 +1,7 @@
-import { PerformanceTable } from "./performanceTable";
-import { SaleTable } from "./saleTable";
-import { TraficTable } from "./traficTable";
-import { VisitTable } from "./visitTable";
+import { PerformanceTable } from "./performance-able";
+import { SaleTable } from "./sale-table";
+import { TraficTable } from "./trafic-table";
+import { VisitTable } from "./visit-table";
 
 export const Tables = () => {
   return (

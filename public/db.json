@@ -1,0 +1,327 @@
+{
+  "pagevisits": [
+    {
+      "pagename": "argon/",
+      "visitors": 4569,
+      "uniqueusers": 340,
+      "bouncerate": 4653
+    },
+    {
+      "pagename": "argon/index.html",
+      "visitors": 4569,
+      "uniqueusers": 340,
+      "bouncerate": 4653
+    },
+    {
+      "pagename": "argon/charts.html",
+      "visitors": 4569,
+      "uniqueusers": 340,
+      "bouncerate": 4653
+    },
+    {
+      "pagename": "argon/tables.html",
+      "visitors": 4569,
+      "uniqueusers": 340,
+      "bouncerate": 4653
+    },
+    {
+      "pagename": "argon/profile.html",
+      "visitors": 4569,
+      "uniqueusers": 340,
+      "bouncerate": 4653
+    }
+  ],
+  "socialtraffic": [
+    {
+      "referral": "facebook",
+      "visitors": 1480,
+      "barrate": 60
+    },
+    {
+      "referral": "facebook",
+      "visitors": 5480,
+      "barrate": 70
+    },
+    {
+      "referral": "google",
+      "visitors": 4807,
+      "barrate": 80
+    },
+    {
+      "referral": "instagram",
+      "visitors": 3678,
+      "barrate": 75
+    },
+    {
+      "referral": "twitter",
+      "visitors": 2645,
+      "barrate": 30
+    }
+  ],
+  "card-datas": [
+    {
+      "card": "today's money",
+      "last": 348,
+      "data": 53897
+    },
+    {
+      "card": "today's users",
+      "last": -520,
+      "data": 3200
+    },
+    {
+      "card": "new clients",
+      "last": -282,
+      "data": 2503
+    },
+    {
+      "card": "total sales",
+      "last": 812,
+      "data": 173000
+    }
+  ],
+  "authors": [
+    {
+      "name": "Esthera Jackson",
+      "photo": "./public/ornek.jpeg",
+      "mail": "esthera@simmmple.com",
+      "rank": "manager",
+      "unit": "organization",
+      "status": true,
+      "employeddate": "14/06/21"
+    },
+    {
+      "name": "Esthera Jackson",
+      "photo": "./public/ornek.jpeg",
+      "mail": "esthera@simmmple.com",
+      "rank": "manager",
+      "unit": "organization",
+      "status": false,
+      "employeddate": "14/06/21"
+    },
+    {
+      "name": "Esthera Jackson",
+      "photo": "./public/ornek.jpeg",
+      "mail": "esthera@simmmple.com",
+      "rank": "manager",
+      "unit": "organization",
+      "status": true,
+      "employeddate": "14/06/21"
+    },
+    {
+      "name": "Esthera Jackson",
+      "photo": "./public/ornek.jpeg",
+      "mail": "esthera@simmmple.com",
+      "rank": "manager",
+      "unit": "organization",
+      "status": true,
+      "employeddate": "14/06/21"
+    },
+    {
+      "name": "Esthera Jackson",
+      "photo": "./public/ornek.jpeg",
+      "mail": "esthera@simmmple.com",
+      "rank": "manager",
+      "unit": "organization",
+      "status": true,
+      "employeddate": "14/06/21"
+    },
+    {
+      "name": "Esthera Jackson",
+      "photo": "./public/ornek.jpeg",
+      "mail": "esthera@simmmple.com",
+      "rank": "manager",
+      "unit": "organization",
+      "status": true,
+      "employeddate": "14/06/21"
+    }
+  ],
+  "projects": [
+    {
+      "companies": "Chakra Soft UI Version",
+      "budget": 14000,
+      "status": "Working",
+      "completion": 70
+    },   
+    {
+      "companies": "Add Progress Track",
+      "budget": 3000,
+      "status": "Canceled",
+      "completion": 10
+    },
+    {
+      "companies": "Fix Platform Errors",
+      "budget": null,
+      "status": "Done",
+      "completion": 100
+    },
+    {
+      "companies": "Launch our Mobile App",
+      "budget": 32000,
+      "status": "Done",
+      "completion": 100
+    },
+    {
+      "companies": "Add the New Pricing Page",
+      "budget": 400,
+      "status": "Working",
+      "completion": 25
+    }
+  ],
+  "payment-method": [
+    {
+      "card-type": "mastercard",
+      "name": "Argon X Chakra",
+      "cardnumber": 7812213908230000,
+      "validthru": "05/24",
+      "cvv": 902
+    }
+  ],
+  "payment-info-cards": [
+    {
+      "card-type": "salary",
+      "data": 2000
+    },
+    {
+      "card-type": "paypal",
+      "data": 455
+    }
+  ],
+  "payment-invoices": [
+    {
+      "id": "MS-415646",
+      "date": "2020-03-01T11:42:14+00:00",
+      "amount": 180
+    },
+    {
+      "id": "RV-126749",
+      "date": "2021-02-10T11:42:14+00:00",
+      "amount": 250
+    },
+    {
+      "id": "FB-212562",
+      "date":"2021-04-05T11:42:14+00:00",
+      "amount": 560
+    }, 
+    {
+      "id": "QW-103578",
+      "date":"2019-06-25T11:42:14+00:00",
+      "amount": 120
+    },
+    {
+      "id": "AR-803481",
+      "date":"2019-03-01T11:42:14+00:00",
+      "amount":300
+    }
+  ],
+  "billing-information": [
+    {
+      "name": "Oliver Liam",
+      "companyname": "Viking Burrito",
+      "email": "oliver@burrito.com",
+      "vatnumber": "FRB123456"
+    },
+    {
+      "name": "Oliver Liam",
+      "companyname": "Viking Burrito",
+      "email":"oliver@burrito.com",
+      "vatnumber":"FRB123456"
+    },
+    {
+      "name": "Oliver Liam",
+      "companyname": "Viking Burrito",
+      "email":"oliver@burrito.com",
+      "vatnumber":"FRB123456"
+    }
+  ],
+  "transitions": [
+    {
+      "company": "Netflix",
+      "date": "2020-03-27T11:42:14+00:00",
+      "amount": -2500
+    },
+    {
+      "company": "Apple",
+      "date":"2019-03-01T11:42:14+00:00",
+      "amount": 2500
+    },
+    {
+      "company": "Stripe",
+      "date":"2020-03-01T11:42:14+00:00",
+      "amount": 800
+    }, 
+    {
+      "company": "HubSpot",
+      "date":"2021-04-05T11:42:14+00:00",
+      "amount": 1700
+    },
+    {
+      "company": "Webflow",
+      "date":"2021-02-10T11:42:14+00:00",
+      "amount": null
+    },
+    {
+      "company": "Microsoft",
+      "date":"2021-04-05T11:42:14+00:00",
+      "amount": -987
+    }
+  ],
+  "user-data": [
+    {
+      "photo": "http://localhost:5173/public/ornek.jpeg",
+      "name": "Alex Thomson",
+      "mail": "alec@simmmple.com",
+      "information": "Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).",
+      "fullname": "Alex M. Thompson",
+      "number": "(44) 123 1234 123",
+      "location": "United States",
+      "socialmedia": {
+        "facebook": "",
+        "twitter": "",
+        "instagram": ""
+      },
+      "projects":[
+        {
+          "id":1,
+          "title": "Modern",
+          "image":"./public/card.png",
+          "desc":"As Uber works through a huge amount of internal management turmoil."
+        },
+        {
+          "id":2,
+          "title": "Scandinavian",
+          "image":"./public/card2.png",
+          "desc":"Music is something that every person has his or her own specific opinion about."
+        },
+        {
+          "id":3,
+          "title":"Minimalist",
+          "image":"./public/card3.png",
+          "desc":"Different people have different taste, and various types of music."
+        }
+      ],
+      "converstations": [
+        {
+          "image":"",
+          "name": "Esthera Jackson",
+          "comment": "Hi! I need more informations..."
+        },
+        {
+          "image":"",
+          "name": "Esthera Jackson",
+          "comment": "Awesome work, cam you change..."
+        },
+        {
+          "image":"",
+          "name": "Esthera Jackson",
+          "comment": "Have a great afternoon..."
+        },
+        {
+          "image":"",
+          "name": "Esthera Jackson",
+          "comment": "About files I can..."
+        }
+      ]
+    }
+  ]
+}

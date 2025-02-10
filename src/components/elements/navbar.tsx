@@ -1,37 +1,43 @@
-import { Input } from "./dashboard/input";
+import { useEffect, useState } from "react";
+import { Input } from "./input";
+import { useLocation } from "react-router-dom";
 
-interface NavBarProps {
-  page: string;
-}
+export const NavBar = () => {
+  const [darkMod, setDarkMod] = useState(true);
 
-export const NavBar = ({ page }: NavBarProps) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (darkMod) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [darkMod]);
+
   return (
-    <div className="flex flex-row justify-between">
+    <div className="flex flex-row mx-2 z-20 justify-between">
       <div className="flex flex-col gap-1">
-        <span className="text-xs">Pages / {page}</span>
-        <span className="text-sm font-semibold">{page}</span>
+        <span className="text-xs">
+          Pages <b>{location.pathname}</b>
+        </span>
+        <span className="text-sm font-semibold">{location.pathname}</span>
       </div>
       <div className="flex flex-row gap-2">
         <div className="flex flex-row my-auto items-center h-9 relative">
           <Input
             placeholder="Type Here..."
-            rounded="lg"
-            fontsize="xs"
-            id="filterInput"
-            customClass="indent-7 h-full"
+            className="indent-7 text-xs rounded-lg h-full w-52 dark:bg-darkDetail"
           />
           <svg
             width="13"
             height="13"
             viewBox="0 0 13 13"
             fill="none"
-            className="absolute mx-2"
+            className="absolute mx-2 fill-detailColor dark:fill-white"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M12.6295 11.5958L9.87292 8.83929C10.5366 7.9558 10.8948 6.88041 10.8936 5.77543C10.8936 2.95297 8.59734 0.656677 5.77488 0.656677C2.95242 0.656677 0.656128 2.95297 0.656128 5.77543C0.656128 8.59788 2.95242 10.8942 5.77488 10.8942C6.87986 10.8954 7.95525 10.5371 8.83874 9.87347L11.5953 12.63C11.7348 12.7547 11.9168 12.8213 12.1039 12.8161C12.291 12.8109 12.469 12.7342 12.6013 12.6019C12.7336 12.4695 12.8103 12.2915 12.8155 12.1044C12.8208 11.9174 12.7542 11.7354 12.6295 11.5958V11.5958ZM2.11863 5.77543C2.11863 5.05229 2.33306 4.34539 2.73482 3.74412C3.13657 3.14286 3.7076 2.67422 4.37569 2.39749C5.04378 2.12076 5.77893 2.04835 6.48817 2.18943C7.19742 2.33051 7.8489 2.67873 8.36023 3.19007C8.87157 3.7014 9.21979 4.35288 9.36087 5.06213C9.50195 5.77137 9.42954 6.50652 9.15281 7.17461C8.87608 7.8427 8.40745 8.41373 7.80618 8.81548C7.20491 9.21724 6.49801 9.43167 5.77488 9.43167C4.80554 9.43051 3.87623 9.04493 3.1908 8.3595C2.50537 7.67407 2.11979 6.74477 2.11863 5.77543V5.77543Z"
-              fill="#2D3748"
-            />
+            <path d="M12.6295 11.5958L9.87292 8.83929C10.5366 7.9558 10.8948 6.88041 10.8936 5.77543C10.8936 2.95297 8.59734 0.656677 5.77488 0.656677C2.95242 0.656677 0.656128 2.95297 0.656128 5.77543C0.656128 8.59788 2.95242 10.8942 5.77488 10.8942C6.87986 10.8954 7.95525 10.5371 8.83874 9.87347L11.5953 12.63C11.7348 12.7547 11.9168 12.8213 12.1039 12.8161C12.291 12.8109 12.469 12.7342 12.6013 12.6019C12.7336 12.4695 12.8103 12.2915 12.8155 12.1044C12.8208 11.9174 12.7542 11.7354 12.6295 11.5958V11.5958ZM2.11863 5.77543C2.11863 5.05229 2.33306 4.34539 2.73482 3.74412C3.13657 3.14286 3.7076 2.67422 4.37569 2.39749C5.04378 2.12076 5.77893 2.04835 6.48817 2.18943C7.19742 2.33051 7.8489 2.67873 8.36023 3.19007C8.87157 3.7014 9.21979 4.35288 9.36087 5.06213C9.50195 5.77137 9.42954 6.50652 9.15281 7.17461C8.87608 7.8427 8.40745 8.41373 7.80618 8.81548C7.20491 9.21724 6.49801 9.43167 5.77488 9.43167C4.80554 9.43051 3.87623 9.04493 3.1908 8.3595C2.50537 7.67407 2.11979 6.74477 2.11863 5.77543V5.77543Z" />
           </svg>
         </div>
         <div className="flex flex-row gap-4">
@@ -54,7 +60,7 @@ export const NavBar = ({ page }: NavBarProps) => {
             </svg>
             <span className="font-semibold text-xs">Sign In</span>
           </div>
-          <button>
+          <button onClick={() => setDarkMod((t) => !t)}>
             <svg
               width="12"
               height="12"
