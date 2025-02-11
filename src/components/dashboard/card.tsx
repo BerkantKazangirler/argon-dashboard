@@ -1,9 +1,10 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { formatBouncerate } from "../../utils/formatter";
+import { cardDatasProps } from "../type";
 
 export const Card = () => {
-  const [cardData, setCardData] = useState<Array<any>>([]);
+  const [cardData, setCardData] = useState<Array<cardDatasProps>>([]);
   useEffect(() => {
     fetch("http://localhost:3000/card-datas")
       .then((res) => res.json())

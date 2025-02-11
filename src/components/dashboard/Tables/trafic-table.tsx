@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { formatBouncerate } from "../../../utils/formatter";
+import { traficDataProps } from "../../type";
 
 export const TraficTable = () => {
-  const [traficData, setTraficData] = useState<Array<any>>([]);
+  const [traficData, setTraficData] = useState<Array<traficDataProps>>([]);
   useEffect(() => {
     fetch("http://localhost:3000/socialtraffic")
       .then((res) => res.json())

@@ -7,7 +7,7 @@ export const Projects = () => {
     fetch("http://localhost:3000/user-data")
       .then((res) => res.json())
       .then((data) => {
-        setProfileData(data);
+        setProfileData(data.projects);
       });
   }, []);
   return (
@@ -21,35 +21,31 @@ export const Projects = () => {
         </span>
       </div>
       <div className="flex flex-row w-full gap-4">
-        {profileData.map((data) => (
-          <>
-            {data.projects.map((data: any, index: any) => (
-              <div key={index} className="flex flex-col w-fit">
-                <div
-                  className={`h-48 w-98 flex flex-col bg-[url('${data.image}')] rounded-xl`}
-                >
-                  <span className="bg-gradient-to-t from-[#3138602E] to-[#15192888] rounded-xl h-full"></span>
-                </div>
-                <div className="flex flex-col mt-3">
-                  <span className="text-placeholderColor text-2xs">
-                    Projects #{data.id}
-                  </span>
-                  <span className="text-detailColor text-lg font-bold dark:text-white">
-                    {data.title}
-                  </span>
-                  <span className="text-placeholderColor text-sm w-64 mt-2 h-12">
-                    {data.desc}
-                  </span>
-                  <div className="flex flex-row justify-between mt-5">
-                    <Button className="rounded-lg dark:bg-detailBg bg-detailColor text-2xs font-bold text-white px-4 py-2">
-                      VIEW ALL
-                    </Button>
-                    <img src={"./public/icon/kisi.png"} className="h-fit" />
-                  </div>
-                </div>
+        {profileData.map((data: any, index: any) => (
+          <div key={index} className="flex flex-col w-fit">
+            <div
+              className={`h-48 w-98 flex flex-col bg-[url('${data.image}')] rounded-xl`}
+            >
+              <span className="bg-gradient-to-t from-[#3138602E] to-[#15192888] rounded-xl h-full"></span>
+            </div>
+            <div className="flex flex-col mt-3">
+              <span className="text-placeholderColor text-2xs">
+                Projects #{data.id}
+              </span>
+              <span className="text-detailColor text-lg font-bold dark:text-white">
+                {data.title}
+              </span>
+              <span className="text-placeholderColor text-sm w-64 mt-2 h-12">
+                {data.desc}
+              </span>
+              <div className="flex flex-row justify-between mt-5">
+                <Button className="rounded-lg dark:bg-detailBg bg-detailColor text-2xs font-bold text-white px-4 py-2">
+                  VIEW ALL
+                </Button>
+                <img src={"./public/icon/kisi.png"} className="h-fit" />
               </div>
-            ))}
-          </>
+            </div>
+          </div>
         ))}
 
         <div className="flex flex-col w-full">

@@ -32,10 +32,6 @@ const router = createBrowserRouter([
         path: "profile",
         element: <ProfilePage />,
       },
-      // {
-      //   path: "signin",
-      //   element: <SignIn />,
-      // },
     ],
   },
   {
@@ -58,7 +54,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-// createRoot(document.getElementById("root")!).render(<App />);
 createRoot(document.getElementById("root")!).render(
   <RouterProvider router={router} />
 );

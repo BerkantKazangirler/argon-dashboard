@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Button } from "../../elements/button";
 import { formatBouncerate } from "../../../utils/formatter";
+import { visitDataProps } from "../../type";
 
 export const VisitTable = () => {
-  const [visitData, setVisitData] = useState<Array<any>>([]);
+  const [visitData, setVisitData] = useState<Array<visitDataProps>>([]);
   useEffect(() => {
     fetch("http://localhost:3000/pagevisits")
       .then((res) => res.json())

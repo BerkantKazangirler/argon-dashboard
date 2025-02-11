@@ -1,8 +1,9 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
+import { authorsDataProps } from "../type";
 
 export const AuthorTable = () => {
-  const [tableData, setTableData] = useState<Array<any>>([]);
+  const [tableData, setTableData] = useState<Array<authorsDataProps>>([]);
   useEffect(() => {
     fetch("http://localhost:3000/authors")
       .then((res) => res.json())

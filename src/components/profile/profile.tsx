@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import { Button } from "../elements/button";
+import SvgEdit from "../icons/edit";
+import OverviewSvg from "../icons/overview";
+import MultiDocumentSvg from "../icons/multidocument";
+import BuildSvg from "../icons/build";
 
 export const Profile = () => {
   const [profileData, setProfileData] = useState<Array<any>>([]);
@@ -13,143 +17,54 @@ export const Profile = () => {
   return (
     <>
       <div className="flex flex-col">
-        {profileData.map((data, index) => (
-          <div
-            key={index}
-            className="flex p-4 flex-row bg-[#FFFFFFCC] dark:bg-darkDetail drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)] rounded-2xl h-24 border border-white dark:border-none"
-          >
-            <div className="flex flex-row justify-between w-full">
-              <div className="flex flex-row gap-4">
-                <div className="flex flex-row w-fit relative">
-                  <img src={data.photo} className="w-16 rounded-xl my-auto" />
+        <div className="flex p-4 flex-row bg-[#FFFFFFCC] dark:bg-darkDetail drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)] rounded-2xl h-24 border border-white dark:border-none">
+          <div className="flex flex-row justify-between w-full">
+            <div className="flex flex-row gap-4">
+              <div className="flex flex-row w-fit relative">
+                <img
+                  src={profileData.photo}
+                  className="w-16 rounded-xl my-auto"
+                />
 
-                  <span className="absolute -bottom-1 -right-2 rounded-lg bg-white dark:bg-darkBg p-1">
-                    <svg
-                      width="13"
-                      height="13"
-                      viewBox="0 0 13 13"
-                      className="fill-detailBg dark:fill-white"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g clip-path="url(#clip0_2612_5324)">
-                        <path d="M2 9.23003V10.75C2 10.89 2.11 11 2.25 11H3.77C3.835 11 3.9 10.975 3.945 10.925L9.405 5.47003L7.53 3.59503L2.075 9.05003C2.025 9.10003 2 9.16003 2 9.23003ZM10.855 4.02003C11.05 3.82503 11.05 3.51003 10.855 3.31503L9.685 2.14503C9.49 1.95003 9.175 1.95003 8.98 2.14503L8.065 3.06003L9.94 4.93503L10.855 4.02003Z" />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_2612_5324">
-                          <rect
-                            width="12"
-                            height="12"
-                            fill="white"
-                            transform="translate(0.5 0.5)"
-                          />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </span>
-                </div>
-
-                <div className="flex flex-col my-auto">
-                  <span className="text-detailColor dark:text-white font-bold">
-                    {data.name}
-                  </span>
-                  <span className="text-sm text-tableTr">{data.mail}</span>
-                </div>
+                <span className="absolute -bottom-1 -right-2 rounded-lg bg-white dark:bg-darkBg p-1">
+                  <SvgEdit className="fill-detailBg dark:fill-white size-3" />
+                </span>
               </div>
-              <div className="flex flex-row gap-5">
-                <Button className="flex flex-row my-auto gap-1 bg-white dark:bg-darkBg rounded-lg drop-shadow-xl py-3 px-6">
-                  <svg
-                    width="12"
-                    height="11"
-                    viewBox="0 0 12 11"
-                    className="my-auto fill-detailColor dark:fill-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clip-path="url(#clip0_2611_5311)">
-                      <path d="M10.2225 2.92498C10.2354 2.91741 10.2462 2.90658 10.2537 2.89355C10.2612 2.88053 10.2651 2.86577 10.2651 2.85075C10.2651 2.83574 10.2612 2.82098 10.2537 2.80795C10.2462 2.79493 10.2354 2.78409 10.2225 2.77653L6.94095 0.870003C6.73098 0.748298 6.4926 0.684204 6.24991 0.684204C6.00722 0.684204 5.76883 0.748298 5.55886 0.870003L2.27798 2.77653C2.26501 2.78409 2.25425 2.79493 2.24677 2.80795C2.23929 2.82098 2.23535 2.83574 2.23535 2.85075C2.23535 2.86577 2.23929 2.88053 2.24677 2.89355C2.25425 2.90658 2.26501 2.91741 2.27798 2.92498L6.20704 5.23627C6.22026 5.24406 6.23532 5.24816 6.25066 5.24816C6.266 5.24816 6.28105 5.24406 6.29427 5.23627L10.2225 2.92498Z" />
-                      <path d="M1.91016 3.50932C1.89705 3.50175 1.88218 3.49778 1.86705 3.4978C1.85192 3.49783 1.83706 3.50185 1.82398 3.50946C1.8109 3.51706 1.80006 3.52799 1.79256 3.54113C1.78505 3.55428 1.78115 3.56917 1.78125 3.5843V7.32021C1.78158 7.50025 1.82903 7.67706 1.91888 7.83307C2.00874 7.98907 2.13787 8.11883 2.29344 8.20945L5.77734 10.2984C5.7904 10.3059 5.80521 10.3099 5.82029 10.3099C5.83537 10.3099 5.85018 10.3059 5.86324 10.2984C5.87631 10.2909 5.88716 10.28 5.8947 10.267C5.90225 10.2539 5.90624 10.2391 5.90625 10.224V5.88957C5.90624 5.8745 5.90226 5.8597 5.89472 5.84665C5.88717 5.8336 5.87633 5.82277 5.86328 5.81523L1.91016 3.50932Z" />
-                      <path d="M6.59375 5.9046V10.223C6.59377 10.238 6.59775 10.2528 6.6053 10.2659C6.61285 10.279 6.6237 10.2898 6.63676 10.2973C6.64982 10.3049 6.66463 10.3088 6.67971 10.3088C6.69479 10.3088 6.7096 10.3048 6.72266 10.2973L10.2063 8.20837C10.3618 8.11787 10.4909 7.98829 10.5808 7.83249C10.6706 7.67668 10.7182 7.50008 10.7187 7.32021V3.58429C10.7187 3.56923 10.7147 3.55445 10.7071 3.54143C10.6996 3.52841 10.6887 3.5176 10.6756 3.5101C10.6626 3.50259 10.6478 3.49864 10.6327 3.49866C10.6177 3.49867 10.6029 3.50264 10.5898 3.51017L6.63672 5.83048C6.6237 5.838 6.61288 5.8488 6.60534 5.86181C6.5978 5.87481 6.5938 5.88957 6.59375 5.9046Z" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_2611_5311">
-                        <rect
-                          width="11"
-                          height="11"
-                          fill="white"
-                          transform="translate(0.75 -0.00280762)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
 
-                  <span className="flex flex-row text-detailColor dark:text-white font-bold text-2xs">
-                    OVERVIEW
-                  </span>
-                </Button>
-
-                <Button className="flex flex-row my-auto gap-1 py-3 px-6">
-                  <svg
-                    width="12"
-                    height="11"
-                    viewBox="0 0 12 11"
-                    fill="none"
-                    className="my-auto fill-detailColor dark:fill-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clip-path="url(#clip0_2611_5303)">
-                      <path d="M6.91072 5.32514C6.92765 5.32515 6.94421 5.32017 6.95832 5.31081C6.97242 5.30144 6.98345 5.28812 6.99001 5.27252C6.99658 5.25691 6.99838 5.23972 6.99521 5.22309C6.99203 5.20646 6.98402 5.19114 6.97217 5.17905L5.28779 3.46631C5.27582 3.45416 5.26051 3.44584 5.24379 3.44242C5.22708 3.439 5.20973 3.44063 5.19395 3.4471C5.17816 3.45358 5.16467 3.4646 5.15517 3.47877C5.14567 3.49295 5.14061 3.50962 5.14063 3.52668V5.06733C5.14063 5.1357 5.16779 5.20128 5.21614 5.24963C5.26449 5.29798 5.33006 5.32514 5.39844 5.32514H6.91072Z" />
-                      <path d="M4.73242 5.73352C4.64418 5.64646 4.57406 5.54278 4.52612 5.42846C4.47818 5.31415 4.45337 5.19146 4.45312 5.0675V3.09094H2.90625C2.54191 3.09202 2.1928 3.23723 1.93517 3.49486C1.67754 3.75249 1.53233 4.1016 1.53125 4.46594V9.27844C1.53125 9.64311 1.67612 9.99285 1.93398 10.2507C2.19184 10.5086 2.54158 10.6534 2.90625 10.6534H6C6.36467 10.6534 6.71441 10.5086 6.97227 10.2507C7.23013 9.99285 7.375 9.64311 7.375 9.27844V6.01282H5.39844C5.27447 6.01264 5.15176 5.98786 5.03744 5.93992C4.92311 5.89198 4.81944 5.82182 4.73242 5.73352V5.73352Z" />
-                      <path d="M8.49219 2.57496H10.0045C10.0214 2.57497 10.038 2.56998 10.0521 2.56062C10.0662 2.55126 10.0772 2.53794 10.0838 2.52234C10.0903 2.50673 10.0921 2.48953 10.089 2.4729C10.0858 2.45627 10.0778 2.44095 10.0659 2.42886L8.38154 0.716128C8.36957 0.703974 8.35426 0.695657 8.33754 0.692236C8.32083 0.688816 8.30348 0.690446 8.2877 0.696921C8.27191 0.703395 8.25842 0.71442 8.24892 0.728592C8.23942 0.742763 8.23436 0.75944 8.23438 0.776499V2.31714C8.23438 2.38552 8.26154 2.4511 8.30989 2.49944C8.35824 2.54779 8.42381 2.57496 8.49219 2.57496Z" />
-                      <path d="M8.49219 3.26257C8.24206 3.26066 8.00273 3.16045 7.82586 2.98359C7.64899 2.80672 7.54878 2.56738 7.54687 2.31726V0.340698H5.22656C4.8848 0.341096 4.55716 0.477036 4.3155 0.718695C4.07384 0.960355 3.9379 1.288 3.9375 1.62976V2.4032H4.84242C4.95793 2.40366 5.0722 2.42694 5.17868 2.4717C5.28516 2.51646 5.38175 2.58182 5.46289 2.66402L7.80812 5.04878C7.97174 5.21479 8.06309 5.43875 8.06228 5.67183V8.5907H9.20203C9.90049 8.5907 10.4685 8.01234 10.4685 7.30163V3.26257H8.49219Z" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_2611_5303">
-                        <rect
-                          width="11"
-                          height="11"
-                          fill="white"
-                          transform="translate(0.5 -0.00280762)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
-
-                  <span className="flex flex-row text-detailColor dark:text-white font-bold text-2xs">
-                    TEAMS
-                  </span>
-                </Button>
-
-                <Button className="flex flex-row my-auto gap-1 py-3 px-6">
-                  <svg
-                    width="12"
-                    height="11"
-                    viewBox="0 0 12 11"
-                    fill="none"
-                    className="my-auto fill-detailColor dark:fill-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clip-path="url(#clip0_2611_5295)">
-                      <path d="M10.838 2.58686C10.8132 2.53872 10.7774 2.49711 10.7336 2.46541C10.6897 2.43371 10.6389 2.41282 10.5855 2.40444C10.532 2.39607 10.4773 2.40044 10.4258 2.41721C10.3743 2.43397 10.3275 2.46266 10.2893 2.50092L8.96926 3.82178C8.90446 3.88564 8.81714 3.92144 8.72616 3.92144C8.63518 3.92144 8.54786 3.88564 8.48306 3.82178L7.91244 3.2503C7.88051 3.21838 7.85518 3.18048 7.8379 3.13877C7.82062 3.09706 7.81173 3.05235 7.81173 3.0072C7.81173 2.96206 7.82062 2.91735 7.8379 2.87564C7.85518 2.83393 7.88051 2.79603 7.91244 2.76411L9.22685 1.44948C9.26626 1.41008 9.29549 1.3617 9.31204 1.30849C9.32859 1.25528 9.33196 1.19885 9.32185 1.14405C9.31175 1.08926 9.28847 1.03774 9.25403 0.993935C9.21959 0.950131 9.17502 0.915356 9.12416 0.892605C8.13136 0.448738 6.89215 0.68034 6.11076 1.45593C5.44689 2.11507 5.24902 3.14503 5.56828 4.28176C5.58549 4.34238 5.58559 4.40658 5.56857 4.46725C5.55154 4.52793 5.51805 4.5827 5.47182 4.62551L1.8951 7.89221C1.75576 8.01732 1.64337 8.1695 1.56478 8.33947C1.48619 8.50944 1.44306 8.69364 1.438 8.88084C1.43295 9.06803 1.46608 9.25429 1.53538 9.42826C1.60468 9.60222 1.7087 9.76025 1.84108 9.89269C1.97347 10.0251 2.13144 10.1292 2.30538 10.1986C2.47932 10.268 2.66556 10.3012 2.85276 10.2962C3.03995 10.2912 3.22417 10.2482 3.39418 10.1697C3.56418 10.0912 3.71642 9.97884 3.84158 9.83956L7.1433 6.25489C7.1855 6.20925 7.23935 6.17598 7.29905 6.15868C7.35875 6.14138 7.42204 6.1407 7.48211 6.1567C7.80574 6.24538 8.13956 6.29139 8.47511 6.29356C9.19269 6.29356 9.8224 6.06131 10.2766 5.61379C11.1177 4.78514 11.246 3.37964 10.838 2.58686ZM2.88746 9.6043C2.74597 9.61975 2.60316 9.59089 2.47876 9.52172C2.35436 9.45255 2.2545 9.34648 2.19295 9.21813C2.13141 9.08979 2.11122 8.94551 2.13516 8.8052C2.15911 8.66489 2.22601 8.53548 2.32664 8.43481C2.42727 8.33415 2.55666 8.2672 2.69696 8.2432C2.83726 8.21921 2.98155 8.23935 3.10992 8.30085C3.23828 8.36235 3.34439 8.46218 3.41361 8.58655C3.48282 8.71093 3.51172 8.85372 3.49633 8.99522C3.47939 9.15091 3.4098 9.29615 3.29908 9.40691C3.18836 9.51767 3.04315 9.58731 2.88746 9.6043Z" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_2611_5295">
-                        <rect
-                          width="11"
-                          height="11"
-                          fill="white"
-                          transform="translate(0.75 -0.00280762)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
-
-                  <span className="flex flex-row text-detailColor dark:text-white font-bold text-2xs">
-                    PROJECTS
-                  </span>
-                </Button>
+              <div className="flex flex-col my-auto">
+                <span className="text-detailColor dark:text-white font-bold">
+                  {profileData.name}
+                </span>
+                <span className="text-sm text-tableTr">{profileData.mail}</span>
               </div>
             </div>
+            <div className="flex flex-row gap-5">
+              <Button className="flex flex-row my-auto gap-1 bg-white dark:bg-darkBg rounded-lg drop-shadow-xl py-3 px-6">
+                <OverviewSvg className="my-auto fill-detailColor dark:fill-white size-3" />
+
+                <span className="flex flex-row text-detailColor dark:text-white font-bold text-2xs">
+                  OVERVIEW
+                </span>
+              </Button>
+
+              <Button className="flex flex-row my-auto gap-1 py-3 px-6">
+                <MultiDocumentSvg className="my-auto fill-detailColor dark:fill-white size-3" />
+
+                <span className="flex flex-row text-detailColor dark:text-white font-bold text-2xs">
+                  TEAMS
+                </span>
+              </Button>
+
+              <Button className="flex flex-row my-auto gap-1 py-3 px-6">
+                <BuildSvg className="my-auto fill-detailBg dark:fill-white size-4" />
+
+                <span className="flex flex-row text-detailColor dark:text-white font-bold text-2xs">
+                  PROJECTS
+                </span>
+              </Button>
+            </div>
           </div>
-        ))}
+        </div>
       </div>
     </>
   );

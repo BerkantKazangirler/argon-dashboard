@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
+import { userDataProps } from "../type";
 
 export const Conversations = () => {
-  const [converstationData, setConversatitionData] = useState<Array<any>>([]);
+  const [converstationData, setConversatitionData] = useState<
+    Array<userDataProps>
+  >([]);
   useEffect(() => {
     fetch("http://localhost:3000/user-data")
       .then((res) => res.json())
       .then((data) => {
-        setConversatitionData(data);
+        setConversatitionData(data.converstations);
       });
   }, []);
   return (
@@ -15,35 +18,28 @@ export const Conversations = () => {
         Conversations
       </span>
       <div className="flex flex-col pb-2">
-        {converstationData.map((data) => (
-          <>
-            {data.converstations.map((data: any, index: any) => (
-              <div
-                key={index}
-                className="flex flex-row pr-4 justify-between mt-4"
-              >
-                <div className="flex flex-row gap-4">
-                  <img
-                    src={
-                      data.image
-                        ? data.image
-                        : "http://localhost:5173/public/ornek.jpeg"
-                    }
-                    className="w-12 rounded-xl my-auto"
-                  />
-                  <div className="flex flex-col">
-                    <span className="text-detailColor dark:text-white font-bold text-sm">
-                      {data.name}
-                    </span>
-                    <span className="text-tableTr text-sm">{data.comment}</span>
-                  </div>
-                </div>
-                <span className="text-detailBg dark:text-white font-bold text-2xs my-auto">
-                  REPLY
+        {converstationData.map((data: any, index: any) => (
+          <div key={index} className="flex flex-row pr-4 justify-between mt-4">
+            <div className="flex flex-row gap-4">
+              <img
+                src={
+                  data.image
+                    ? data.image
+                    : "http://localhost:5173/public/ornek.jpeg"
+                }
+                className="w-12 rounded-xl my-auto"
+              />
+              <div className="flex flex-col">
+                <span className="text-detailColor dark:text-white font-bold text-sm">
+                  {data.name}
                 </span>
+                <span className="text-tableTr text-sm">{data.comment}</span>
               </div>
-            ))}
-          </>
+            </div>
+            <span className="text-detailBg dark:text-white font-bold text-2xs my-auto">
+              REPLY
+            </span>
+          </div>
         ))}
       </div>
     </div>

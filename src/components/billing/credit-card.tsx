@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { formatCardNumber, formatCVV } from "../../utils/cardnumber";
+import { paymentMethodProps } from "../type";
 
 export const CreditCard = () => {
-  const [cardData, setCardData] = useState<Array<any>>([]);
+  const [cardData, setCardData] = useState<Array<paymentMethodProps>>([]);
   const [load, setLoad] = useState(false);
   useEffect(() => {
     fetch("http://localhost:3000/payment-method")

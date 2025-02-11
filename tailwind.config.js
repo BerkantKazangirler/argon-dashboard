@@ -14,6 +14,7 @@ export default {
         detailBg: "#3182CE",
         detailGreen: "#48BB78",
         detailRed: "#E53E3E",
+        checkboxGreen: "#68D391",
         tableTd: "#E2E8F0",
         tableTr: "#718096",
         infoBg: "#F7FAFC",
