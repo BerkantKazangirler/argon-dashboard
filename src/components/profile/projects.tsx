@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components";
 import { request } from "@/utils/fetchdata";
-import { userDataProps } from "../type";
 
 export const Projects = () => {
   const [profileData, setProfileData] = useState<Array<any>>([]);

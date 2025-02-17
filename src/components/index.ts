@@ -69,6 +69,7 @@ export { ProfilePage } from "../pages/profile"
 export { LoginLayout } from "../layout/loginlayout"
 export { SignIn } from "../pages/signin"
 export { Register } from "../pages/register"
+export { MainLayout } from "../layout/mainlayout"
 
 
 // export { visitDataProps, traficDataProps, cardDatasProps, authorsDataProps, projectsDataProps,paymentInfoProps, paymentMethodProps, billingInformationProps, paymentInvoicesProps, userDataProps, salesOverviewProps, performanceProps } from "./type"

@@ -10,7 +10,7 @@ import {
   LoginLayout,
   SignIn,
   Register,
-} from "./components";
+} from "@/components";
 
 const router = createBrowserRouter([
   {
