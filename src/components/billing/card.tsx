@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { paymentInfoProps } from "../type";
 import SvgWallet from "../icons/wallet";
 import SvgPaypal from "../icons/paypal";
+import { request } from "../../utils/fetchdata";
 
 export const BillingCard = () => {
   const [cardData, setCardData] = useState<Array<paymentInfoProps>>([]);
   const [load, setLoad] = useState(false);
+
   useEffect(() => {
-    fetch("http://localhost:3000/payment-info-cards")
-      .then((res) => res.json())
+    request<Array<paymentInfoProps>>("/payment-info-cards", "GET")
       .then((data) => {
         setCardData(data);
       })

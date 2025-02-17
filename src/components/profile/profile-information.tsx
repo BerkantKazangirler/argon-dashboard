@@ -5,15 +5,16 @@ import FacebookSvg from "../icons/facebook";
 import TwitterSvg from "../icons/twitter";
 import InstagramSvg from "../icons/instagram";
 import CheckBoxSvg from "../icons/checkbox";
+import { request } from "../../utils/fetchdata";
 
 export const ProfileInformation = () => {
   const [informationData, setInformationData] = useState<Array<userDataProps>>(
     []
   );
   const [load, setLoad] = useState(false);
+
   useEffect(() => {
-    fetch("http://localhost:3000/user-data")
-      .then((res) => res.json())
+    request<Array<userDataProps>>("/user-data", "GET")
       .then((data) => {
         setInformationData(data);
       })

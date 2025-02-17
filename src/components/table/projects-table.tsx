@@ -3,15 +3,15 @@ import { formatBouncerate } from "../../utils/formatter";
 import { projectsDataProps } from "../type";
 import CheckBoxSvg from "../icons/checkbox";
 import VertSvg from "../icons/vert";
+import { request } from "../../utils/fetchdata";
 
 export const ProjectsTable = () => {
   const [tableData, setTableData] = useState<Array<projectsDataProps>>([]);
+
   useEffect(() => {
-    fetch("http://localhost:3000/projects")
-      .then((res) => res.json())
-      .then((data) => {
-        setTableData(data);
-      });
+    request<Array<projectsDataProps>>("/projects", "GET").then((data) => {
+      setTableData(data);
+    });
   }, []);
   return (
     <div className="flex flex-col w-full bg-white dark:bg-darkDetail rounded-2xl drop-shadow-xl px-4 py-6">

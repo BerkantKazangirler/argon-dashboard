@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { formatBouncerate } from "../../../utils/formatter";
 import { traficDataProps } from "../../type";
+import { request } from "../../../utils/fetchdata";
 
 export const TraficTable = () => {
   const [traficData, setTraficData] = useState<Array<traficDataProps>>([]);
+
   useEffect(() => {
-    fetch("http://localhost:3000/socialtraffic")
-      .then((res) => res.json())
-      .then((data) => {
-        setTraficData(data);
-      });
+    request<Array<traficDataProps>>("/socialtraffic", "GET").then((data) => {
+      setTraficData(data);
+    });
   }, []);
   return (
     <div className="w-1/2 h-[244px] py-2 bg-white dark:bg-darkDetail rounded-2xl drop-shadow-xl">

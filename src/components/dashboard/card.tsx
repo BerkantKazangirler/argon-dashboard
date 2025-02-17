@@ -2,15 +2,15 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { formatBouncerate } from "../../utils/formatter";
 import { cardDatasProps } from "../type";
+import { request } from "../../utils/fetchdata";
 
 export const Card = () => {
   const [cardData, setCardData] = useState<Array<cardDatasProps>>([]);
+
   useEffect(() => {
-    fetch("http://localhost:3000/card-datas")
-      .then((res) => res.json())
-      .then((data) => {
-        setCardData(data);
-      });
+    request<Array<cardDatasProps>>("/card-datas", "GET").then((data) => {
+      setCardData(data);
+    });
   }, []);
   return (
     <>

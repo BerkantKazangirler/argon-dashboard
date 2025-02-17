@@ -4,15 +4,15 @@ import SvgEdit from "../icons/edit";
 import OverviewSvg from "../icons/overview";
 import MultiDocumentSvg from "../icons/multidocument";
 import BuildSvg from "../icons/build";
+import { request } from "../../utils/fetchdata";
 
 export const Profile = () => {
   const [profileData, setProfileData] = useState<Array<any>>([]);
+
   useEffect(() => {
-    fetch("http://localhost:3000/user-data")
-      .then((res) => res.json())
-      .then((data) => {
-        setProfileData(data);
-      });
+    request<Array<any>>("/user-data", "GET").then((data) => {
+      setProfileData(data);
+    });
   }, []);
   return (
     <>

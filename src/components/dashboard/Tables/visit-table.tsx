@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import { Button } from "../../elements/button";
 import { formatBouncerate } from "../../../utils/formatter";
 import { visitDataProps } from "../../type";
+import { request } from "../../../utils/fetchdata";
 
 export const VisitTable = () => {
   const [visitData, setVisitData] = useState<Array<visitDataProps>>([]);
+
   useEffect(() => {
-    fetch("http://localhost:3000/pagevisits")
-      .then((res) => res.json())
-      .then((data) => {
-        setVisitData(data);
-      });
+    request<Array<visitDataProps>>("/pagevisits", "GET").then((data) => {
+      setVisitData(data);
+    });
   }, []);
   return (
     <div className="w-full rounded-2xl overflow-y-hidden py-2 drop-shadow-xl h-full bg-white dark:bg-darkDetail">

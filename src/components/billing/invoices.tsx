@@ -3,15 +3,17 @@ import { Button } from "../elements/button";
 import { formatDate } from "../../utils/date";
 import { paymentInvoicesProps } from "../type";
 import TextDocumentSvg from "../icons/textdocument";
+import { request } from "../../utils/fetchdata";
 
 export const Invoices = () => {
   const [cardData, setCardData] = useState<Array<paymentInvoicesProps>>([]);
+
   useEffect(() => {
-    fetch("http://localhost:3000/payment-invoices")
-      .then((res) => res.json())
-      .then((data) => {
+    request<Array<paymentInvoicesProps>>("/payment-invoices", "GET").then(
+      (data) => {
         setCardData(data);
-      });
+      }
+    );
   }, []);
 
   return (

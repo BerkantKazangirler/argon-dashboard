@@ -2,15 +2,17 @@ import { useEffect, useState } from "react";
 import { billingInformationProps } from "../type";
 import SvgTrash from "../icons/trash";
 import SvgEdit from "../icons/edit";
+import { request } from "../../utils/fetchdata";
 
 export const Information = () => {
   const [cardData, setCardData] = useState<Array<billingInformationProps>>([]);
+
   useEffect(() => {
-    fetch("http://localhost:3000/billing-information")
-      .then((res) => res.json())
-      .then((data) => {
+    request<Array<billingInformationProps>>("/billing-information", "GET").then(
+      (data) => {
         setCardData(data);
-      });
+      }
+    );
   }, []);
   return (
     <div className="flex flex-col w-full p-6 bg-white dark:bg-darkDetail drop-shadow-xl rounded-2.5xl">

@@ -1,16 +1,17 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { authorsDataProps } from "../type";
+import { request } from "../../utils/fetchdata";
 
 export const AuthorTable = () => {
   const [tableData, setTableData] = useState<Array<authorsDataProps>>([]);
+
   useEffect(() => {
-    fetch("http://localhost:3000/authors")
-      .then((res) => res.json())
-      .then((data) => {
-        setTableData(data);
-      });
+    request<Array<authorsDataProps>>("/authors", "GET").then((data) => {
+      setTableData(data);
+    });
   }, []);
+
   return (
     <div className="flex flex-col w-full px-4 drop-shadow-xl rounded-2xl bg-white dark:bg-darkDetail">
       <span className="text-detailColor dark:text-white pt-4 font-semibold text-lg">
