@@ -5,8 +5,25 @@ import {
   SvgSettings,
   SvgNotifications,
   SvgSearch,
+  Button,
 } from "@/components";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "./sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const NavBar = () => {
   const [darkMod, setDarkMod] = useState(true);
@@ -26,7 +43,7 @@ export const NavBar = () => {
       <div className="flex flex-col gap-1">
         <span className="text-xs">
           Pages{" "}
-          <b>{location.pathname == "/" ? "Dashboard" : location.pathname}</b>
+          <b>{location.pathname == "/" ? "/dashboard" : location.pathname}</b>
         </span>
         <span className="text-sm font-semibold">
           {location.pathname == "/" ? "Dashboard" : location.pathname}
@@ -41,16 +58,85 @@ export const NavBar = () => {
           <SvgSearch className="absolute size-3 mx-2 fill-detailColor dark:fill-white" />
         </div>
         <div className="flex flex-row gap-4">
-          <div className="flex flex-row hover:cursor-pointer gap-1 items-center">
+          <Link
+            to={"auth/sign"}
+            className="flex flex-row hover:cursor-pointer gap-1 items-center"
+          >
             <SvgPerson className="size-3" />
             <span className="font-semibold text-xs">Sign In</span>
-          </div>
-          <button onClick={() => setDarkMod((t) => !t)}>
-            <SvgSettings className="fill-white size-3" />
-          </button>
-          <button>
-            <SvgNotifications className="size-3" />
-          </button>
+          </Link>
+          <Sheet>
+            <SheetTrigger>
+              <SvgSettings className="size-3 fill-white" />
+            </SheetTrigger>
+            <SheetContent side="right">
+              <SheetHeader>
+                <SheetTitle>Settings</SheetTitle>
+                <SheetDescription>
+                  Make changes to your settings here.
+                </SheetDescription>
+              </SheetHeader>
+
+              <div className="flex flex-col py-5">
+                <Button
+                  className="bg-slate-400 py-2 text-sm rounded-lg"
+                  onClick={() => setDarkMod((t) => !t)}
+                >
+                  Toggle {darkMod ? "Dark" : "Light"}
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <SvgNotifications className="size-3" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+                <div className="flex flex-row gap-2">
+                  <img
+                    src={"./public/ornek.jpeg"}
+                    className="size-12 rounded-xl"
+                  />
+                  <div className="flex my-auto flex-col">
+                    <span className="text-sm">
+                      <b>New Message</b> from Alicia
+                    </span>
+                    <p className="text-xs text-[#728096]">13 minutes ago</p>
+                  </div>
+                </div>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <div className="flex flex-row gap-2">
+                  <img
+                    src={"./public/ornek.jpeg"}
+                    className="size-12 rounded-xl"
+                  />
+                  <div className="flex my-auto flex-col">
+                    <span className="text-sm">
+                      <b>New Message</b> from Alicia
+                    </span>
+                    <p className="text-xs text-[#728096]">13 minutes ago</p>
+                  </div>
+                </div>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <div className="flex flex-row gap-2">
+                  <img
+                    src={"./public/ornek.jpeg"}
+                    className="size-12 rounded-xl"
+                  />
+                  <div className="flex my-auto flex-col">
+                    <span className="text-sm">
+                      <b>New Message</b> from Alicia
+                    </span>
+                    <p className="text-xs text-[#728096]">13 minutes ago</p>
+                  </div>
+                </div>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </div>
