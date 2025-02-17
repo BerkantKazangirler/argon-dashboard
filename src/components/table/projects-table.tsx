@@ -36,7 +36,10 @@ export const ProjectsTable = () => {
 
         <tbody>
           {tableData.map((data, index) => (
-            <tr key={index} className="my-2 border-t border-tableTd">
+            <tr
+              key={index}
+              className="my-2 border-t border-tableTd dark:border-darkBorder"
+            >
               <td>
                 <div className="flex flex-row gap-3 py-4">
                   <span className="text-detailColor dark:text-white font-semibold text-sm">
