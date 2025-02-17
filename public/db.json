@@ -321,5 +321,93 @@
         "comment": "About files I can..."
       }
     ]
-  }
+  },
+  "sales-overview": [
+    {
+      "month": "January",
+      "desktop": 50,
+      "mobile": 30
+    },
+    {
+      "month": "Febuary",
+      "desktop": 40,
+      "mobile": 90
+    },
+    {
+      "month": "March",
+      "desktop": 300,
+      "mobile": 40
+    },
+    {
+      "month": "April",
+      "desktop": 220,
+      "mobile": 140
+    },
+    {
+      "month": "May",
+      "desktop": 500,
+      "mobile": 290
+    },
+    {
+      "month": "June",
+      "desktop": 250,
+      "mobile": 290
+    },
+    {
+      "month": "July",
+      "desktop": 400,
+      "mobile": 340
+    },
+    {
+      "month": "Agust",
+      "desktop": 230,
+      "mobile": 230
+    },
+    {
+      "month": "September",
+      "desktop": 480,
+      "mobile": 400
+    },
+    {
+      "month": "October",
+      "desktop": 140,
+      "mobile": 350
+    },
+    {
+      "month": "November",
+      "desktop": 160,
+      "mobile": 360
+    },
+    {
+      "month": "Desember",
+      "desktop": 170,
+      "mobile": 420
+    }
+  ],
+  "performance-order": [
+    {
+      "month": "July",
+      "desktop": 24
+    },
+    {
+      "month": "Agust",
+      "desktop": 19
+    },
+    {
+      "month": "September",
+      "desktop": 29
+    },
+    {
+      "month": "October",
+      "desktop": 22
+    },
+    {
+      "month": "November",
+      "desktop": 18
+    },
+    {
+      "month": "December",
+      "desktop": 28
+    }
+  ]
 }

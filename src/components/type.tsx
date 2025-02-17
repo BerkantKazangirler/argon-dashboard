@@ -85,3 +85,14 @@ export interface userDataProps {
     comment: string;
   };
 }
+
+export interface salesOverviewProps {
+  month: string;
+  desktop: number;
+  mobile: number;
+}
+
+export interface performanceProps {
+  month: string;
+  desktop: number;
+}
