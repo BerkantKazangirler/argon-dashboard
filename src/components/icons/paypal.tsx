@@ -1,5 +1,5 @@
 import { SVGProps } from "react";
-const SvgPaypal = (props: SVGProps<SVGSVGElement>) => (
+export const SvgPaypal = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={19}
@@ -11,4 +11,3 @@ const SvgPaypal = (props: SVGProps<SVGSVGElement>) => (
     <path d="M18.213 7.393c-.998 4.61-4.183 7.048-9.239 7.048H7.142L5.774 23.1h2.972a.87.87 0 0 0 .862-.731l.035-.184.684-4.297.045-.237a.87.87 0 0 1 .86-.731h.544c3.513 0 6.264-1.416 7.067-5.51.323-1.644.167-3.021-.63-4.017Z" />
   </svg>
 );
-export default SvgPaypal;

@@ -1,4 +1,4 @@
-const PendingSvg = () => (
+export const PendingSvg = () => (
   <svg
     width="35"
     height="35"
@@ -29,4 +29,3 @@ const PendingSvg = () => (
     </defs>
   </svg>
 );
-export default PendingSvg;

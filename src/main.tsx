@@ -1,15 +1,16 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
-// import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { TablePage } from "./pages/tables.tsx";
-import { BillingPage } from "./pages/billing.tsx";
-import { Dashboard } from "./pages/dashboard.tsx";
-import { ProfilePage } from "./pages/profile.tsx";
-import { SignIn } from "./pages/signin.tsx";
-import App from "./App.tsx";
-import { SignLayout } from "./components/register/sign-layout.tsx";
-import { Register } from "./pages/register.tsx";
+import App from "./App";
+import {
+  TablePage,
+  Dashboard,
+  BillingPage,
+  ProfilePage,
+  LoginLayout,
+  SignIn,
+  Register,
+} from "./components";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/auth",
-    element: <SignLayout />,
+    element: <LoginLayout />,
     children: [
       {
         path: "sign",
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <SignLayout />,
+    element: <LoginLayout />,
   },
 ]);
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Button } from "../../elements/button";
-import { formatBouncerate } from "../../../utils/formatter";
-import { visitDataProps } from "../../type";
-import { request } from "../../../utils/fetchdata";
+import { Button } from "@/components";
+import { visitDataProps } from "@/components/type";
+import { request } from "@/utils/fetchdata";
+import { formatBouncerate } from "@/utils/formatbouncerate";
 
 export const VisitTable = () => {
   const [visitData, setVisitData] = useState<Array<visitDataProps>>([]);

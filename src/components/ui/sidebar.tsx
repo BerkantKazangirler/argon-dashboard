@@ -1,26 +1,30 @@
 import { Link, useLocation } from "react-router-dom";
 import cn from "classnames";
-import { Button } from "./button";
 
-import SvgHome from "../icons/home";
-import SvgTable from "../icons/table";
-import SvgBilling from "../icons/billing";
-import SvgPerson from "../icons/person";
-import SvgDocument from "../icons/document";
-import SvgRocket from "../icons/rocket";
+import {
+  Button,
+  SvgRocket,
+  SvgBilling,
+  SvgTable,
+  SvgDocument,
+  SvgHome,
+  SvgPerson,
+} from "@/components";
 
 export const Sidebar = () => {
   const location = useLocation();
   return (
     <div className="flex flex-col rounded-3xl bg-white dark:bg-darkDetail drop-shadow-xl z-20 w-64 h-[800px]">
-      <img
-        src={"public/logo.png"}
-        className="w-36 mx-auto py-6 visible dark:hidden"
-      />
-      <img
-        src={"public/logowhite.png"}
-        className="w-36 mx-auto py-6 hidden dark:block"
-      />
+      <Link to={"/"}>
+        <img
+          src={"public/logo.png"}
+          className="w-36 mx-auto py-6 visible dark:hidden"
+        />
+        <img
+          src={"public/logowhite.png"}
+          className="w-36 mx-auto py-6 hidden dark:block"
+        />
+      </Link>
       <svg
         width="234"
         height="1"

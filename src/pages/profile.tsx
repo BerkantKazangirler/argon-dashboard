@@ -1,8 +1,10 @@
-import { Conversations } from "../components/profile/conversations";
-import { PlatformSettings } from "../components/profile/platform-settings";
-import { Profile } from "../components/profile/profile";
-import { ProfileInformation } from "../components/profile/profile-information";
-import { Projects } from "../components/profile/projects";
+import {
+  Profile,
+  PlatformSettings,
+  ProfileInformation,
+  Conversations,
+  Projects,
+} from "@/components";
 
 export const ProfilePage = () => {
   return (

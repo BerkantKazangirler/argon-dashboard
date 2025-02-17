@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { formatBouncerate } from "../../../utils/formatter";
-import { traficDataProps } from "../../type";
-import { request } from "../../../utils/fetchdata";
+import { traficDataProps } from "@/components/type";
+import { request } from "@/utils/fetchdata";
+import { formatBouncerate } from "@/utils/formatbouncerate";
 
 export const TraficTable = () => {
   const [traficData, setTraficData] = useState<Array<traficDataProps>>([]);

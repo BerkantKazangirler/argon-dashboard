@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { userDataProps } from "../type";
-import { request } from "../../utils/fetchdata";
+import { userDataProps } from "@/components/type";
+import { request } from "@/utils/fetchdata";
 
 export const Conversations = () => {
   const [converstationData, setConversatitionData] = useState<

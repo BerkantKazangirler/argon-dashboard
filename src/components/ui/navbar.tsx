@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { Input } from "./input";
+import {
+  Input,
+  SvgPerson,
+  SvgSettings,
+  SvgNotifications,
+  SvgSearch,
+} from "@/components";
 import { useLocation } from "react-router-dom";
-import SvgSearch from "../icons/search";
-import SvgPerson from "../icons/person";
-import SvgSettings from "../icons/settings";
-import SvgNotifications from "../icons/notifications";
 
 export const NavBar = () => {
   const [darkMod, setDarkMod] = useState(true);

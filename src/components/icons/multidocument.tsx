@@ -1,5 +1,5 @@
 import { SVGProps } from "react";
-const MultiDocumentSvg = (props: SVGProps<SVGSVGElement>) => (
+export const MultiDocumentSvg = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" {...props}>
     <g clipPath="url(#a)">
       <path d="M6.91 5.325a.086.086 0 0 0 .062-.146L5.288 3.466a.086.086 0 0 0-.147.06v1.541a.258.258 0 0 0 .257.258h1.513Z" />
@@ -13,4 +13,3 @@ const MultiDocumentSvg = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default MultiDocumentSvg;

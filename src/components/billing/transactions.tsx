@@ -1,7 +1,4 @@
-import CalendarSvg from "../icons/calendar";
-import LowerSvg from "../icons/lower";
-import PendingSvg from "../icons/pending";
-import UpperSvg from "../icons/upper";
+import { CalendarSvg, LowerSvg, UpperSvg, PendingSvg } from "@/components";
 
 export const Transactions = () => {
   return (

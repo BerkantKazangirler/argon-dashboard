@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-const SvgHome = (props: SVGProps<SVGSVGElement>) => (
+export const SvgHome = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} {...props}>
     <g clipPath="url(#a)">
       <path d="M8.163 3.467a.234.234 0 0 0-.324 0L2.445 8.62a.234.234 0 0 0-.072.17v4.835a.937.937 0 0 0 .937.938h2.815a.469.469 0 0 0 .469-.469V10.11a.234.234 0 0 1 .234-.235h2.344a.234.234 0 0 1 .234.235v3.984a.469.469 0 0 0 .469.469h2.814a.938.938 0 0 0 .938-.938V8.79a.236.236 0 0 0-.073-.17L8.163 3.467Z" />
@@ -13,5 +13,3 @@ const SvgHome = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-
-export default SvgHome;

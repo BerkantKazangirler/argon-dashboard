@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { paymentInfoProps } from "../type";
-import SvgWallet from "../icons/wallet";
-import SvgPaypal from "../icons/paypal";
-import { request } from "../../utils/fetchdata";
+import { SvgWallet, SvgPaypal } from "@/components";
+
+import { paymentInfoProps } from "@/components/type";
+import { request } from "@/utils/fetchdata";
 
 export const BillingCard = () => {
   const [cardData, setCardData] = useState<Array<paymentInfoProps>>([]);

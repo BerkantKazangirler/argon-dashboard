@@ -1,7 +1,9 @@
-import { PerformanceTable } from "./performance-able";
-import { SaleTable } from "./sale-table";
-import { TraficTable } from "./trafic-table";
-import { VisitTable } from "./visit-table";
+import {
+  SaleTable,
+  PerformanceTable,
+  VisitTable,
+  TraficTable,
+} from "@/components";
 
 export const Tables = () => {
   return (

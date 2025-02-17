@@ -1,6 +1,4 @@
-import { Button } from "../components/elements/button";
-import { Input } from "../components/elements/input";
-import AppleSvg from "../components/icons/apple";
+import { Input, Button, AppleSvg } from "@/components";
 
 export const Register = () => {
   return (

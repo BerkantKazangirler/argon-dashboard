@@ -1,5 +1,5 @@
 import { SVGProps } from "react";
-const CalendarSvg = (props: SVGProps<SVGSVGElement>) => (
+export const CalendarSvg = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" {...props}>
     <path
       fill="#fff"
@@ -16,4 +16,3 @@ const CalendarSvg = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default CalendarSvg;

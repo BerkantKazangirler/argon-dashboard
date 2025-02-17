@@ -1,8 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { SignInBg } from "./sign-bg";
-import { SignNav } from "./sign-nav";
+import { SignInBg, SignNav } from "@/components";
 
-export const SignLayout = () => {
+export const LoginLayout = () => {
   return (
     <div className="flex flex-row w-full h-full font-Poppins">
       <SignInBg />

@@ -1,14 +1,14 @@
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
-import { CardContent } from "../../ui/card";
+import { useEffect, useState } from "react";
+import { request } from "@/utils/fetchdata";
+import { performanceProps } from "@/components/type";
+import { CardContent } from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "../../ui/chart";
-import { useEffect, useState } from "react";
-import { request } from "../../../utils/fetchdata";
-import { performanceProps } from "../../type";
+} from "@/components/ui/chart";
 
 export const PerformanceTable = () => {
   const [data, setData] = useState<performanceProps[]>([]);
@@ -21,14 +21,6 @@ export const PerformanceTable = () => {
     );
   }, []);
 
-  // const chartData = [
-  //   { month: "January", desktop: 186 },
-  //   { month: "February", desktop: 305 },
-  //   { month: "March", desktop: 237 },
-  //   { month: "April", desktop: 73 },
-  //   { month: "May", desktop: 209 },
-  //   { month: "June", desktop: 900 },
-  // ];
   const chartConfig = {
     desktop: {
       label: "Desktop",
@@ -58,7 +50,7 @@ export const PerformanceTable = () => {
               tickLine={false}
               tickMargin={10}
               axisLine={false}
-              tickFormatter={(value) => value.slice(0, 3)}
+              tickFormatter={(value: string | any[]) => value.slice(0, 3)}
             />
             <ChartTooltip
               cursor={false}

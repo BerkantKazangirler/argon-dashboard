@@ -1,5 +1,4 @@
-import { AuthorTable } from "../components/table/author-table";
-import { ProjectsTable } from "../components/table/projects-table";
+import { AuthorTable, ProjectsTable } from "@/components";
 
 export const TablePage = () => {
   return (

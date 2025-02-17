@@ -1,11 +1,14 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
-import { userDataProps } from "../type";
-import FacebookSvg from "../icons/facebook";
-import TwitterSvg from "../icons/twitter";
-import InstagramSvg from "../icons/instagram";
-import CheckBoxSvg from "../icons/checkbox";
-import { request } from "../../utils/fetchdata";
+import { userDataProps } from "@/components/type";
+import {
+  FacebookSvg,
+  TwitterSvg,
+  InstagramSvg,
+  CheckBoxSvg,
+} from "@/components";
+
+import { request } from "@/utils/fetchdata";
 
 export const ProfileInformation = () => {
   const [informationData, setInformationData] = useState<Array<userDataProps>>(

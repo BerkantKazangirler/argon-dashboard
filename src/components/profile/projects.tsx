@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { Button } from "../elements/button";
+import { Button } from "@/components";
+import { request } from "@/utils/fetchdata";
+import { userDataProps } from "../type";
 
 export const Projects = () => {
   const [profileData, setProfileData] = useState<Array<any>>([]);
   useEffect(() => {
-    fetch("http://localhost:3000/user-data")
-      .then((res) => res.json())
-      .then((data) => {
-        setProfileData(data.projects);
-      });
+    request<Array<any>>("/user-data", "GET").then((data) => {
+      setProfileData(data.projects);
+    });
   }, []);
   return (
     <div className="bg-white dark:bg-darkDetail px-4 pt-4 w-full rounded-2.5xl drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)]">

@@ -1,5 +1,5 @@
 import { SVGProps } from "react";
-const SvgDocument = (props: SVGProps<SVGSVGElement>) => (
+export const SvgDocument = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={16}
@@ -11,4 +11,3 @@ const SvgDocument = (props: SVGProps<SVGSVGElement>) => (
     <path d="M12.782 6.026 8.569 1.813a.059.059 0 0 0-.1.041v3.803a.469.469 0 0 0 .469.469h3.803a.059.059 0 0 0 .057-.07.059.059 0 0 0-.016-.03Z" />
   </svg>
 );
-export default SvgDocument;

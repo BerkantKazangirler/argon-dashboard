@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Button } from "../elements/button";
-import { formatDate } from "../../utils/date";
-import { paymentInvoicesProps } from "../type";
-import TextDocumentSvg from "../icons/textdocument";
-import { request } from "../../utils/fetchdata";
+import { Button, TextDocumentSvg } from "@/components";
+import { request } from "@/utils/fetchdata";
+
+import { paymentInvoicesProps } from "@/components/type";
+import { formatDate } from "@/utils/formatdate";
 
 export const Invoices = () => {
   const [cardData, setCardData] = useState<Array<paymentInvoicesProps>>([]);

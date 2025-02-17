@@ -1,5 +1,5 @@
 import { SVGProps } from "react";
-const SvgWallet = (props: SVGProps<SVGSVGElement>) => (
+export const SvgWallet = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={23}
@@ -11,4 +11,3 @@ const SvgWallet = (props: SVGProps<SVGSVGElement>) => (
     <path d="M1.406 11.401V7.03c0-.952.528-2.549 2.358-2.895 1.553-.291 3.091-.291 3.091-.291s1.011.703.176.703-.813 1.077 0 1.077 0 1.032 0 1.032L3.757 10.37 1.407 11.4Z" />
   </svg>
 );
-export default SvgWallet;

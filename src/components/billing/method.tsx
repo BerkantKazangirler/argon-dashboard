@@ -1,6 +1,4 @@
-import { Button } from "../elements/button";
-import { Input } from "../elements/input";
-import SvgEdit from "../icons/edit";
+import { Input, Button, SvgEdit } from "@/components";
 
 export const Method = () => {
   return (

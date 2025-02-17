@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { formatBouncerate } from "../../utils/formatter";
-import { projectsDataProps } from "../type";
-import CheckBoxSvg from "../icons/checkbox";
-import VertSvg from "../icons/vert";
-import { request } from "../../utils/fetchdata";
+import { projectsDataProps } from "@/components/type";
+import { CheckBoxSvg, VertSvg } from "@/components";
+import { request } from "@/utils/fetchdata";
+import { formatBouncerate } from "@/utils/formatbouncerate";
 
 export const ProjectsTable = () => {
   const [tableData, setTableData] = useState<Array<projectsDataProps>>([]);

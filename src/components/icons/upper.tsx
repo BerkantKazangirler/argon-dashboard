@@ -1,5 +1,5 @@
 import { SVGProps } from "react";
-const UpperSvg = (props: SVGProps<SVGSVGElement>) => (
+export const UpperSvg = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" {...props}>
     <circle cx={17.5} cy={18} r={17} />
     <path
@@ -10,4 +10,3 @@ const UpperSvg = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default UpperSvg;

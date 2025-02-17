@@ -1,9 +1,5 @@
 import { Link } from "react-router-dom";
-import { Button } from "../elements/button";
-import OverviewSvg from "../icons/overview";
-import SvgPerson from "../icons/person";
-import UserSvg from "../icons/user";
-import KeySvg from "../icons/key";
+import { Button, OverviewSvg, SvgPerson, UserSvg, KeySvg } from "@/components";
 
 export const SignNav = () => {
   return (

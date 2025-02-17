@@ -1,5 +1,4 @@
-import { Button } from "../components/elements/button";
-import { Input } from "../components/elements/input";
+import { Input, Button } from "@/components";
 
 export const SignIn = () => {
   return (

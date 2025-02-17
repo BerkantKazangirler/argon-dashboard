@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { Button } from "../elements/button";
-import SvgEdit from "../icons/edit";
-import OverviewSvg from "../icons/overview";
-import MultiDocumentSvg from "../icons/multidocument";
-import BuildSvg from "../icons/build";
-import { request } from "../../utils/fetchdata";
+import {
+  Button,
+  BuildSvg,
+  SvgEdit,
+  OverviewSvg,
+  MultiDocumentSvg,
+} from "@/components";
+import { request } from "@/utils/fetchdata";
 
 export const Profile = () => {
   const [profileData, setProfileData] = useState<Array<any>>([]);

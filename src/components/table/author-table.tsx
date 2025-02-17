@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
-import { authorsDataProps } from "../type";
-import { request } from "../../utils/fetchdata";
+import { authorsDataProps } from "@/components/type";
+import { request } from "@/utils/fetchdata";
 
 export const AuthorTable = () => {
   const [tableData, setTableData] = useState<Array<authorsDataProps>>([]);

@@ -1,5 +1,5 @@
 import { SVGProps } from "react";
-const SvgRocket = (props: SVGProps<SVGSVGElement>) => (
+export const SvgRocket = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={16}
@@ -11,4 +11,3 @@ const SvgRocket = (props: SVGProps<SVGSVGElement>) => (
     <path d="M5.434 12.203c-.161.16-.418.223-.728.277a1.025 1.025 0 0 1-1.187-1.187c.048-.267.19-.641.277-.73a.128.128 0 0 0-.107-.217c-.39.047-.751.224-1.029.501-.689.69-.754 3.248-.754 3.248s2.56-.066 3.248-.755c.279-.277.455-.64.502-1.03.011-.123-.138-.195-.222-.107Z" />
   </svg>
 );
-export default SvgRocket;

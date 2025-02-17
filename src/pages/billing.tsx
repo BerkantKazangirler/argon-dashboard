@@ -1,9 +1,11 @@
-import { BillingCard } from "../components/billing/card";
-import { CreditCard } from "../components/billing/credit-card";
-import { Information } from "../components/billing/information";
-import { Invoices } from "../components/billing/invoices";
-import { Method } from "../components/billing/method";
-import { Transactions } from "../components/billing/transactions";
+import {
+  Card,
+  CreditCard,
+  Information,
+  Invoices,
+  Method,
+  Transactions,
+} from "@/components";
 
 export const BillingPage = () => {
   return (
@@ -12,7 +14,7 @@ export const BillingPage = () => {
         <div className="flex flex-col gap-5">
           <div className="flex flex-row gap-8">
             <CreditCard />
-            <BillingCard />
+            <Card />
           </div>
           <Method />
         </div>
