@@ -11,7 +11,7 @@ export const Projects = () => {
   }, []);
   return (
     <div className="bg-white dark:bg-darkDetail px-4 pt-4 w-full rounded-2.5xl drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)]">
-      <div className="flex flex-col mb-3">
+      <div className="flex flex-col mb-3 w-fit">
         <span className="text-detailColor dark:text-white font-bold text-lg">
           Projects
         </span>
@@ -19,11 +19,11 @@ export const Projects = () => {
           Architects design houses
         </span>
       </div>
-      <div className="flex flex-row w-full gap-4">
+      <div className="flex flex-col xl:flex-row w-full gap-4 mb-4">
         {profileData.map((data: any, index: any) => (
-          <div key={index} className="flex flex-col w-fit">
+          <div key={index} className="flex flex-col w-full">
             <div
-              className={`h-48 w-98 flex flex-col bg-[url('${data.image}')] rounded-xl`}
+              className={`h-48 w-full flex flex-col bg-[url('${data.image}')] rounded-xl`}
             >
               <span className="bg-gradient-to-t from-[#3138602E] to-[#15192888] rounded-xl h-full"></span>
             </div>
@@ -34,7 +34,7 @@ export const Projects = () => {
               <span className="text-detailColor text-lg font-bold dark:text-white">
                 {data.title}
               </span>
-              <span className="text-placeholderColor text-sm w-64 mt-2 h-12">
+              <span className="text-placeholderColor text-sm w-40 xl:w-64 mt-2 h-12">
                 {data.desc}
               </span>
               <div className="flex flex-row justify-between mt-5">
@@ -47,8 +47,8 @@ export const Projects = () => {
           </div>
         ))}
 
-        <div className="flex flex-col w-full">
-          <Button className="h-98 items-center w-full border border-inputBorder flex flex-col rounded-xl">
+        <div className="flex-col flex">
+          <Button className="h-full items-center xl:w-98 w-full py-5 xl:py-0 border border-inputBorder flex flex-col rounded-xl">
             <div className="flex flex-col dark:text-white text-tableTr text-center my-auto font-bold text-lg gap-2">
               <span>+</span>
               <span>Create a New Project</span>

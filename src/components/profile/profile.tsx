@@ -18,7 +18,7 @@ export const Profile = () => {
   }, []);
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col mr-5 xl:mr-0">
         <div className="flex p-4 flex-row bg-[#FFFFFFCC] dark:bg-darkDetail drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)] rounded-2xl h-24 border border-white dark:border-none">
           <div className="flex flex-row justify-between w-full">
             <div className="flex flex-row gap-4">
@@ -40,7 +40,7 @@ export const Profile = () => {
                 <span className="text-sm text-tableTr">{profileData.mail}</span>
               </div>
             </div>
-            <div className="flex flex-row gap-5">
+            <div className="xl:flex hidden flex-row gap-5">
               <Button className="flex flex-row my-auto gap-1 bg-white dark:bg-darkBg rounded-lg drop-shadow-xl py-3 px-6">
                 <OverviewSvg className="my-auto fill-detailColor dark:fill-white size-3" />
 

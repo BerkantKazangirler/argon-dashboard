@@ -21,10 +21,10 @@ export const Card = () => {
         >
           <div className="flex flex-col gap-5 justify-between">
             <div className="flex flex-col">
-              <span className="uppercase font-semibold text-2xs xl:text-xs text-placeholderColor">
+              <span className="uppercase font-semibold text-[8px] lg:text-2xs xl:text-xs text-placeholderColor">
                 {data.card}
               </span>
-              <span className="text-detailColor dark:text-white font-semibold text-base xl:text-lg">
+              <span className="text-detailColor dark:text-white font-semibold text-base lg:text-sm xl:text-lg">
                 ${formatBouncerate(data.data, 0, 3)}
               </span>
             </div>
