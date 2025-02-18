@@ -34,7 +34,7 @@ export const SaleTable = () => {
   }, []);
 
   return (
-    <div className="w-full hidden lg:flex rounded-2xl px-4 pt-4 drop-shadow-xl bg-[linear-gradient(81.62deg,_#313860_2.25%,_#151928_79.87%)] dark:bg-gradient-to-t dark:bg-darkDetail h-full">
+    <div className="xl:w-full rounded-2xl px-4 pt-4 drop-shadow-xl bg-[linear-gradient(81.62deg,_#313860_2.25%,_#151928_79.87%)] dark:bg-gradient-to-t dark:bg-darkDetail h-full">
       <div className="flex flex-col pb-5 w-full">
         <span className="text-white font-semibold">Sales overview</span>
         <div className="flex flex-row gap-1 text-sm">
@@ -43,7 +43,7 @@ export const SaleTable = () => {
         </div>
         <CardContent>
           <ChartContainer
-            className="max-h-[350px] 2xl:max-h-[380px] pt-3 w-full"
+            className="max-h-[350px] 2xl:max-h-[380px] h-[350px] pt-3 w-full"
             config={chartConfig}
           >
             <AreaChart

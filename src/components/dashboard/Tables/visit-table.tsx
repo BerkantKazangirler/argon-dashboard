@@ -29,8 +29,10 @@ export const VisitTable = () => {
               <tr className="bg-tableTd dark:bg-darkBg h-8 uppercase border-t border-b dark:border-none text-xs text-placeholderColor">
                 <td>page name</td>
                 <td>visitors</td>
-                <td className="lg:flex hidden">unique users</td>
-                <td className="md:flex hidden">bounce rate</td>
+                <td>unique users</td>
+                <td className="2xl:flex my-auto leading-8 hidden">
+                  bounce rate
+                </td>
               </tr>
             </thead>
 
@@ -44,8 +46,8 @@ export const VisitTable = () => {
                   <td className="w-1/6">
                     {formatBouncerate(data.visitors, 0, 3)}
                   </td>
-                  <td className="lg:visible invisible">{data.uniqueusers}</td>
-                  <td className="md:visible invisible">
+                  <td>{data.uniqueusers}</td>
+                  <td className="2xl:flex my-auto leading-8 hidden">
                     {formatBouncerate(data.bouncerate, 0, 2)}%
                   </td>
                 </tr>

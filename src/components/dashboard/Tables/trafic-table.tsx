@@ -12,7 +12,7 @@ export const TraficTable = () => {
     });
   }, []);
   return (
-    <div className="w-1/2 max-w-[500px] bg-white dark:bg-darkDetail rounded-2xl drop-shadow-xl">
+    <div className="w-full md:max-w-[500px] bg-white md:mx-auto md:w-1/2 dark:bg-darkDetail rounded-2xl drop-shadow-xl">
       <div className="flex flex-col">
         <div className="flex flex-row justify-between items-center">
           <span className="lg:text-lg text-base px-5 py-2 text-detailColor dark:text-white font-semibold">
@@ -39,11 +39,11 @@ export const TraficTable = () => {
                 >
                   <td className="capitalize">{data.referral}</td>
                   <td>{formatBouncerate(data.visitors, 0, 3)}</td>
-                  <td className="hidden md:flex flex-row gap-2 leading-6">
+                  <td className="hidden 2xl:flex flex-row gap-2 leading-6">
                     <span>{data.barrate}%</span>
                     <progress
                       value={data.barrate}
-                      className="h-1 hidden xl:flex my-auto [&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:rounded-lg   [&::-webkit-progress-bar]:bg-slate-300 [&::-webkit-progress-value]:bg-orange-400 [&::-moz-progress-bar]:bg-orange-400"
+                      className="h-1 my-auto [&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:rounded-lg   [&::-webkit-progress-bar]:bg-slate-300 [&::-webkit-progress-value]:bg-orange-400 [&::-moz-progress-bar]:bg-orange-400"
                     ></progress>
                   </td>
                 </tr>

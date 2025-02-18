@@ -19,16 +19,16 @@ export const Method = () => {
             className="absolute mt-6 ml-5"
           />
 
-          <SvgEdit className="absolute right-0 mt-6 fill-detailColor" />
+          <SvgEdit className="absolute h-fit -right-[270px] mt-6 fill-detailColor" />
           <Input
             placeholder="7812 2139 0823 XXXX"
             className="indent-14 text-sm leading-6 rounded-lg w-full py-5 pr-10 text-black dark:text-white dark:bg-darkBg"
           />
         </div>
         <div className="border border-inputBorder dark:border-none w-full relative rounded-lg">
+          <SvgEdit className="absolute h-fit -right-[270px] mt-6 fill-detailColor" />
           <img src={"./public/icon/visa.png"} className="absolute mt-7 ml-5" />
 
-          <SvgEdit className="absolute right-0 mt-6 fill-detailColor" />
           <Input
             placeholder="7812 2139 0823 XXXX"
             className="indent-14 text-sm leading-6 rounded-lg w-full py-5 pr-10 text-black dark:text-white dark:bg-darkBg"

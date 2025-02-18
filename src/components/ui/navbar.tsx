@@ -39,12 +39,8 @@ export const NavBar = () => {
   return (
     <div className="flex flex-row mx-5 xl:mx-2 z-20 justify-between">
       <div className="flex flex-col gap-1">
-        <span className="text-xs">
-          Pages{" "}
-          <b>{location.pathname == "/" ? "/dashboard" : location.pathname}</b>
-        </span>
-        <span className="text-sm font-semibold">
-          {location.pathname == "/" ? "Dashboard" : location.pathname}
+        <span className="text-sm font-semibold capitalize my-auto">
+          {location.pathname == "/" ? "Dashboard" : location.pathname.slice(1)}
         </span>
       </div>
       <div className="flex flex-row gap-2">

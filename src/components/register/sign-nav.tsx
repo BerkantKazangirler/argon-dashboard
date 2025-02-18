@@ -5,7 +5,7 @@ export const SignNav = () => {
   return (
     <div className="flex flex-row mx-auto my-8 justify-around w-full">
       <img src={"../public/logowhite.png"} className="h-fit my-auto" />
-      <div className="flex flex-row font-bold text-2xs gap-5 my-auto">
+      <div className="md:flex hidden flex-row font-bold text-2xs gap-5 my-auto">
         <Link to={"/"} className="flex flex-row gap-1">
           <OverviewSvg className="size-3 my-auto" />
 

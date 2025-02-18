@@ -3,6 +3,12 @@ import { projectsDataProps } from "@/components/type";
 import { CheckBoxSvg, VertSvg } from "@/components";
 import { request } from "@/utils/fetchdata";
 import { formatBouncerate } from "@/utils/formatbouncerate";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const ProjectsTable = () => {
   const [tableData, setTableData] = useState<Array<projectsDataProps>>([]);
@@ -63,8 +69,23 @@ export const ProjectsTable = () => {
                   ></progress>
                 </div>
               </td>
-              <td className="hover:cursor-pointer">
-                <VertSvg className="fill-placeholderColor dark:fill-white size-5" />
+              <td className="my-auto hover:cursor-pointer">
+                <DropdownMenu>
+                  <DropdownMenuTrigger>
+                    <VertSvg className="fill-placeholderColor dark:fill-white size-5" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-8">
+                    <DropdownMenuItem>
+                      <span>Sil</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <span>Status Değiştir</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <span>Düzenle</span>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </td>
             </tr>
           ))}

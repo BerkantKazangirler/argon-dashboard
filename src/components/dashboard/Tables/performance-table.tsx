@@ -29,7 +29,7 @@ export const PerformanceTable = () => {
   } satisfies ChartConfig;
 
   return (
-    <div className="w-1/2 max-w-[500px] h-full bg-white dark:bg-darkDetail px-4 py-6 rounded-2xl drop-shadow-xl">
+    <div className="xl:w-1/3 xl:max-w-[500px] h-full bg-white dark:bg-darkDetail px-4 py-6 rounded-2xl drop-shadow-xl">
       <div className="flex flex-col pb-5">
         <span className="text-placeholderColor text-xs uppercase font-semibold">
           performance
@@ -40,7 +40,7 @@ export const PerformanceTable = () => {
       </div>
       <CardContent>
         <ChartContainer
-          className="max-w-[450px] h-[350px]"
+          className="max-w-full xl:max-w-full mx-auto h-[400px] xl:h-[350px]"
           config={chartConfig}
         >
           <BarChart accessibilityLayer data={data}>
