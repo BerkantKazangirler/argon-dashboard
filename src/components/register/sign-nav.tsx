@@ -16,16 +16,17 @@ export const SignNav = () => {
 
           <span>PROFILE</span>
         </Link>
-        <div className="flex flex-row gap-1">
+        <Link to={"/auth/sign"} className="flex flex-row gap-1">
           <UserSvg className="size-3 my-auto" />
 
           <span>SIGN UP</span>
-        </div>
-        <div className="flex flex-row gap-1">
+        </Link>
+
+        <Link to={"/auth/register"} className="flex flex-row gap-1">
           <KeySvg className="size-3 my-auto" />
 
           <span>SIGN IN</span>
-        </div>
+        </Link>
       </div>
       <Button className="text-detailColor dark:text-white font-bold text-2xs rounded-lg bg-white dark:bg-darkBg px-7 py-3">
         FREE DOWNLOAD

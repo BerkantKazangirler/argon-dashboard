@@ -1,3 +1,5 @@
+import { Checkbox } from "@/components";
+
 export const PlatformSettings = () => {
   return (
     <div className="flex flex-col rounded-2.5xl w-full bg-white dark:bg-darkDetail drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)] px-4 py-4">
@@ -10,40 +12,16 @@ export const PlatformSettings = () => {
         </span>
         <div className="flex flex-col">
           <div className="flex flex-row mt-3 text-placeholderColor text-xs">
-            <label
-              className="inline-flex items-center me-5 cursor-pointer"
-              htmlFor="check1"
-            >
-              <input type="checkbox" id="check1" className="sr-only peer" />
-              <div className="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-detailBg peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-detailBg"></div>
-              <span className="text-xs ms-3 text-placeholderColor">
-                Email me when someone follows me
-              </span>
-            </label>
+            <Checkbox id="check1" text="Email me when someone follows me" />
           </div>
           <div className="flex flex-row mt-3 text-placeholderColor text-xs">
-            <label
-              className="inline-flex items-center me-5 cursor-pointer"
-              htmlFor="check2"
-            >
-              <input type="checkbox" id="check2" className="sr-only peer" />
-              <div className="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-detailBg peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-detailBg"></div>
-              <span className="text-xs ms-3 text-placeholderColor">
-                Email me when someone answers on my post
-              </span>
-            </label>
+            <Checkbox
+              id="check2"
+              text="Email me when someone answers on my post"
+            />
           </div>
           <div className="flex flex-row mt-3 text-placeholderColor text-xs">
-            <label
-              className="inline-flex items-center me-5 cursor-pointer"
-              htmlFor="check3"
-            >
-              <input type="checkbox" id="check3" className="sr-only peer" />
-              <div className="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-detailBg peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-detailBg"></div>
-              <span className="text-xs ms-3 text-placeholderColor">
-                Email me when someone mentions me
-              </span>
-            </label>
+            <Checkbox id="check3" text="Email me when someone mentions me" />
           </div>
         </div>
         <span className="text-placeholderColor py-1 mt-3 text-2xs font-bold">
@@ -51,40 +29,13 @@ export const PlatformSettings = () => {
         </span>
         <div className="flex flex-col">
           <div className="flex flex-row mt-3 text-placeholderColor text-xs">
-            <label
-              className="inline-flex items-center me-5 cursor-pointer"
-              htmlFor="check4"
-            >
-              <input type="checkbox" id="check4" className="sr-only peer" />
-              <div className="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-detailBg peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-detailBg"></div>
-              <span className="text-xs ms-3 text-placeholderColor">
-                New launches and projects
-              </span>
-            </label>
+            <Checkbox id="check4" text="New launches and projects" />
           </div>
           <div className="flex flex-row mt-3 text-placeholderColor text-xs">
-            <label
-              className="inline-flex items-center me-5 cursor-pointer"
-              htmlFor="check5"
-            >
-              <input type="checkbox" id="check5" className="sr-only peer" />
-              <div className="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-detailBg peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-detailBg"></div>
-              <span className="text-xs ms-3 text-placeholderColor">
-                Monthly product updates
-              </span>
-            </label>
+            <Checkbox id="check5" text="Monthly product updates" />
           </div>
           <div className="flex flex-row mt-3 text-placeholderColor text-xs">
-            <label
-              className="inline-flex items-center me-5 cursor-pointer"
-              htmlFor="check6"
-            >
-              <input type="checkbox" id="check6" className="sr-only peer" />
-              <div className="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-detailBg peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-detailBg"></div>
-              <span className="text-xs ms-3 text-placeholderColor">
-                Subscribe to newsletter
-              </span>
-            </label>
+            <Checkbox id="check6" text="Subscribe to newsletter" />
           </div>
         </div>
       </div>

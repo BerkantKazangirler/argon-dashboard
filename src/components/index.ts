@@ -1,5 +1,6 @@
 export { Button } from "./ui/button"; 
 export { Input } from "./ui/input"; 
+export { Checkbox } from "./ui/checkbox"
 
 export { BillingCard as Card } from "./billing/card"
 export { CreditCard } from "./billing/credit-card"

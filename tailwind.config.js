@@ -12,6 +12,7 @@ export default {
         inputBorder: "#E2E8F0",
         detailColor: "#2D3748",
         detailBg: "#3182CE",
+        checkboxBg: "#1e4f7c",
         detailGreen: "#48BB78",
         detailRed: "#E53E3E",
         checkboxGreen: "#68D391",
