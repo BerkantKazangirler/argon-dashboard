@@ -17,7 +17,7 @@ export const CreditCard = () => {
   return (
     <>
       {load && (
-        <div className="flex p-6 w-100 h-[240px] justify-between drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)] flex-col bg-[url('./public/cardbg.png')] dark:bg-[url('./public/carlightbg.png')]">
+        <div className="flex p-6 min-w-[460px] justify-between drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)] flex-col bg-[url('./public/cardbg.png')] dark:bg-[url('./public/carlightbg.png')]">
           <div className="flex flex-row justify-between">
             <span className="font-bold text-lg">{cardData[0].name}</span>
             <img src={"./public/icon/mcard.png"} />

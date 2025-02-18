@@ -15,7 +15,7 @@ export const Information = () => {
     );
   }, []);
   return (
-    <div className="flex flex-col w-full p-6 bg-white dark:bg-darkDetail drop-shadow-xl rounded-2.5xl">
+    <div className="flex flex-col w-full p-6 -mx-2 xl:mx-0 bg-white dark:bg-darkDetail drop-shadow-xl rounded-2.5xl">
       <span className="text-detailColor dark:text-white text-lg font-bold">
         Billing Information
       </span>
@@ -44,7 +44,7 @@ export const Information = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="w-fit">
               <div className="flex flex-row gap-1 text-xs">
                 <span className="text-placeholderColor">Company Name:</span>
                 <span className="font-bold text-tableTr dark:text-white">

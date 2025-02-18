@@ -19,7 +19,7 @@ export const BillingCard = () => {
     <>
       {load ? (
         <>
-          <div className="bg-infoBg dark:bg-darkDetail rounded-2.5xl w-60 drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)] flex flex-col">
+          <div className="bg-infoBg py-[22px] w-full dark:bg-darkDetail rounded-2.5xl drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)] flex flex-col">
             <div className="my-auto flex flex-col items-center gap-5">
               <div className="bg-detailBg flex items-center p-2 rounded-lg w-16 h-16">
                 <SvgWallet className="mx-auto fill-white" />
@@ -69,7 +69,7 @@ export const BillingCard = () => {
               </span>
             </div>
           </div>
-          <div className="bg-infoBg dark:bg-darkDetail rounded-2.5xl w-60 drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)] flex flex-col">
+          <div className="bg-infoBg py-[22px] w-full dark:bg-darkDetail rounded-2.5xl drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)] flex flex-col">
             <div className="my-auto flex flex-col items-center gap-5">
               <div className="bg-detailBg p-2 flex items-center rounded-lg w-16 h-16">
                 <SvgPaypal className="mx-auto fill-white" />
@@ -121,7 +121,7 @@ export const BillingCard = () => {
         </>
       ) : (
         <>
-          <div className="bg-gray-200 animate-pulse dark:bg-darkDetail dark:bg-opacity-40 rounded-2.5xl w-60 drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)] flex flex-col">
+          <div className="bg-gray-200 animate-pulse dark:bg-darkDetail dark:bg-opacity-40 rounded-2.5xl drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)] flex flex-col">
             <div className="my-auto flex flex-col items-center gap-5">
               <div className="bg-gray-400 p-2 flex items-center rounded-lg w-16 h-16"></div>
               <div className="flex flex-col mx-auto">
@@ -168,7 +168,7 @@ export const BillingCard = () => {
               </span>
             </div>
           </div>
-          <div className="bg-gray-200 animate-pulse dark:bg-darkDetail dark:bg-opacity-40 rounded-2.5xl w-60 drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)] flex flex-col">
+          <div className="bg-gray-200 animate-pulse dark:bg-darkDetail dark:bg-opacity-40 rounded-2.5xl drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)] flex flex-col">
             <div className="my-auto flex flex-col items-center gap-5">
               <div className="bg-gray-400 p-2 flex items-center rounded-lg w-16 h-16"></div>
               <div className="flex flex-col mx-auto">

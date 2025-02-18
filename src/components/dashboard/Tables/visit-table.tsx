@@ -13,10 +13,10 @@ export const VisitTable = () => {
     });
   }, []);
   return (
-    <div className="w-full rounded-2xl overflow-y-hidden py-2 drop-shadow-xl h-full bg-white dark:bg-darkDetail">
+    <div className="w-full rounded-2xl overflow-y-hidden drop-shadow-xl h-full bg-white dark:bg-darkDetail">
       <div className="flex flex-col">
         <div className="flex flex-row justify-between items-center">
-          <span className="text-lg px-5 py-2 text-detailColor dark:text-white font-semibold">
+          <span className="lg:text-lg text-base px-5 py-2 text-detailColor dark:text-white font-semibold">
             Page visits
           </span>
           <Button className="uppercase text-[10px] px-3 bg-blue-500 rounded-lg mr-4 h-fit py-1">
@@ -29,8 +29,8 @@ export const VisitTable = () => {
               <tr className="bg-tableTd dark:bg-darkBg h-8 uppercase border-t border-b dark:border-none text-xs text-placeholderColor">
                 <td>page name</td>
                 <td>visitors</td>
-                <td>unique users</td>
-                <td>bounce rate</td>
+                <td className="lg:flex hidden">unique users</td>
+                <td className="md:flex hidden">bounce rate</td>
               </tr>
             </thead>
 
@@ -38,12 +38,16 @@ export const VisitTable = () => {
               {visitData.map((data, index) => (
                 <tr
                   key={index}
-                  className="text-tableTr dark:text-white font-semibold text-xs h-8 border-b dark:border-darkBorder"
+                  className="text-tableTr dark:text-white font-semibold text-xs h-8 border-t dark:border-darkBorder"
                 >
-                  <td>/{data.pagename}</td>
-                  <td>{formatBouncerate(data.visitors, 0, 3)}</td>
-                  <td>{data.uniqueusers}</td>
-                  <td>{formatBouncerate(data.bouncerate, 0, 2)}%</td>
+                  <td className="w-1/6">/{data.pagename}</td>
+                  <td className="w-1/6">
+                    {formatBouncerate(data.visitors, 0, 3)}
+                  </td>
+                  <td className="lg:visible invisible">{data.uniqueusers}</td>
+                  <td className="md:visible invisible">
+                    {formatBouncerate(data.bouncerate, 0, 2)}%
+                  </td>
                 </tr>
               ))}
             </tbody>

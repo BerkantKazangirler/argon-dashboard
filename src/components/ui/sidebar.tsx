@@ -14,7 +14,7 @@ import {
 export const Sidebar = () => {
   const location = useLocation();
   return (
-    <div className="flex flex-col rounded-3xl bg-white dark:bg-darkDetail drop-shadow-xl z-20 w-64 h-[800px]">
+    <div className="hidden sticky top-3 lg:flex flex-col rounded-3xl bg-white dark:bg-darkDetail drop-shadow-xl z-20 w-64 h-[800px]">
       <Link to={"/"}>
         <img
           src={"public/logo.png"}

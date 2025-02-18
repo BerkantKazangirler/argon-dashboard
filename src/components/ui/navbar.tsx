@@ -15,13 +15,11 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "./sheet";
+} from "@/components/ui/sheet";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
@@ -39,7 +37,7 @@ export const NavBar = () => {
   }, [darkMod]);
 
   return (
-    <div className="flex flex-row mx-2 z-20 justify-between">
+    <div className="flex flex-row mx-5 xl:mx-2 z-20 justify-between">
       <div className="flex flex-col gap-1">
         <span className="text-xs">
           Pages{" "}
@@ -50,7 +48,7 @@ export const NavBar = () => {
         </span>
       </div>
       <div className="flex flex-row gap-2">
-        <div className="flex flex-row my-auto items-center h-9 relative">
+        <div className="hidden lg:flex flex-row my-auto items-center h-9 relative">
           <Input
             placeholder="Type Here..."
             className="indent-7 text-xs text-black dark:text-white rounded-lg h-full w-52 dark:bg-darkDetail"

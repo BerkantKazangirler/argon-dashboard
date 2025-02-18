@@ -8,11 +8,11 @@ import {
 export const Tables = () => {
   return (
     <>
-      <div className="w-full flex flex-row gap-3 h-100">
+      <div className="w-full flex flex-row gap-3">
         <SaleTable />
         <PerformanceTable />
       </div>
-      <div className="w-full flex flex-row gap-3 h-[244px]">
+      <div className="w-full flex flex-row gap-3">
         <VisitTable />
         <TraficTable />
       </div>

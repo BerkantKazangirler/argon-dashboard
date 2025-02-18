@@ -2,7 +2,7 @@ import { CalendarSvg, LowerSvg, UpperSvg, PendingSvg } from "@/components";
 
 export const Transactions = () => {
   return (
-    <div className="flex flex-col w-full p-6 bg-white dark:bg-darkDetail drop-shadow-xl rounded-2.5xl">
+    <div className="flex flex-col w-full -mx-2 xl:mx-0 p-6 bg-white dark:bg-darkDetail drop-shadow-xl rounded-2.5xl">
       <div className="flex flex-row justify-between">
         <span className="text-detailColor dark:text-white text-lg font-bold">
           Your Transactions

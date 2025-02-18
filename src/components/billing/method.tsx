@@ -2,7 +2,7 @@ import { Input, Button, SvgEdit } from "@/components";
 
 export const Method = () => {
   return (
-    <div className="bg-white dark:bg-darkDetail drop-shadow-xl w-full p-4 rounded-2.5xl gap-5 flex flex-col">
+    <div className="bg-white dark:bg-darkDetail drop-shadow-xl xl:w-full w-11/12 p-4 rounded-2.5xl gap-5 flex flex-col">
       <div className="flex flex-row justify-between">
         <span className="font-bold text-sm leading-none my-auto text-detailColor dark:text-white">
           Payment Method

@@ -10,6 +10,7 @@ import {
   LoginLayout,
   SignIn,
   Register,
+  Error,
 } from "@/components";
 
 const router = createBrowserRouter([
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <LoginLayout />,
+    element: <Error />,
   },
 ]);
 
