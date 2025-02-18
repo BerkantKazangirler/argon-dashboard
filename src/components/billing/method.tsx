@@ -11,14 +11,14 @@ import {
 
 export const Method = () => {
   return (
-    <div className="bg-white dark:bg-darkDetail drop-shadow-xl xl:w-full w-11/12 p-4 rounded-2.5xl gap-5 flex flex-col">
+    <div className="flex w-11/12 flex-col gap-5 rounded-2.5xl bg-white p-4 drop-shadow-xl xl:w-full dark:bg-darkDetail">
       <div className="flex flex-row justify-between">
-        <span className="font-bold text-sm leading-none my-auto text-detailColor dark:text-white">
+        <span className="my-auto text-sm font-bold leading-none text-detailColor dark:text-white">
           Payment Method
         </span>
 
         <Dialog>
-          <DialogTrigger className="bg-detailColo rounded-lg bg-detailColor dark:bg-detailBg text-2xs w-32 px-2 py-3 font-bold">
+          <DialogTrigger className="bg-detailColo w-32 rounded-lg bg-detailColor px-2 py-3 text-2xs font-bold dark:bg-detailBg">
             ADD A NEW CARD
           </DialogTrigger>
           <DialogContent className="sm:max-w-[425px]">
@@ -33,7 +33,7 @@ export const Method = () => {
                 </label>
                 <Input
                   id="number"
-                  className="col-span-3 bg-black text-sm indent-2 outline-slate-800"
+                  className="col-span-3 bg-black indent-2 text-sm outline-slate-800"
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
@@ -42,7 +42,7 @@ export const Method = () => {
                 </label>
                 <Input
                   id="validthru"
-                  className="col-span-3 bg-black text-sm indent-2 outline-slate-800"
+                  className="col-span-3 bg-black indent-2 text-sm outline-slate-800"
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
@@ -52,38 +52,34 @@ export const Method = () => {
                 <Input
                   id="validthru"
                   type="password"
-                  className="col-span-3 bg-black text-sm indent-2 outline-slate-800"
+                  className="col-span-3 bg-black indent-2 text-sm outline-slate-800"
                 />
               </div>
             </div>
             <DialogFooter>
-              <Button className="bg-slate-900 px-3 py-1 rounded-lg text-sm">
+              <Button className="rounded-lg bg-slate-900 px-3 py-1 text-sm">
                 Save changes
               </Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>
       </div>
-      <div className="flex flex-row w-full gap-5">
-        <div className="border border-inputBorder dark:border-none w-full relative rounded-lg">
-          <img
-            src={"./public/icon/mastercard.png"}
-            className="absolute mt-6 ml-5"
-          />
+      <div className="flex w-full flex-row gap-5">
+        <div className="flex w-full rounded-lg border border-inputBorder dark:border-none dark:bg-darkBg">
+          <img src={"./public/icon/mastercard.png"} className="h-5 w-5" />
 
-          <SvgEdit className="absolute h-fit -right-[270px] mt-6 fill-detailColor" />
-          <Input
-            placeholder="7812 2139 0823 XXXX"
-            className="indent-14 text-sm leading-6 rounded-lg w-full py-5 pr-10 text-black dark:text-white dark:bg-darkBg"
-          />
+          <SvgEdit className="fill-detailColor" />
+          <p className="w-full text-sm text-black dark:text-white">
+            7812 2139 0823 XXXX
+          </p>
         </div>
-        <div className="border border-inputBorder dark:border-none w-full relative rounded-lg">
-          <SvgEdit className="absolute h-fit -right-[270px] mt-6 fill-detailColor" />
-          <img src={"./public/icon/visa.png"} className="absolute mt-7 ml-5" />
+        <div className="relative w-full rounded-lg border border-inputBorder dark:border-none">
+          <SvgEdit className="absolute -right-[270px] mt-6 h-fit fill-detailColor" />
+          <img src={"./public/icon/visa.png"} className="absolute ml-5 mt-7" />
 
           <Input
             placeholder="7812 2139 0823 XXXX"
-            className="indent-14 text-sm leading-6 rounded-lg w-full py-5 pr-10 text-black dark:text-white dark:bg-darkBg"
+            className="w-full rounded-lg py-5 pr-10 indent-14 text-sm leading-6 text-black dark:bg-darkBg dark:text-white"
           />
         </div>
       </div>
