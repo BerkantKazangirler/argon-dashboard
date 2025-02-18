@@ -1,4 +1,5 @@
 import { Input, Button, AppleSvg, Checkbox } from "@/components";
+import { Link } from "react-router-dom";
 
 export const Register = () => {
   return (
@@ -45,7 +46,7 @@ export const Register = () => {
               <Button className="rounded-lg border border-inputBorder dark:bg-darkBottomBg dark:border-none p-5">
                 <AppleSvg className="fill-detailColor dark:fill-white size-8" />
               </Button>
-              <Button className="rounded-lg border border-inputBorder dark:bg-darkBottomBg dark:border-none p-5">
+              <Button className="rounded-lg border border-inputBorder dark:bg-darkBottomBg dark:border-none p-6">
                 <svg
                   width="22"
                   height="22"
@@ -70,7 +71,7 @@ export const Register = () => {
                   Name
                 </label>
                 <Input
-                  placeholder="Your full name"
+                  placeholder="User name"
                   className="rounded-lg indent-2 w-full text-sm border py-3 border-inputBorder bg-white dark:bg-darkBottomBg dark:border-none text-black"
                   id="name"
                 />
@@ -96,7 +97,7 @@ export const Register = () => {
                   Password
                 </label>
                 <Input
-                  placeholder="Your email address"
+                  placeholder="Your password"
                   type="password"
                   className="rounded-lg indent-2 w-full text-sm border py-3 border-inputBorder bg-white dark:bg-darkBottomBg dark:border-none text-black"
                   id="pass"
@@ -110,7 +111,12 @@ export const Register = () => {
               </Button>
               <span className="text-sm text-center text-placeholderColor">
                 Already have an account?{" "}
-                <b className="text-detailColor dark:text-white">Sign in</b>
+                <Link
+                  className="text-detailColor font-bold dark:text-white"
+                  to={"/auth/sign"}
+                >
+                  Sign in
+                </Link>
               </span>
             </div>
           </div>

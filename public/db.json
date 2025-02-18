@@ -77,7 +77,7 @@
     {
       "card": "total sales",
       "last": 812,
-      "data": 173000
+      "data": 1173000
     }
   ],
   "authors": [
@@ -87,7 +87,7 @@
       "mail": "esthera@simmmple.com",
       "rank": "manager",
       "unit": "organization",
-      "status": true,
+      "status": false,
       "employeddate": "14/06/21"
     },
     {
@@ -153,7 +153,7 @@
       "companies": "Fix Platform Errors",
       "budget": null,
       "status": "Done",
-      "completion": 100
+      "completion": -1
     },
     {
       "companies": "Launch our Mobile App",
@@ -408,6 +408,18 @@
     {
       "month": "December",
       "desktop": 28
+    },
+    {
+      "month": "December",
+      "desktop": 28
+    },
+    {
+      "month": "December",
+      "desktop": 28
+    },
+    {
+      "month": "December",
+      "desktop": 100
     }
   ]
 }

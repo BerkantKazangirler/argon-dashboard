@@ -1,4 +1,13 @@
-import { Input, Button, SvgEdit } from "@/components";
+import { Button, Input, SvgEdit } from "@/components";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export const Method = () => {
   return (
@@ -8,9 +17,52 @@ export const Method = () => {
           Payment Method
         </span>
 
-        <Button className="bg-detailColo rounded-lg bg-detailColor dark:bg-detailBg text-2xs w-32 px-2 py-3 font-bold">
-          ADD A NEW CARD
-        </Button>
+        <Dialog>
+          <DialogTrigger className="bg-detailColo rounded-lg bg-detailColor dark:bg-detailBg text-2xs w-32 px-2 py-3 font-bold">
+            ADD A NEW CARD
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Add Card</DialogTitle>
+              <DialogDescription>Add new card to the system.</DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-4 items-center gap-4">
+                <label htmlFor="number" className="text-xs">
+                  Card Number
+                </label>
+                <Input
+                  id="number"
+                  className="col-span-3 bg-black text-sm indent-2 outline-slate-800"
+                />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                <label htmlFor="validthru" className="text-xs">
+                  Valid Thru
+                </label>
+                <Input
+                  id="validthru"
+                  className="col-span-3 bg-black text-sm indent-2 outline-slate-800"
+                />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                <label htmlFor="cvv" className="text-xs">
+                  CVV
+                </label>
+                <Input
+                  id="validthru"
+                  type="password"
+                  className="col-span-3 bg-black text-sm indent-2 outline-slate-800"
+                />
+              </div>
+            </div>
+            <DialogFooter>
+              <Button className="bg-slate-900 px-3 py-1 rounded-lg text-sm">
+                Save changes
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
       <div className="flex flex-row w-full gap-5">
         <div className="border border-inputBorder dark:border-none w-full relative rounded-lg">

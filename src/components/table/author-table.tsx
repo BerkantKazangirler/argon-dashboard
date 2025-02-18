@@ -23,13 +23,14 @@ export const AuthorTable = () => {
       <span className="text-detailColor dark:text-white pt-4 font-semibold text-lg">
         Authors Table
       </span>
-      <table className="w-full">
+      <table className="w-full mb-3">
         <thead>
           <tr className="text-placeholderColor h-10 uppercase text-[10px]">
             <td className="w-1/2">author</td>
             <td>function</td>
             <td>status</td>
             <td>employed</td>
+            <td>actions</td>
           </tr>
         </thead>
 
@@ -57,7 +58,9 @@ export const AuthorTable = () => {
                   <span className="font-semibold capitalize text-tableTr dark:text-white text-sm">
                     {data.rank}
                   </span>
-                  <span className="text-sm text-tableTr">{data.unit}</span>
+                  <span className="text-sm capitalize text-tableTr">
+                    {data.unit}
+                  </span>
                 </div>
               </td>
               <td>
@@ -86,13 +89,13 @@ export const AuthorTable = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-8">
                     <DropdownMenuItem>
-                      <span>Sil</span>
+                      <span>Delete</span>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
-                      <span>Status Değiştir</span>
+                      <span>Change Status</span>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
-                      <span>Düzenle</span>
+                      <span>Edit</span>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>

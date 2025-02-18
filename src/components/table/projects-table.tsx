@@ -36,6 +36,7 @@ export const ProjectsTable = () => {
             <td>budget</td>
             <td>status</td>
             <td>completion</td>
+            <td>actions</td>
           </tr>
         </thead>
 
@@ -65,7 +66,7 @@ export const ProjectsTable = () => {
                   <span>{data.completion}%</span>
                   <progress
                     value={data.completion}
-                    className="h-1 my-auto [&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:rounded-lg   [&::-webkit-progress-bar]:bg-red-300 [&::-webkit-progress-value]:bg-blue-500 [&::-moz-progress-bar]:bg-blue-500"
+                    className="h-1 my-auto [&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:rounded-lg   [&::-webkit-progress-bar]:bg-red-300 [&::-webkit-progress-value]:bg-blue-500 [&::-moz-progress-bar]:bg-blue-500 "
                   ></progress>
                 </div>
               </td>
@@ -76,13 +77,13 @@ export const ProjectsTable = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-8">
                     <DropdownMenuItem>
-                      <span>Sil</span>
+                      <span>Delete</span>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
-                      <span>Status Değiştir</span>
+                      <span>Change Status</span>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
-                      <span>Düzenle</span>
+                      <span>Edit</span>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>

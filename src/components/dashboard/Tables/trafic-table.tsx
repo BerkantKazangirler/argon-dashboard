@@ -25,9 +25,10 @@ export const TraficTable = () => {
         <div>
           <table className="w-full justify-between indent-5">
             <thead>
-              <tr className="bg-tableTd dark:bg-darkBg w-full h-8 uppercase border-t border-b dark:border-none text-xs text-placeholderColor">
+              <tr className="bg-tableTd dark:bg-darkBg w-full h-8 uppercase border-t border-b border-inputBorder dark:border-none text-xs text-placeholderColor">
                 <td>referral</td>
                 <td>visitors</td>
+                <td>progress</td>
               </tr>
             </thead>
 
@@ -35,7 +36,7 @@ export const TraficTable = () => {
               {traficData.map((data, index) => (
                 <tr
                   key={index}
-                  className="text-tableTr font-semibold text-xs h-8 border-t dark:border-darkBorder"
+                  className="text-tableTr font-semibold text-xs h-8 border-t border-inputBorder dark:border-darkBorder"
                 >
                   <td className="capitalize">{data.referral}</td>
                   <td>{formatBouncerate(data.visitors, 0, 3)}</td>

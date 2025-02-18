@@ -33,7 +33,7 @@ export const ProfileInformation = () => {
           <span className="text-placeholderColor text-xs">
             {informationData?.information}
           </span>
-          <CheckBoxSvg className="mt-5 mx-auto fill-checkboxGreen size-4" />
+          {/* <CheckBoxSvg className="mt-5 mx-auto fill-checkboxGreen size-4" /> */}
           <div className="flex flex-col mt-5 gap-4">
             <div className="flex flex-row gap-2">
               <span className="text-tableTr font-bold text-xs">Full Name:</span>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { userDataProps } from "@/components/type";
 import { request } from "@/utils/fetchdata";
+import { Button } from "@/components";
 
 export const Conversations = () => {
   const [converstationData, setConversatitionData] = useState<
@@ -36,9 +37,9 @@ export const Conversations = () => {
                 <span className="text-tableTr text-sm">{data.comment}</span>
               </div>
             </div>
-            <span className="text-detailBg dark:text-white font-bold text-2xs my-auto">
+            <Button className="text-detailBg dark:text-white font-bold text-2xs my-auto">
               REPLY
-            </span>
+            </Button>
           </div>
         ))}
       </div>

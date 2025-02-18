@@ -1,4 +1,5 @@
 import { Input, Button, Checkbox } from "@/components";
+import { Link } from "react-router-dom";
 
 export const SignIn = () => {
   return (
@@ -45,7 +46,7 @@ export const SignIn = () => {
                   <path d="M21.1018 2.43903C19.6487 2.53772 17.9534 3.46287 16.9604 4.67078C16.0595 5.76547 15.3184 7.38934 15.609 8.96416H15.7253C17.2728 8.96416 18.8567 8.03234 19.7819 6.83836C20.6731 5.7019 21.3488 4.09135 21.1018 2.43903Z" />
                 </svg>
               </Button>
-              <Button className="rounded-lg border border-inputBorder dark:bg-darkBottomBg dark:border-none p-5">
+              <Button className="rounded-lg border border-inputBorder dark:bg-darkBottomBg dark:border-none p-6">
                 <svg
                   width="22"
                   height="22"
@@ -70,8 +71,8 @@ export const SignIn = () => {
                   Name
                 </label>
                 <Input
-                  placeholder="Your full name"
-                  className="rounded-lg indent-2 w-full text-sm border py-3 border-inputBorder bg-white dark:bg-darkBottomBg dark:border-none text-black"
+                  placeholder="User Name"
+                  className="rounded-lg indent-2 dark:text-white w-full text-sm border py-3 border-inputBorder bg-white dark:bg-darkBottomBg dark:border-none text-black"
                   id="name"
                 />
               </div>
@@ -85,7 +86,7 @@ export const SignIn = () => {
                 <Input
                   placeholder="Your email address"
                   type="password"
-                  className="rounded-lg indent-2 w-full text-sm border py-3 border-inputBorder bg-white dark:bg-darkBottomBg dark:border-none text-black"
+                  className="rounded-lg dark:text-white indent-2 w-full text-sm border py-3 border-inputBorder bg-white dark:bg-darkBottomBg dark:border-none text-black"
                   id="pass"
                 />
               </div>
@@ -96,8 +97,13 @@ export const SignIn = () => {
                 SIGN UP
               </Button>
               <span className="text-sm text-center text-placeholderColor">
-                Already have an account?{" "}
-                <b className="text-detailColor dark:text-white">Sign in</b>
+                Don't have an account?{" "}
+                <Link
+                  className="text-detailColor font-bold dark:text-white"
+                  to={"/auth/register"}
+                >
+                  Sign in
+                </Link>
               </span>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SvgEdit, SvgTrash } from "@/components";
+import { Button, SvgEdit, SvgTrash } from "@/components";
 
 import { billingInformationProps } from "@/components/type";
 import { request } from "@/utils/fetchdata";
@@ -30,18 +30,18 @@ export const Information = () => {
                 {data.name}
               </span>
               <div className="flex flex-row gap-5">
-                <div className="flex flex-row gap-1">
+                <Button className="flex flex-row gap-1">
                   <SvgTrash className="my-auto size-4 fill-detailRed" />
                   <span className="text-detailRed font-bold text-2xs my-auto">
                     DELETE
                   </span>
-                </div>
-                <div className="flex flex-row gap-1">
+                </Button>
+                <Button className="flex flex-row gap-1">
                   <SvgEdit className="my-auto size-3 fill-detailColor dark:fill-white" />
                   <span className="text-detailColor dark:text-white font-bold text-2xs my-auto">
                     EDIT
                   </span>
-                </div>
+                </Button>
               </div>
             </div>
             <div className="w-fit">

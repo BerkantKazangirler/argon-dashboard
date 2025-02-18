@@ -26,7 +26,7 @@ export const VisitTable = () => {
         <div>
           <table className="w-full justify-between indent-5">
             <thead>
-              <tr className="bg-tableTd dark:bg-darkBg h-8 uppercase border-t border-b dark:border-none text-xs text-placeholderColor">
+              <tr className="bg-tableTd dark:bg-darkBg h-8 uppercase border-t border-b border-inputBorder dark:border-none text-xs text-placeholderColor">
                 <td>page name</td>
                 <td>visitors</td>
                 <td>unique users</td>
@@ -40,7 +40,7 @@ export const VisitTable = () => {
               {visitData.map((data, index) => (
                 <tr
                   key={index}
-                  className="text-tableTr dark:text-white font-semibold text-xs h-8 border-t dark:border-darkBorder"
+                  className="text-tableTr dark:text-white font-semibold text-xs h-8 border-t border-inputBorder dark:border-darkBorder"
                 >
                   <td className="w-1/6">/{data.pagename}</td>
                   <td className="w-1/6">
