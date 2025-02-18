@@ -2,6 +2,12 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { authorsDataProps } from "@/components/type";
 import { request } from "@/utils/fetchdata";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const AuthorTable = () => {
   const [tableData, setTableData] = useState<Array<authorsDataProps>>([]);
@@ -70,8 +76,26 @@ export const AuthorTable = () => {
               <td className="text-tableTr font-semibold dark:text-white text-sm">
                 {data.employeddate}
               </td>
-              <td className="text-tableTr font-semibold dark:text-white text-sm">
-                Edit
+
+              <td className="my-auto">
+                <DropdownMenu>
+                  <DropdownMenuTrigger>
+                    <span className="text-tableTr font-semibold dark:text-white text-sm">
+                      Edit
+                    </span>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-8">
+                    <DropdownMenuItem>
+                      <span>Sil</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <span>Status Değiştir</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <span>Düzenle</span>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </td>
             </tr>
           ))}
