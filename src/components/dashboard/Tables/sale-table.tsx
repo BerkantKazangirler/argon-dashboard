@@ -29,21 +29,21 @@ export const SaleTable = () => {
     request<Array<salesOverviewProps>>("/sales-overview", "GET").then(
       (data) => {
         setData(data);
-      }
+      },
     );
   }, []);
 
   return (
-    <div className="xl:w-full rounded-2xl px-4 pt-4 drop-shadow-xl bg-[linear-gradient(81.62deg,_#313860_2.25%,_#151928_79.87%)] dark:bg-gradient-to-t dark:bg-darkDetail h-full">
-      <div className="flex flex-col pb-5 w-full">
-        <span className="text-white font-semibold">Sales overview</span>
+    <div className="h-full rounded-2xl bg-[linear-gradient(81.62deg,_#313860_2.25%,_#151928_79.87%)] px-4 pt-4 drop-shadow-xl xl:w-full dark:bg-darkDetail dark:bg-gradient-to-t">
+      <div className="flex w-full flex-col pb-5">
+        <span className="font-semibold text-white">Sales overview</span>
         <div className="flex flex-row gap-1 text-sm">
           <span className="text-green-400">(+5) more</span>
           <span>in 2021</span>
         </div>
         <CardContent>
           <ChartContainer
-            className="max-h-[350px] 2xl:max-h-[380px] h-[350px] pt-3 w-full"
+            className="h-[350px] max-h-[350px] w-full pt-3 2xl:max-h-[380px]"
             config={chartConfig}
           >
             <AreaChart

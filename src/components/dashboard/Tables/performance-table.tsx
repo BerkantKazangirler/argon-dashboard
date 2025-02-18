@@ -17,7 +17,7 @@ export const PerformanceTable = () => {
     request<Array<performanceProps>>("/performance-order", "GET").then(
       (data) => {
         setData(data);
-      }
+      },
     );
   }, []);
 
@@ -29,18 +29,18 @@ export const PerformanceTable = () => {
   } satisfies ChartConfig;
 
   return (
-    <div className="xl:w-1/3 xl:max-w-[500px] h-full bg-white dark:bg-darkDetail px-4 py-6 rounded-2xl drop-shadow-xl">
+    <div className="h-full rounded-2xl bg-white px-4 py-6 drop-shadow-xl xl:w-1/3 xl:max-w-[500px] dark:bg-darkDetail">
       <div className="flex flex-col pb-5">
-        <span className="text-placeholderColor text-xs uppercase font-semibold">
+        <span className="text-xs font-semibold uppercase text-placeholderColor">
           performance
         </span>
-        <span className="text-detailColor dark:text-white font-semibold text-lg">
+        <span className="text-lg font-semibold text-detailColor dark:text-white">
           Total orders
         </span>
       </div>
       <CardContent>
         <ChartContainer
-          className="max-w-full xl:max-w-full mx-auto h-[400px] xl:h-[350px]"
+          className="mx-auto h-[400px] max-w-full xl:h-[350px] xl:max-w-full"
           config={chartConfig}
         >
           <BarChart accessibilityLayer data={data}>

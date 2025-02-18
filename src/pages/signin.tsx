@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 export const SignIn = () => {
   return (
     <>
-      <div className="flex flex-col my-auto justify-center h-full w-full">
-        <div className="flex py-2 w-100 mx-auto items-center justify-center bg-white dark:bg-darkDetail rounded-2.5xl drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)]">
+      <div className="my-auto flex h-full w-full flex-col justify-center">
+        <div className="mx-auto flex w-100 items-center justify-center rounded-2.5xl bg-white py-2 drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)] dark:bg-darkDetail">
           <div className="flex flex-col gap-5 py-5">
-            <span className="text-detailColor dark:text-white text-center font-bold text-lg">
+            <span className="text-center text-lg font-bold text-detailColor dark:text-white">
               Sign In with
             </span>
-            <div className="flex flex-row gap-3 mx-auto">
-              <Button className="rounded-lg border border-inputBorder dark:bg-darkBottomBg dark:border-none p-5">
+            <div className="mx-auto flex flex-row gap-3">
+              <Button className="rounded-lg border border-inputBorder p-5 dark:border-none dark:bg-darkBottomBg">
                 <svg
                   width="32"
                   height="32"
@@ -34,7 +34,7 @@ export const SignIn = () => {
                   </defs>
                 </svg>
               </Button>
-              <Button className="rounded-lg border border-inputBorder dark:bg-darkBottomBg dark:border-none p-5">
+              <Button className="rounded-lg border border-inputBorder p-5 dark:border-none dark:bg-darkBottomBg">
                 <svg
                   width="32"
                   height="32"
@@ -46,7 +46,7 @@ export const SignIn = () => {
                   <path d="M21.1018 2.43903C19.6487 2.53772 17.9534 3.46287 16.9604 4.67078C16.0595 5.76547 15.3184 7.38934 15.609 8.96416H15.7253C17.2728 8.96416 18.8567 8.03234 19.7819 6.83836C20.6731 5.7019 21.3488 4.09135 21.1018 2.43903Z" />
                 </svg>
               </Button>
-              <Button className="rounded-lg border border-inputBorder dark:bg-darkBottomBg dark:border-none p-6">
+              <Button className="rounded-lg border border-inputBorder p-6 dark:border-none dark:bg-darkBottomBg">
                 <svg
                   width="22"
                   height="22"
@@ -59,47 +59,47 @@ export const SignIn = () => {
               </Button>
             </div>
 
-            <div className="flex flex-col w-80 gap-4">
-              <span className="font-bold text-lg text-center text-placeholderColor">
+            <div className="flex w-80 flex-col gap-4">
+              <span className="text-center text-lg font-bold text-placeholderColor">
                 or
               </span>
               <div className="flex flex-col gap-1">
                 <label
                   htmlFor="name"
-                  className="text-detailColor dark:text-white text-sm"
+                  className="text-sm text-detailColor dark:text-white"
                 >
                   Name
                 </label>
                 <Input
                   placeholder="User Name"
-                  className="rounded-lg indent-2 dark:text-white w-full text-sm border py-3 border-inputBorder bg-white dark:bg-darkBottomBg dark:border-none text-black"
+                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
                   id="name"
                 />
               </div>
               <div className="flex flex-col gap-1">
                 <label
                   htmlFor="pass"
-                  className="text-detailColor dark:text-white text-sm"
+                  className="text-sm text-detailColor dark:text-white"
                 >
                   Password
                 </label>
                 <Input
                   placeholder="Your email address"
                   type="password"
-                  className="rounded-lg dark:text-white indent-2 w-full text-sm border py-3 border-inputBorder bg-white dark:bg-darkBottomBg dark:border-none text-black"
+                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
                   id="pass"
                 />
               </div>
               <div className="flex flex-row gap-3">
                 <Checkbox id="remember" text="Remember me" />
               </div>
-              <Button className="rounded-lg bg-detailColor dark:bg-detailBg font-bold text-2xs text-white w-full py-3">
+              <Button className="w-full rounded-lg bg-detailColor py-3 text-2xs font-bold text-white dark:bg-detailBg">
                 SIGN UP
               </Button>
-              <span className="text-sm text-center text-placeholderColor">
+              <span className="text-center text-sm text-placeholderColor">
                 Don't have an account?{" "}
                 <Link
-                  className="text-detailColor font-bold dark:text-white"
+                  className="font-bold text-detailColor dark:text-white"
                   to={"/auth/register"}
                 >
                   Sign in

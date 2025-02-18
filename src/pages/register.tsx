@@ -4,23 +4,23 @@ import { Link } from "react-router-dom";
 export const Register = () => {
   return (
     <>
-      <div className="flex gap-14 flex-col my-auto justify-center h-full w-full">
+      <div className="my-auto flex h-full w-full flex-col justify-center gap-14">
         <div className="flex flex-col gap-5">
-          <span className="w-fit text-center mx-auto text-white text-3xl font-bold">
+          <span className="mx-auto w-fit text-center text-3xl font-bold text-white">
             Welcome!
           </span>
-          <span className="text-sm text-white mx-auto text-center w-[330px]">
+          <span className="mx-auto w-[330px] text-center text-sm text-white">
             Use these awesome forms to login or create new account in your
             project for free.
           </span>
         </div>
-        <div className="flex py-2 w-100 mx-auto flex-row items-center justify-center bg-white dark:bg-darkDetail rounded-2.5xl drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)]">
+        <div className="mx-auto flex w-100 flex-row items-center justify-center rounded-2.5xl bg-white py-2 drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)] dark:bg-darkDetail">
           <div className="flex flex-col gap-5 py-5">
-            <span className="text-detailColor dark:text-white text-center font-bold text-lg">
+            <span className="text-center text-lg font-bold text-detailColor dark:text-white">
               Register with
             </span>
-            <div className="flex flex-row gap-3 mx-auto">
-              <Button className="rounded-lg border border-inputBorder dark:bg-darkBottomBg dark:border-none p-5">
+            <div className="mx-auto flex flex-row gap-3">
+              <Button className="rounded-lg border border-inputBorder p-5 dark:border-none dark:bg-darkBottomBg">
                 <svg
                   width="32"
                   height="32"
@@ -43,10 +43,10 @@ export const Register = () => {
                   </defs>
                 </svg>
               </Button>
-              <Button className="rounded-lg border border-inputBorder dark:bg-darkBottomBg dark:border-none p-5">
-                <AppleSvg className="fill-detailColor dark:fill-white size-8" />
+              <Button className="rounded-lg border border-inputBorder p-5 dark:border-none dark:bg-darkBottomBg">
+                <AppleSvg className="size-8 fill-detailColor dark:fill-white" />
               </Button>
-              <Button className="rounded-lg border border-inputBorder dark:bg-darkBottomBg dark:border-none p-6">
+              <Button className="rounded-lg border border-inputBorder p-6 dark:border-none dark:bg-darkBottomBg">
                 <svg
                   width="22"
                   height="22"
@@ -59,60 +59,60 @@ export const Register = () => {
               </Button>
             </div>
 
-            <div className="flex flex-col w-80 gap-4">
-              <span className="font-bold text-lg text-center text-placeholderColor">
+            <div className="flex w-80 flex-col gap-4">
+              <span className="text-center text-lg font-bold text-placeholderColor">
                 or
               </span>
               <div className="flex flex-col gap-1">
                 <label
                   htmlFor="name"
-                  className="text-detailColor dark:text-white text-sm"
+                  className="text-sm text-detailColor dark:text-white"
                 >
                   Name
                 </label>
                 <Input
                   placeholder="User name"
-                  className="rounded-lg indent-2 w-full text-sm border py-3 border-inputBorder bg-white dark:bg-darkBottomBg dark:border-none text-black"
+                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
                   id="name"
                 />
               </div>
               <div className="flex flex-col gap-1">
                 <label
                   htmlFor="mail"
-                  className="text-detailColor dark:text-white text-sm"
+                  className="text-sm text-detailColor dark:text-white"
                 >
                   Email
                 </label>
                 <Input
                   placeholder="Your email address"
-                  className="rounded-lg indent-2 w-full text-sm border py-3 border-inputBorder bg-white dark:bg-darkBottomBg dark:border-none text-black"
+                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
                   id="mail"
                 />
               </div>
               <div className="flex flex-col gap-1">
                 <label
                   htmlFor="pass"
-                  className="text-detailColor dark:text-white text-sm"
+                  className="text-sm text-detailColor dark:text-white"
                 >
                   Password
                 </label>
                 <Input
                   placeholder="Your password"
                   type="password"
-                  className="rounded-lg indent-2 w-full text-sm border py-3 border-inputBorder bg-white dark:bg-darkBottomBg dark:border-none text-black"
+                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
                   id="pass"
                 />
               </div>
               <div className="flex flex-row gap-3">
                 <Checkbox id="remember" text="Remember me" />
               </div>
-              <Button className="rounded-lg bg-detailColor dark:bg-detailBg font-bold text-2xs text-white w-full py-3">
+              <Button className="w-full rounded-lg bg-detailColor py-3 text-2xs font-bold text-white dark:bg-detailBg">
                 SIGN UP
               </Button>
-              <span className="text-sm text-center text-placeholderColor">
+              <span className="text-center text-sm text-placeholderColor">
                 Already have an account?{" "}
                 <Link
-                  className="text-detailColor font-bold dark:text-white"
+                  className="font-bold text-detailColor dark:text-white"
                   to={"/auth/sign"}
                 >
                   Sign in

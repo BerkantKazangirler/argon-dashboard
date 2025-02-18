@@ -3,7 +3,7 @@ import { MainLayout } from "@/components";
 function App() {
   return (
     <>
-      <div className="flex flex-row w-full h-full font-Poppins">
+      <div className="flex h-full w-full flex-row font-Poppins">
         <MainLayout />
       </div>
     </>

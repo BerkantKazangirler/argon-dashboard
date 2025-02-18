@@ -18,49 +18,49 @@ export const Profile = () => {
   }, []);
   return (
     <>
-      <div className="flex flex-col mr-5 xl:mr-0">
-        <div className="flex p-4 flex-row bg-[#FFFFFFCC] dark:bg-darkDetail drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)] rounded-2xl h-24 border border-white dark:border-none">
-          <div className="flex flex-row justify-between w-full">
+      <div className="mr-5 flex flex-col xl:mr-0">
+        <div className="flex h-24 flex-row rounded-2xl border border-white bg-[#FFFFFFCC] p-4 drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)] dark:border-none dark:bg-darkDetail">
+          <div className="flex w-full flex-row justify-between">
             <div className="flex flex-row gap-4">
-              <div className="flex flex-row w-fit relative">
+              <div className="relative flex w-fit flex-row">
                 <img
                   src={profileData.photo}
-                  className="w-16 rounded-xl my-auto"
+                  className="my-auto w-16 rounded-xl"
                 />
 
-                <span className="absolute -bottom-1 -right-2 rounded-lg bg-white dark:bg-darkBg p-1">
-                  <SvgEdit className="fill-detailBg dark:fill-white size-3" />
+                <span className="absolute -bottom-1 -right-2 rounded-lg bg-white p-1 dark:bg-darkBg">
+                  <SvgEdit className="size-3 fill-detailBg dark:fill-white" />
                 </span>
               </div>
 
-              <div className="flex flex-col my-auto">
-                <span className="text-detailColor dark:text-white font-bold">
+              <div className="my-auto flex flex-col">
+                <span className="font-bold text-detailColor dark:text-white">
                   {profileData.name}
                 </span>
                 <span className="text-sm text-tableTr">{profileData.mail}</span>
               </div>
             </div>
-            <div className="xl:flex hidden flex-row gap-5">
-              <Button className="flex flex-row my-auto gap-1 bg-white dark:bg-darkBg rounded-lg drop-shadow-xl py-3 px-6">
-                <OverviewSvg className="my-auto fill-detailColor dark:fill-white size-3" />
+            <div className="hidden flex-row gap-5 xl:flex">
+              <Button className="my-auto flex flex-row gap-1 rounded-lg bg-white px-6 py-3 drop-shadow-xl dark:bg-darkBg">
+                <OverviewSvg className="my-auto size-3 fill-detailColor dark:fill-white" />
 
-                <span className="flex flex-row text-detailColor dark:text-white font-bold text-2xs">
+                <span className="flex flex-row text-2xs font-bold text-detailColor dark:text-white">
                   OVERVIEW
                 </span>
               </Button>
 
-              <Button className="flex flex-row my-auto gap-1 py-3 px-6">
-                <MultiDocumentSvg className="my-auto fill-detailColor dark:fill-white size-3" />
+              <Button className="my-auto flex flex-row gap-1 px-6 py-3">
+                <MultiDocumentSvg className="my-auto size-3 fill-detailColor dark:fill-white" />
 
-                <span className="flex flex-row text-detailColor dark:text-white font-bold text-2xs">
+                <span className="flex flex-row text-2xs font-bold text-detailColor dark:text-white">
                   TEAMS
                 </span>
               </Button>
 
-              <Button className="flex flex-row my-auto gap-1 py-3 px-6">
-                <BuildSvg className="my-auto fill-detailBg dark:fill-white size-4" />
+              <Button className="my-auto flex flex-row gap-1 px-6 py-3">
+                <BuildSvg className="my-auto size-4 fill-detailBg dark:fill-white" />
 
-                <span className="flex flex-row text-detailColor dark:text-white font-bold text-2xs">
+                <span className="flex flex-row text-2xs font-bold text-detailColor dark:text-white">
                   PROJECTS
                 </span>
               </Button>

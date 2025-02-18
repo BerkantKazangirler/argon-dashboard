@@ -11,34 +11,34 @@ export const Information = () => {
     request<Array<billingInformationProps>>("/billing-information", "GET").then(
       (data) => {
         setCardData(data);
-      }
+      },
     );
   }, []);
   return (
-    <div className="flex flex-col w-full p-6 -mx-2 xl:mx-0 bg-white dark:bg-darkDetail drop-shadow-xl rounded-2.5xl">
-      <span className="text-detailColor dark:text-white text-lg font-bold">
+    <div className="-mx-2 flex w-full flex-col rounded-2.5xl bg-white p-6 drop-shadow-xl xl:mx-0 dark:bg-darkDetail">
+      <span className="text-lg font-bold text-detailColor dark:text-white">
         Billing Information
       </span>
       <div className="flex flex-col gap-4">
         {cardData.map((data, index) => (
           <div
             key={index}
-            className="flex flex-col gap-3 bg-informationBg dark:bg-darkBg rounded-lg p-4"
+            className="flex flex-col gap-3 rounded-lg bg-informationBg p-4 dark:bg-darkBg"
           >
             <div className="flex flex-row justify-between">
-              <span className="text-tableTr font-bold text-sm dark:text-white">
+              <span className="text-sm font-bold text-tableTr dark:text-white">
                 {data.name}
               </span>
               <div className="flex flex-row gap-5">
                 <Button className="flex flex-row gap-1">
                   <SvgTrash className="my-auto size-4 fill-detailRed" />
-                  <span className="text-detailRed font-bold text-2xs my-auto">
+                  <span className="my-auto text-2xs font-bold text-detailRed">
                     DELETE
                   </span>
                 </Button>
                 <Button className="flex flex-row gap-1">
                   <SvgEdit className="my-auto size-3 fill-detailColor dark:fill-white" />
-                  <span className="text-detailColor dark:text-white font-bold text-2xs my-auto">
+                  <span className="my-auto text-2xs font-bold text-detailColor dark:text-white">
                     EDIT
                   </span>
                 </Button>

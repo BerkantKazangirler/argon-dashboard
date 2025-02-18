@@ -17,25 +17,25 @@ export const CreditCard = () => {
   return (
     <>
       {load && (
-        <div className="flex p-6 min-w-[460px] justify-between drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)] flex-col bg-[url('./public/cardbg.png')] dark:bg-[url('./public/carlightbg.png')]">
+        <div className="flex min-w-[460px] flex-col justify-between bg-[url('./public/cardbg.png')] p-6 drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)] dark:bg-[url('./public/carlightbg.png')]">
           <div className="flex flex-row justify-between">
-            <span className="font-bold text-lg">{cardData[0].name}</span>
+            <span className="text-lg font-bold">{cardData[0].name}</span>
             <img src={"./public/icon/mcard.png"} />
           </div>
           <div className="flex flex-col gap-5">
-            <span className="font-bold text-2xl">
+            <span className="text-2xl font-bold">
               {formatCardNumber(cardData[0].cardnumber)}
             </span>
             <div className="flex flex-row gap-10">
               <div className="flex flex-col">
                 <span className="text-2xs">VALID THRU</span>
-                <span className="font-bold text-sm">
+                <span className="text-sm font-bold">
                   {cardData[0].validthru}
                 </span>
               </div>
               <div className="flex flex-col">
                 <span className="text-2xs">CVV</span>
-                <span className="font-bold text-sm">
+                <span className="text-sm font-bold">
                   {formatCVV(cardData[0].cvv)}
                 </span>
               </div>

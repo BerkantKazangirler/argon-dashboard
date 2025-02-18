@@ -17,18 +17,18 @@ export const Card = () => {
       {cardData.map((data, index) => (
         <div
           key={index}
-          className="flex flex-row bg-white dark:bg-darkDetail p-4 justify-between rounded-2xl w-full"
+          className="flex w-full flex-row justify-between rounded-2xl bg-white p-4 dark:bg-darkDetail"
         >
-          <div className="flex flex-col gap-5 justify-between">
+          <div className="flex flex-col justify-between gap-5">
             <div className="flex flex-col">
-              <span className="uppercase font-semibold text-[8px] lg:text-2xs xl:text-xs text-placeholderColor">
+              <span className="text-[8px] font-semibold uppercase text-placeholderColor lg:text-2xs xl:text-xs">
                 {data.card}
               </span>
-              <span className="text-detailColor dark:text-white font-semibold text-base lg:text-sm xl:text-lg">
+              <span className="text-base font-semibold text-detailColor lg:text-sm xl:text-lg dark:text-white">
                 ${formatBouncerate(data.data, 0, 3)}
               </span>
             </div>
-            <div className="hidden flex-row gap-1 xl:flex text-xs">
+            <div className="hidden flex-row gap-1 text-xs xl:flex">
               <span
                 className={classNames("font-semibold", {
                   "text-detailGreen": data.last > 0,
@@ -43,7 +43,7 @@ export const Card = () => {
               <span className="text-placeholderColor">Since last month</span>
             </div>
           </div>
-          <span className="rounded-lg bg-detailBg p-2 h-fit">
+          <span className="h-fit rounded-lg bg-detailBg p-2">
             <svg
               width="23"
               height="23"

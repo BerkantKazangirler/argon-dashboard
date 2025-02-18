@@ -10,35 +10,35 @@ export const Projects = () => {
     });
   }, []);
   return (
-    <div className="bg-white dark:bg-darkDetail px-4 pt-4 w-full rounded-2.5xl drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)]">
-      <div className="flex flex-col mb-3 w-fit">
-        <span className="text-detailColor dark:text-white font-bold text-lg">
+    <div className="w-full rounded-2.5xl bg-white px-4 pt-4 drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)] dark:bg-darkDetail">
+      <div className="mb-3 flex w-fit flex-col">
+        <span className="text-lg font-bold text-detailColor dark:text-white">
           Projects
         </span>
-        <span className="text-placeholderColor text-sm">
+        <span className="text-sm text-placeholderColor">
           Architects design houses
         </span>
       </div>
-      <div className="flex flex-col xl:flex-row w-full gap-4 mb-4">
+      <div className="mb-4 flex w-full flex-col gap-4 xl:flex-row">
         {profileData.map((data: any, index: any) => (
-          <div key={index} className="flex flex-col w-full">
+          <div key={index} className="flex w-full flex-col">
             <div
-              className={`h-48 w-full flex flex-col bg-[url('${data.image}')] rounded-xl`}
+              className={`flex h-48 w-full flex-col bg-[url('${data.image}')] rounded-xl`}
             >
-              <span className="bg-gradient-to-t from-[#3138602E] to-[#15192888] rounded-xl h-full"></span>
+              <span className="h-full rounded-xl bg-gradient-to-t from-[#3138602E] to-[#15192888]"></span>
             </div>
-            <div className="flex flex-col mt-3">
-              <span className="text-placeholderColor text-2xs">
+            <div className="mt-3 flex flex-col">
+              <span className="text-2xs text-placeholderColor">
                 Projects #{data.id}
               </span>
-              <span className="text-detailColor text-lg font-bold dark:text-white">
+              <span className="text-lg font-bold text-detailColor dark:text-white">
                 {data.title}
               </span>
-              <span className="text-placeholderColor text-sm w-40 xl:w-64 mt-2 h-12">
+              <span className="mt-2 h-12 w-40 text-sm text-placeholderColor xl:w-64">
                 {data.desc}
               </span>
-              <div className="flex flex-row justify-between mt-5">
-                <Button className="rounded-lg dark:bg-detailBg bg-detailColor text-2xs font-bold text-white px-4 py-2">
+              <div className="mt-5 flex flex-row justify-between">
+                <Button className="rounded-lg bg-detailColor px-4 py-2 text-2xs font-bold text-white dark:bg-detailBg">
                   VIEW ALL
                 </Button>
                 <img src={"./public/icon/kisi.png"} className="h-fit" />
@@ -47,9 +47,9 @@ export const Projects = () => {
           </div>
         ))}
 
-        <div className="flex-col flex">
-          <Button className="h-full items-center xl:w-98 w-full py-5 xl:py-0 border border-inputBorder flex flex-col rounded-xl">
-            <div className="flex flex-col dark:text-white text-tableTr text-center my-auto font-bold text-lg gap-2">
+        <div className="flex flex-col">
+          <Button className="flex h-full w-full flex-col items-center rounded-xl border border-inputBorder py-5 xl:w-98 xl:py-0">
+            <div className="my-auto flex flex-col gap-2 text-center text-lg font-bold text-tableTr dark:text-white">
               <span>+</span>
               <span>Create a New Project</span>
             </div>

@@ -13,10 +13,10 @@ export const formatCardNumber = (cardNumber: number): string => {
 
   // İlk 12 haneyi gruplara ayır ve boşluk ekle
   const first12Digits = cardNumberStr.slice(0, 12);
-  const formattedFirstPart = first12Digits.replace(/(\d{4})(?=\d)/g, '$1 ');
+  const formattedFirstPart = first12Digits.replace(/(\d{4})(?=\d)/g, "$1 ");
 
   // Son haneyi 'X' ile değiştir
-  const lastDigitX = 'X';
+  const lastDigitX = "X";
 
   return `${formattedFirstPart} ${lastDigitX}`;
 };

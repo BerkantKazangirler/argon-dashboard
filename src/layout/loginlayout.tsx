@@ -3,9 +3,9 @@ import { SignInBg, SignNav } from "@/components";
 
 export const LoginLayout = () => {
   return (
-    <div className="flex flex-row w-full h-full font-Poppins">
+    <div className="flex h-full w-full flex-row font-Poppins">
       <SignInBg />
-      <div className="flex flex-col text-white w-full">
+      <div className="flex w-full flex-col text-white">
         <SignNav />
         <Outlet />
       </div>

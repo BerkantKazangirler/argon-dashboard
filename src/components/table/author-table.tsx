@@ -19,13 +19,13 @@ export const AuthorTable = () => {
   }, []);
 
   return (
-    <div className="flex flex-col w-full px-4 drop-shadow-xl rounded-2xl bg-white dark:bg-darkDetail">
-      <span className="text-detailColor dark:text-white pt-4 font-semibold text-lg">
+    <div className="flex w-full flex-col rounded-2xl bg-white px-4 drop-shadow-xl dark:bg-darkDetail">
+      <span className="pt-4 text-lg font-semibold text-detailColor dark:text-white">
         Authors Table
       </span>
-      <table className="w-full mb-3">
+      <table className="mb-3 w-full">
         <thead>
-          <tr className="text-placeholderColor h-10 uppercase text-[10px]">
+          <tr className="h-10 text-[10px] uppercase text-placeholderColor">
             <td className="w-1/2">author</td>
             <td>function</td>
             <td>status</td>
@@ -40,13 +40,13 @@ export const AuthorTable = () => {
               key={index}
               className="border-t border-tableTd dark:border-darkBorder"
             >
-              <td className="flex flex-row my-2 w-full gap-3">
+              <td className="my-2 flex w-full flex-row gap-3">
                 <img
                   src={data.photo}
-                  className="w-10 h-10 object-cover rounded-lg"
+                  className="h-10 w-10 rounded-lg object-cover"
                 />
                 <div className="flex flex-col">
-                  <span className="font-semibold text-sm text-detailColor dark:text-white">
+                  <span className="text-sm font-semibold text-detailColor dark:text-white">
                     {data.name}
                   </span>
                   <span className="text-sm text-tableTr">{data.mail}</span>
@@ -55,7 +55,7 @@ export const AuthorTable = () => {
 
               <td>
                 <div className="flex flex-col">
-                  <span className="font-semibold capitalize text-tableTr dark:text-white text-sm">
+                  <span className="text-sm font-semibold capitalize text-tableTr dark:text-white">
                     {data.rank}
                   </span>
                   <span className="text-sm capitalize text-tableTr">
@@ -66,24 +66,24 @@ export const AuthorTable = () => {
               <td>
                 <span
                   className={classNames(
-                    "rounded-md py-1 font-semibold text-sm text-white px-2",
+                    "rounded-md px-2 py-1 text-sm font-semibold text-white",
                     {
                       "bg-red-400": !data.status,
                       "bg-green-400": data.status,
-                    }
+                    },
                   )}
                 >
                   {data.status ? "Online" : "Offline"}
                 </span>
               </td>
-              <td className="text-tableTr font-semibold dark:text-white text-sm">
+              <td className="text-sm font-semibold text-tableTr dark:text-white">
                 {data.employeddate}
               </td>
 
               <td className="my-auto">
                 <DropdownMenu>
                   <DropdownMenuTrigger>
-                    <span className="text-tableTr font-semibold dark:text-white text-sm">
+                    <span className="text-sm font-semibold text-tableTr dark:text-white">
                       Edit
                     </span>
                   </DropdownMenuTrigger>

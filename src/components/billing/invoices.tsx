@@ -12,17 +12,17 @@ export const Invoices = () => {
     request<Array<paymentInvoicesProps>>("/payment-invoices", "GET").then(
       (data) => {
         setCardData(data);
-      }
+      },
     );
   }, []);
 
   return (
-    <div className="flex flex-col rounded-2.5xl drop-shadow-xl w-full h-[416px] bg-white dark:bg-darkDetail p-4">
+    <div className="flex h-[416px] w-full flex-col rounded-2.5xl bg-white p-4 drop-shadow-xl dark:bg-darkDetail">
       <div className="flex flex-row justify-between px-2 py-3">
-        <span className="font-bold leading-none my-auto text-detailColor dark:text-white">
+        <span className="my-auto font-bold leading-none text-detailColor dark:text-white">
           Invoices
         </span>
-        <Button className="text-detailBg font-bold text-2xs border rounded-lg border-detailBg py-2 w-fit px-4 dark:text-white dark:border-white">
+        <Button className="w-fit rounded-lg border border-detailBg px-4 py-2 text-2xs font-bold text-detailBg dark:border-white dark:text-white">
           VIEW ALL
         </Button>
       </div>
@@ -30,19 +30,19 @@ export const Invoices = () => {
         {cardData.map((data, index) => (
           <div key={index} className="flex flex-row justify-between">
             <div className="flex flex-col gap-1">
-              <span className="text-detailColor dark:text-white font-bold text-sm">
+              <span className="text-sm font-bold text-detailColor dark:text-white">
                 {formatDate(data.date)}
               </span>
-              <span className="text-placeholderColor text-xs font-bold">
+              <span className="text-xs font-bold text-placeholderColor">
                 #{data.id}
               </span>
             </div>
-            <div className="flex flex-row my-auto gap-3">
-              <span className="text-placeholderColor font-bold text-xs">
+            <div className="my-auto flex flex-row gap-3">
+              <span className="text-xs font-bold text-placeholderColor">
                 ${data.amount}
               </span>
-              <Button className="text-2xs flex gap-1 text-detailColor dark:text-white font-bold">
-                <TextDocumentSvg className="fill-detailColor size-5 dark:fill-white" />
+              <Button className="flex gap-1 text-2xs font-bold text-detailColor dark:text-white">
+                <TextDocumentSvg className="size-5 fill-detailColor dark:fill-white" />
                 PDF
               </Button>
             </div>

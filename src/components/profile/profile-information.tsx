@@ -12,7 +12,7 @@ import { request } from "@/utils/fetchdata";
 
 export const ProfileInformation = () => {
   const [informationData, setInformationData] = useState<Array<userDataProps>>(
-    []
+    [],
   );
   const [load, setLoad] = useState(false);
 
@@ -26,45 +26,45 @@ export const ProfileInformation = () => {
   return (
     <>
       {load && (
-        <div className="flex flex-col rounded-2.5xl w-full bg-white dark:bg-darkDetail drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)] px-4 py-4">
-          <span className="text-detailColor dark:text-white font-bold text-lg">
+        <div className="flex w-full flex-col rounded-2.5xl bg-white px-4 py-4 drop-shadow-[0_5px_14px_rgba(0,0,0,0.5)] dark:bg-darkDetail">
+          <span className="text-lg font-bold text-detailColor dark:text-white">
             Profile Information
           </span>
-          <span className="text-placeholderColor text-xs">
+          <span className="text-xs text-placeholderColor">
             {informationData?.information}
           </span>
           {/* <CheckBoxSvg className="mt-5 mx-auto fill-checkboxGreen size-4" /> */}
-          <div className="flex flex-col mt-5 gap-4">
+          <div className="mt-5 flex flex-col gap-4">
             <div className="flex flex-row gap-2">
-              <span className="text-tableTr font-bold text-xs">Full Name:</span>
-              <span className="text-placeholderColor text-xs dark:text-white">
+              <span className="text-xs font-bold text-tableTr">Full Name:</span>
+              <span className="text-xs text-placeholderColor dark:text-white">
                 {informationData?.fullname}
               </span>
             </div>
 
             <div className="flex flex-row gap-2">
-              <span className="text-tableTr font-bold text-xs">Mobile:</span>
-              <span className="text-placeholderColor text-xs dark:text-white">
+              <span className="text-xs font-bold text-tableTr">Mobile:</span>
+              <span className="text-xs text-placeholderColor dark:text-white">
                 {informationData?.number}
               </span>
             </div>
 
             <div className="flex flex-row gap-2">
-              <span className="text-tableTr font-bold text-xs">Email:</span>
-              <span className="text-placeholderColor text-xs dark:text-white">
+              <span className="text-xs font-bold text-tableTr">Email:</span>
+              <span className="text-xs text-placeholderColor dark:text-white">
                 {informationData?.mail}
               </span>
             </div>
 
             <div className="flex flex-row gap-2">
-              <span className="text-tableTr font-bold text-xs">Location:</span>
-              <span className="text-placeholderColor text-xs dark:text-white">
+              <span className="text-xs font-bold text-tableTr">Location:</span>
+              <span className="text-xs text-placeholderColor dark:text-white">
                 {informationData?.location}
               </span>
             </div>
 
             <div className="flex flex-row gap-2">
-              <span className="text-tableTr font-bold text-xs">
+              <span className="text-xs font-bold text-tableTr">
                 Social Media:
               </span>
               <div className="flex flex-row gap-3">
@@ -74,7 +74,7 @@ export const ProfileInformation = () => {
                     hidden: informationData?.socialmedia.facebook == "",
                   })}
                 >
-                  <FacebookSvg className="size-3 my-auto fill-detailBg dark:fill-white" />
+                  <FacebookSvg className="my-auto size-3 fill-detailBg dark:fill-white" />
                 </a>
                 <a
                   href={informationData?.socialmedia.twitter}
@@ -82,7 +82,7 @@ export const ProfileInformation = () => {
                     hidden: informationData?.socialmedia.twitter == "",
                   })}
                 >
-                  <TwitterSvg className="size-3 my-auto fill-detailBg dark:fill-white" />
+                  <TwitterSvg className="my-auto size-3 fill-detailBg dark:fill-white" />
                 </a>
                 <a
                   href={informationData?.socialmedia.instagram}
@@ -90,7 +90,7 @@ export const ProfileInformation = () => {
                     hidden: informationData?.socialmedia.instagram == "",
                   })}
                 >
-                  <InstagramSvg className="size-3 my-auto fill-detailBg dark:fill-white" />
+                  <InstagramSvg className="my-auto size-3 fill-detailBg dark:fill-white" />
                 </a>
               </div>
             </div>

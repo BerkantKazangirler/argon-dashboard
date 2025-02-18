@@ -3,7 +3,7 @@ import { AuthorTable, ProjectsTable } from "@/components";
 export const TablePage = () => {
   return (
     <>
-      <div className="flex flex-col w-full gap-3 mt-3">
+      <div className="mt-3 flex w-full flex-col gap-3">
         <AuthorTable />
         <ProjectsTable />
       </div>

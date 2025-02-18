@@ -2,8 +2,8 @@ import { CardPage, Tables } from "@/components";
 
 export const Dashboard = () => {
   return (
-    <div className="flex flex-col gap-3 mt-3">
-      <div className="flex flex-row gap-4 justify-between w-full">
+    <div className="mt-3 flex flex-col gap-3">
+      <div className="flex w-full flex-row justify-between gap-4">
         <CardPage />
       </div>
       <Tables />

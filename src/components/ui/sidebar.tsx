@@ -14,15 +14,15 @@ import {
 export const Sidebar = () => {
   const location = useLocation();
   return (
-    <div className="hidden sticky top-5 lg:flex flex-col rounded-3xl bg-white dark:bg-darkDetail drop-shadow-xl z-20 w-64 h-[800px]">
+    <div className="sticky top-5 z-20 hidden h-[800px] w-64 flex-col rounded-3xl bg-white drop-shadow-xl lg:flex dark:bg-darkDetail">
       <Link to={"/"}>
         <img
           src={"public/logo.png"}
-          className="w-36 mx-auto py-6 visible dark:hidden"
+          className="visible mx-auto w-36 py-6 dark:hidden"
         />
         <img
           src={"public/logowhite.png"}
-          className="w-36 mx-auto py-6 hidden dark:block"
+          className="mx-auto hidden w-36 py-6 dark:block"
         />
       </Link>
       <svg
@@ -54,22 +54,22 @@ export const Sidebar = () => {
         <Link
           to={"/"}
           className={cn(
-            "flex flex-row gap-2 mx-auto justify-center w-fit pl-4 pr-7 py-2",
+            "mx-auto flex w-fit flex-row justify-center gap-2 py-2 pl-4 pr-7",
             {
-              "dark:bg-darkBottomBg rounded-lg": "/" == location.pathname,
-            }
+              "rounded-lg dark:bg-darkBottomBg": "/" == location.pathname,
+            },
           )}
         >
           <span
             className={cn("p-2", {
-              "bg-detailBg transition-colors rounded-lg":
+              "rounded-lg bg-detailBg transition-colors":
                 "/" == location.pathname,
-              "dark:bg-darkBottomBg rounded-lg": "/" != location.pathname,
+              "rounded-lg dark:bg-darkBottomBg": "/" != location.pathname,
             })}
           >
             <SvgHome
               className={cn(
-                "/" == location.pathname ? "fill-white" : "fill-detailBg"
+                "/" == location.pathname ? "fill-white" : "fill-detailBg",
               )}
             />
           </span>
@@ -78,7 +78,7 @@ export const Sidebar = () => {
               "text-xs",
               "/" == location.pathname
                 ? "font-semibold text-black dark:text-white"
-                : "text-placeholderColor font-bold dark:text-white"
+                : "font-bold text-placeholderColor dark:text-white",
             )}
           >
             Dashboard
@@ -87,22 +87,22 @@ export const Sidebar = () => {
         <Link
           to={"/table"}
           className={cn(
-            "flex flex-row gap-2 mx-auto justify-center w-fit pl-4 pr-14 py-2",
+            "mx-auto flex w-fit flex-row justify-center gap-2 py-2 pl-4 pr-14",
             {
-              "dark:bg-darkBottomBg rounded-lg": "/table" == location.pathname,
-            }
+              "rounded-lg dark:bg-darkBottomBg": "/table" == location.pathname,
+            },
           )}
         >
           <span
             className={cn("p-2", {
-              "bg-detailBg transition-colors rounded-lg":
+              "rounded-lg bg-detailBg transition-colors":
                 "/table" == location.pathname,
-              "dark:bg-darkBottomBg rounded-lg": "/table" != location.pathname,
+              "rounded-lg dark:bg-darkBottomBg": "/table" != location.pathname,
             })}
           >
             <SvgTable
               className={cn(
-                "/table" == location.pathname ? "fill-white" : "fill-detailBg"
+                "/table" == location.pathname ? "fill-white" : "fill-detailBg",
               )}
             />
           </span>
@@ -111,7 +111,7 @@ export const Sidebar = () => {
               "text-xs",
               location.pathname == "/table"
                 ? "font-semibold text-black dark:text-white"
-                : "text-placeholderColor font-bold dark:text-white"
+                : "font-bold text-placeholderColor dark:text-white",
             )}
           >
             Tables
@@ -120,24 +120,26 @@ export const Sidebar = () => {
         <Link
           to={"/billing"}
           className={cn(
-            "flex flex-row gap-2 mx-auto justify-center w-fit pl-4 pr-14 py-2",
+            "mx-auto flex w-fit flex-row justify-center gap-2 py-2 pl-4 pr-14",
             {
-              "dark:bg-darkBottomBg rounded-lg":
+              "rounded-lg dark:bg-darkBottomBg":
                 "/billing" == location.pathname,
-            }
+            },
           )}
         >
           <span
             className={cn("p-2", {
-              "bg-detailBg transition-colors rounded-lg":
+              "rounded-lg bg-detailBg transition-colors":
                 "/billing" == location.pathname,
-              "dark:bg-darkBottomBg rounded-lg":
+              "rounded-lg dark:bg-darkBottomBg":
                 "/billing" != location.pathname,
             })}
           >
             <SvgBilling
               className={cn(
-                "/billing" == location.pathname ? "fill-white" : "fill-detailBg"
+                "/billing" == location.pathname
+                  ? "fill-white"
+                  : "fill-detailBg",
               )}
             />
           </span>
@@ -146,36 +148,38 @@ export const Sidebar = () => {
               "text-xs",
               "/billing" == location.pathname
                 ? "font-semibold text-black dark:text-white"
-                : "text-placeholderColor font-bold dark:text-white"
+                : "font-bold text-placeholderColor dark:text-white",
             )}
           >
             Billing
           </Button>
         </Link>
 
-        <span className="text-detailColor dark:text-white px-12 py-2 font-bold text-xs">
+        <span className="px-12 py-2 text-xs font-bold text-detailColor dark:text-white">
           ACCOUNT PAGES
         </span>
         <Link
           to={"/profile"}
           className={cn(
-            "flex flex-row gap-2 mx-auto justify-center w-fit pl-4 pr-14 py-2",
+            "mx-auto flex w-fit flex-row justify-center gap-2 py-2 pl-4 pr-14",
             {
-              "dark:bg-darkBottomBg rounded-lg":
+              "rounded-lg dark:bg-darkBottomBg":
                 "/profile" == location.pathname,
-            }
+            },
           )}
         >
           <span
             className={cn("p-2", {
-              "bg-detailBg transition-colors rounded-lg":
+              "rounded-lg bg-detailBg transition-colors":
                 location.pathname == "/profile",
             })}
           >
             <SvgPerson
               className={cn(
                 "size-4",
-                "/profile" == location.pathname ? "fill-white" : "fill-detailBg"
+                "/profile" == location.pathname
+                  ? "fill-white"
+                  : "fill-detailBg",
               )}
             />
           </span>
@@ -184,7 +188,7 @@ export const Sidebar = () => {
               "text-xs",
               "/profile" == location.pathname
                 ? "font-semibold text-black dark:text-white"
-                : "text-placeholderColor font-bold dark:text-white"
+                : "font-bold text-placeholderColor dark:text-white",
             )}
           >
             Profile
@@ -192,11 +196,11 @@ export const Sidebar = () => {
         </Link>
         <Link
           to={"/auth/sign"}
-          className="flex flex-row gap-2 mx-auto pl-4 pr-14 dark:pl-4 dark:pr-14 py-1"
+          className="mx-auto flex flex-row gap-2 py-1 pl-4 pr-14 dark:pl-4 dark:pr-14"
         >
           <span
             className={cn("p-2", {
-              "bg-detailBg transition-colors rounded-lg":
+              "rounded-lg bg-detailBg transition-colors":
                 location.pathname == "/auth/sign",
             })}
           >
@@ -204,7 +208,7 @@ export const Sidebar = () => {
               className={cn(
                 "/auth/sign" == location.pathname
                   ? "fill-white"
-                  : "fill-detailBg"
+                  : "fill-detailBg",
               )}
             />
           </span>
@@ -213,7 +217,7 @@ export const Sidebar = () => {
               "text-xs",
               "/auth/sign" == location.pathname
                 ? "font-semibold text-black dark:text-white"
-                : "text-placeholderColor font-bold dark:text-white"
+                : "font-bold text-placeholderColor dark:text-white",
             )}
           >
             Sign In
@@ -221,11 +225,11 @@ export const Sidebar = () => {
         </Link>
         <Link
           to={"/auth/register"}
-          className="flex flex-row gap-2 pl-4 pr-14 mx-auto dark:pl-4 dark:pr-14 py-1"
+          className="mx-auto flex flex-row gap-2 py-1 pl-4 pr-14 dark:pl-4 dark:pr-14"
         >
           <span
             className={cn("p-2", {
-              "bg-detailBg transition-colors rounded-lg":
+              "rounded-lg bg-detailBg transition-colors":
                 location.pathname == "/auth/register",
             })}
           >
@@ -233,7 +237,7 @@ export const Sidebar = () => {
               className={cn(
                 "/auth/register" == location.pathname
                   ? "fill-white"
-                  : "fill-detailBg"
+                  : "fill-detailBg",
               )}
             />
           </span>
@@ -242,33 +246,33 @@ export const Sidebar = () => {
               "text-xs",
               "/auth/register" == location.pathname
                 ? "font-semibold text-black dark:text-white"
-                : "text-placeholderColor font-bold dark:text-white"
+                : "font-bold text-placeholderColor dark:text-white",
             )}
           >
             Sign Up
           </Button>
         </Link>
-        <div className="mx-auto flex flex-col w-full gap-4 mb-5 items-center absolute bottom-0">
+        <div className="absolute bottom-0 mx-auto mb-5 flex w-full flex-col items-center gap-4">
           <div className="flex flex-col">
             <img
               src={"./public/icon/icon-documentation.png"}
-              className="w-40 visible dark:hidden"
+              className="visible w-40 dark:hidden"
             />
             <img
               src={"./public/icon/icon-docdark.png"}
-              className="w-40 hidden dark:block"
+              className="hidden w-40 dark:block"
             />
-            <span className="text-detailColor dark:text-white font-bold w-fit mx-auto text-sm">
+            <span className="mx-auto w-fit text-sm font-bold text-detailColor dark:text-white">
               Need Help?
             </span>
-            <span className="text-tableTr w-fit mx-auto text-xs">
+            <span className="mx-auto w-fit text-xs text-tableTr">
               Please check our docs
             </span>
           </div>
-          <Button className="font-bold text-2xs rounded-lg text-white bg-detailBg py-3 w-fit px-8">
+          <Button className="w-fit rounded-lg bg-detailBg px-8 py-3 text-2xs font-bold text-white">
             DOCUMENTATION
           </Button>
-          <Button className="font-bold text-2xs rounded-lg text-white bg-detailColor py-3 w-fit px-8">
+          <Button className="w-fit rounded-lg bg-detailColor px-8 py-3 text-2xs font-bold text-white">
             UPDATE TO PRO
           </Button>
         </div>

@@ -5,9 +5,9 @@ export const MainLayout = () => {
   return (
     <>
       <Bg />
-      <div className="mx-5 pb-5 z-20 pt-5 flex flex-row gap-4 w-full">
+      <div className="z-20 mx-5 flex w-full flex-row gap-4 pb-5 pt-5">
         <Sidebar />
-        <div className="flex flex-col text-white w-full">
+        <div className="flex w-full flex-col text-white">
           <NavBar />
           <Outlet />
         </div>

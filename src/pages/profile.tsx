@@ -8,9 +8,9 @@ import {
 
 export const ProfilePage = () => {
   return (
-    <div className="flex flex-col gap-3 mt-3">
+    <div className="mt-3 flex flex-col gap-3">
       <Profile />
-      <div className="flex flex-col mr-5 xl:mr-0 xl:flex-row gap-4">
+      <div className="mr-5 flex flex-col gap-4 xl:mr-0 xl:flex-row">
         <PlatformSettings />
         <ProfileInformation />
         <Conversations />

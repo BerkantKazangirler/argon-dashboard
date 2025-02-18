@@ -19,19 +19,19 @@ export const ProjectsTable = () => {
     });
   }, []);
   return (
-    <div className="flex flex-col w-full bg-white dark:bg-darkDetail rounded-2xl drop-shadow-xl px-4 py-6">
+    <div className="flex w-full flex-col rounded-2xl bg-white px-4 py-6 drop-shadow-xl dark:bg-darkDetail">
       <div className="flex flex-col">
-        <span className="text-black dark:text-white font-semibold text-lg">
+        <span className="text-lg font-semibold text-black dark:text-white">
           Projects
         </span>
-        <span className="text-placeholderColor gap-1 flex flex-row text-sm">
+        <span className="flex flex-row gap-1 text-sm text-placeholderColor">
           <CheckBoxSvg className="my-auto size-4 fill-checkboxGreen" />
           <b>30 done</b> this month
         </span>
       </div>
       <table className="mt-2">
         <thead>
-          <tr className="uppercase h-10 text-placeholderColor text-[10px] font-semibold">
+          <tr className="h-10 text-[10px] font-semibold uppercase text-placeholderColor">
             <td>companies</td>
             <td>budget</td>
             <td>status</td>
@@ -48,32 +48,32 @@ export const ProjectsTable = () => {
             >
               <td>
                 <div className="flex flex-row gap-3 py-4">
-                  <span className="text-detailColor dark:text-white font-semibold text-sm">
+                  <span className="text-sm font-semibold text-detailColor dark:text-white">
                     {data.companies}
                   </span>
                 </div>
               </td>
-              <td className="text-tableTr dark:text-white text-sm font-semibold">
+              <td className="text-sm font-semibold text-tableTr dark:text-white">
                 {data.budget == null
                   ? "Not set"
                   : "$" + formatBouncerate(data.budget, 0, 3)}
               </td>
-              <td className="text-tableTr dark:text-white text-sm font-semibold">
+              <td className="text-sm font-semibold text-tableTr dark:text-white">
                 {data.status == null ? "Canceled" : data.status}
               </td>
               <td>
-                <div className="text-blue-500 text-sm font-semibold flex flex-col">
+                <div className="flex flex-col text-sm font-semibold text-blue-500">
                   <span>{data.completion}%</span>
                   <progress
                     value={data.completion}
-                    className="h-1 my-auto [&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:rounded-lg   [&::-webkit-progress-bar]:bg-red-300 [&::-webkit-progress-value]:bg-blue-500 [&::-moz-progress-bar]:bg-blue-500 "
+                    className="my-auto h-1 [&::-moz-progress-bar]:bg-blue-500 [&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-bar]:bg-red-300 [&::-webkit-progress-value]:rounded-lg [&::-webkit-progress-value]:bg-blue-500"
                   ></progress>
                 </div>
               </td>
               <td className="my-auto hover:cursor-pointer">
                 <DropdownMenu>
                   <DropdownMenuTrigger>
-                    <VertSvg className="fill-placeholderColor dark:fill-white size-5" />
+                    <VertSvg className="size-5 fill-placeholderColor dark:fill-white" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-8">
                     <DropdownMenuItem>

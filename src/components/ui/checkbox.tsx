@@ -6,12 +6,12 @@ interface checkboxprops {
 export const Checkbox = ({ id, text }: checkboxprops) => {
   return (
     <label
-      className="inline-flex items-center me-5 cursor-pointer"
+      className="me-5 inline-flex cursor-pointer items-center"
       htmlFor={id}
     >
-      <input type="checkbox" id={id} className="sr-only peer" />
-      <div className="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-detailBg peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-checkboxBg"></div>
-      <span className="text-xs ms-3 text-placeholderColor">{text}</span>
+      <input type="checkbox" id={id} className="peer sr-only" />
+      <div className="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-0.5 after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-checkboxBg peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:ring-detailBg rtl:peer-checked:after:-translate-x-full"></div>
+      <span className="ms-3 text-xs text-placeholderColor">{text}</span>
     </label>
   );
 };
