@@ -26,3 +26,4 @@ export const formatBouncerate = (
   // Eğer sayı 3 basamaktan küçükse, sadece sayıyı döndür
   return `${valueStr}`;
 };
+

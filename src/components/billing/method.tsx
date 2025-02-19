@@ -65,13 +65,14 @@ export const Method = () => {
         </Dialog>
       </div>
       <div className="flex w-full flex-row gap-5">
-        <div className="flex w-full rounded-lg border border-inputBorder dark:border-none dark:bg-darkBg">
-          <img src={"./public/icon/mastercard.png"} className="h-5 w-5" />
-
-          <SvgEdit className="fill-detailColor" />
-          <p className="w-full text-sm text-black dark:text-white">
-            7812 2139 0823 XXXX
-          </p>
+        <div className="flex w-full items-center justify-between rounded-lg border border-inputBorder px-4 dark:border-none dark:bg-darkBg">
+          <div className="flex gap-2">
+            <img src={"./public/icon/mastercard.png"} className="h-5 w-5" />
+            <p className="w-full text-sm text-black dark:text-white">
+              7812 2139 0823 XXXX
+            </p>
+          </div>
+          <SvgEdit className="h-5 w-5 fill-detailColor" />
         </div>
         <div className="relative w-full rounded-lg border border-inputBorder dark:border-none">
           <SvgEdit className="absolute -right-[270px] mt-6 h-fit fill-detailColor" />

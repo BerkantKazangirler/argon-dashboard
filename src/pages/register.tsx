@@ -1,7 +1,20 @@
 import { Input, Button, AppleSvg, Checkbox } from "@/components";
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 export const Register = () => {
+  const [name, setName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [mail, setMail] = useState<string>("");
+  function toastify(text: string) {
+    toast(text);
+  }
+
+  function login(name: string, password: string, mail: string) {
+    toast("Ad : " + name + " Soyad :" + password + " Mail : " + mail);
+  }
+
   return (
     <>
       <div className="my-auto flex h-full w-full flex-col justify-center gap-14">
@@ -20,7 +33,10 @@ export const Register = () => {
               Register with
             </span>
             <div className="mx-auto flex flex-row gap-3">
-              <Button className="rounded-lg border border-inputBorder p-5 dark:border-none dark:bg-darkBottomBg">
+              <Button
+                onClick={() => toastify("facebook")}
+                className="rounded-lg border border-inputBorder p-5 dark:border-none dark:bg-darkBottomBg"
+              >
                 <svg
                   width="32"
                   height="32"
@@ -43,10 +59,16 @@ export const Register = () => {
                   </defs>
                 </svg>
               </Button>
-              <Button className="rounded-lg border border-inputBorder p-5 dark:border-none dark:bg-darkBottomBg">
+              <Button
+                onClick={() => toastify("apple")}
+                className="rounded-lg border border-inputBorder p-5 dark:border-none dark:bg-darkBottomBg"
+              >
                 <AppleSvg className="size-8 fill-detailColor dark:fill-white" />
               </Button>
-              <Button className="rounded-lg border border-inputBorder p-6 dark:border-none dark:bg-darkBottomBg">
+              <Button
+                onClick={() => toastify("google")}
+                className="rounded-lg border border-inputBorder p-6 dark:border-none dark:bg-darkBottomBg"
+              >
                 <svg
                   width="22"
                   height="22"
@@ -71,6 +93,7 @@ export const Register = () => {
                   Name
                 </label>
                 <Input
+                  onChange={(e) => setName(e.currentTarget.value)}
                   placeholder="User name"
                   className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
                   id="name"
@@ -84,9 +107,11 @@ export const Register = () => {
                   Email
                 </label>
                 <Input
+                  onChange={(e) => setMail(e.currentTarget.value)}
                   placeholder="Your email address"
                   className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
                   id="mail"
+                  type="mail"
                 />
               </div>
               <div className="flex flex-col gap-1">
@@ -97,6 +122,7 @@ export const Register = () => {
                   Password
                 </label>
                 <Input
+                  onChange={(e) => setPassword(e.currentTarget.value)}
                   placeholder="Your password"
                   type="password"
                   className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
@@ -106,7 +132,10 @@ export const Register = () => {
               <div className="flex flex-row gap-3">
                 <Checkbox id="remember" text="Remember me" />
               </div>
-              <Button className="w-full rounded-lg bg-detailColor py-3 text-2xs font-bold text-white dark:bg-detailBg">
+              <Button
+                onClick={() => login(name, password, mail)}
+                className="w-full rounded-lg bg-detailColor py-3 text-2xs font-bold text-white dark:bg-detailBg"
+              >
                 SIGN UP
               </Button>
               <span className="text-center text-sm text-placeholderColor">
@@ -122,6 +151,7 @@ export const Register = () => {
           </div>
         </div>
       </div>
+      <Toaster />
     </>
   );
 };

@@ -46,10 +46,10 @@ export const Information = () => {
             </div>
             <div className="w-fit">
               <div className="flex flex-row gap-1 text-xs">
-                <span className="text-placeholderColor">Company Name:</span>
-                <span className="font-bold text-tableTr dark:text-white">
+                <h4 className="text-placeholderColor">Company Name:</h4>
+                <h5 className="font-bold text-tableTr dark:text-white">
                   {data.companyname}
-                </span>
+                </h5>
               </div>
               <div className="flex flex-row gap-1 text-xs">
                 <span className="text-placeholderColor">Email Address:</span>

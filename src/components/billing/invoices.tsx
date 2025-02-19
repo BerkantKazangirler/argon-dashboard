@@ -17,7 +17,7 @@ export const Invoices = () => {
   }, []);
 
   return (
-    <div className="flex h-[416px] w-full flex-col rounded-2.5xl bg-white p-4 drop-shadow-xl dark:bg-darkDetail">
+    <div className="flex w-full flex-col rounded-2.5xl bg-white p-4 drop-shadow-xl dark:bg-darkDetail">
       <div className="flex flex-row justify-between px-2 py-3">
         <span className="my-auto font-bold leading-none text-detailColor dark:text-white">
           Invoices

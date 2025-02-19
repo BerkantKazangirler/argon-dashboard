@@ -1,7 +1,19 @@
 import { Input, Button, Checkbox } from "@/components";
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 export const SignIn = () => {
+  const [name, setName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  function toastify(text: string) {
+    toast(text);
+  }
+
+  function login(name: string, password: string) {
+    toast("Ad : " + name + " Soyad :" + password);
+  }
+
   return (
     <>
       <div className="my-auto flex h-full w-full flex-col justify-center">
@@ -11,7 +23,10 @@ export const SignIn = () => {
               Sign In with
             </span>
             <div className="mx-auto flex flex-row gap-3">
-              <Button className="rounded-lg border border-inputBorder p-5 dark:border-none dark:bg-darkBottomBg">
+              <Button
+                onClick={() => toastify("facebook")}
+                className="rounded-lg border border-inputBorder p-5 dark:border-none dark:bg-darkBottomBg"
+              >
                 <svg
                   width="32"
                   height="32"
@@ -34,7 +49,10 @@ export const SignIn = () => {
                   </defs>
                 </svg>
               </Button>
-              <Button className="rounded-lg border border-inputBorder p-5 dark:border-none dark:bg-darkBottomBg">
+              <Button
+                onClick={() => toastify("apple")}
+                className="rounded-lg border border-inputBorder p-5 dark:border-none dark:bg-darkBottomBg"
+              >
                 <svg
                   width="32"
                   height="32"
@@ -46,7 +64,10 @@ export const SignIn = () => {
                   <path d="M21.1018 2.43903C19.6487 2.53772 17.9534 3.46287 16.9604 4.67078C16.0595 5.76547 15.3184 7.38934 15.609 8.96416H15.7253C17.2728 8.96416 18.8567 8.03234 19.7819 6.83836C20.6731 5.7019 21.3488 4.09135 21.1018 2.43903Z" />
                 </svg>
               </Button>
-              <Button className="rounded-lg border border-inputBorder p-6 dark:border-none dark:bg-darkBottomBg">
+              <Button
+                onClick={() => toastify("google")}
+                className="rounded-lg border border-inputBorder p-6 dark:border-none dark:bg-darkBottomBg"
+              >
                 <svg
                   width="22"
                   height="22"
@@ -74,6 +95,7 @@ export const SignIn = () => {
                   placeholder="User Name"
                   className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
                   id="name"
+                  onChange={(e) => setName(e.currentTarget.value)}
                 />
               </div>
               <div className="flex flex-col gap-1">
@@ -88,12 +110,16 @@ export const SignIn = () => {
                   type="password"
                   className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
                   id="pass"
+                  onChange={(e) => setPassword(e.currentTarget.value)}
                 />
               </div>
               <div className="flex flex-row gap-3">
                 <Checkbox id="remember" text="Remember me" />
               </div>
-              <Button className="w-full rounded-lg bg-detailColor py-3 text-2xs font-bold text-white dark:bg-detailBg">
+              <Button
+                onClick={() => login(name, password)}
+                className="w-full rounded-lg bg-detailColor py-3 text-2xs font-bold text-white dark:bg-detailBg"
+              >
                 SIGN UP
               </Button>
               <span className="text-center text-sm text-placeholderColor">
@@ -109,6 +135,7 @@ export const SignIn = () => {
           </div>
         </div>
       </div>
+      <Toaster />
     </>
   );
 };
