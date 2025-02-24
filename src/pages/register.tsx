@@ -1,18 +1,20 @@
 import { Input, Button, AppleSvg, Checkbox } from "@/components";
-import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 export const Register = () => {
-  const [name, setName] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [mail, setMail] = useState<string>("");
   function toastify(text: string) {
     toast(text);
   }
 
-  function login(name: string, password: string, mail: string) {
-    toast("Ad : " + name + " Soyad :" + password + " Mail : " + mail);
+  function login(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const name = formData.get("name");
+    const mail = formData.get("mail");
+    const pass = formData.get("pass");
+
+    toastify(`Ad: ${name}, Mail: ${mail}, Şifre: ${pass}`);
   }
 
   return (
@@ -85,59 +87,64 @@ export const Register = () => {
               <span className="text-center text-lg font-bold text-placeholderColor">
                 or
               </span>
-              <div className="flex flex-col gap-1">
-                <label
-                  htmlFor="name"
-                  className="text-sm text-detailColor dark:text-white"
-                >
-                  Name
-                </label>
-                <Input
-                  onChange={(e) => setName(e.currentTarget.value)}
-                  placeholder="User name"
-                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
-                  id="name"
-                />
-              </div>
-              <div className="flex flex-col gap-1">
-                <label
-                  htmlFor="mail"
-                  className="text-sm text-detailColor dark:text-white"
-                >
-                  Email
-                </label>
-                <Input
-                  onChange={(e) => setMail(e.currentTarget.value)}
-                  placeholder="Your email address"
-                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
-                  id="mail"
-                  type="mail"
-                />
-              </div>
-              <div className="flex flex-col gap-1">
-                <label
-                  htmlFor="pass"
-                  className="text-sm text-detailColor dark:text-white"
-                >
-                  Password
-                </label>
-                <Input
-                  onChange={(e) => setPassword(e.currentTarget.value)}
-                  placeholder="Your password"
-                  type="password"
-                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
-                  id="pass"
-                />
-              </div>
-              <div className="flex flex-row gap-3">
-                <Checkbox id="remember" text="Remember me" />
-              </div>
-              <Button
-                onClick={() => login(name, password, mail)}
-                className="w-full rounded-lg bg-detailColor py-3 text-2xs font-bold text-white dark:bg-detailBg"
-              >
-                SIGN UP
-              </Button>
+              <form onSubmit={login}>
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor="name"
+                    className="text-sm text-detailColor dark:text-white"
+                  >
+                    Name
+                  </label>
+                  <Input
+                    placeholder="User name"
+                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
+                    id="name"
+                    name="name"
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor="mail"
+                    className="text-sm text-detailColor dark:text-white"
+                  >
+                    Email
+                  </label>
+                  <Input
+                    placeholder="Your email address"
+                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
+                    id="mail"
+                    type="mail"
+                    name="mail"
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor="pass"
+                    className="text-sm text-detailColor dark:text-white"
+                  >
+                    Password
+                  </label>
+                  <Input
+                    placeholder="Your password"
+                    type="password"
+                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
+                    id="pass"
+                    name="pass"
+                  />
+                </div>
+                <div className="flex flex-col gap-2 pt-3">
+                  <div className="flex flex-row gap-3">
+                    <Checkbox id="remember" text="Remember me" />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full rounded-lg bg-detailColor py-3 text-2xs font-bold text-white dark:bg-detailBg"
+                  >
+                    SIGN UP
+                  </button>
+                </div>
+              </form>
+
               <span className="text-center text-sm text-placeholderColor">
                 Already have an account?{" "}
                 <Link

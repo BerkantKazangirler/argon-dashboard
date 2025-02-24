@@ -1,17 +1,19 @@
 import { Input, Button, Checkbox } from "@/components";
-import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 export const SignIn = () => {
-  const [name, setName] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
   function toastify(text: string) {
     toast(text);
   }
 
-  function login(name: string, password: string) {
-    toast("Ad : " + name + " Soyad :" + password);
+  function login(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const name = formData.get("name");
+    const pass = formData.get("pass");
+
+    toastify(`Ad: ${name}, Şifre: ${pass}`);
   }
 
   return (
@@ -84,44 +86,48 @@ export const SignIn = () => {
               <span className="text-center text-lg font-bold text-placeholderColor">
                 or
               </span>
-              <div className="flex flex-col gap-1">
-                <label
-                  htmlFor="name"
-                  className="text-sm text-detailColor dark:text-white"
-                >
-                  Name
-                </label>
-                <Input
-                  placeholder="User Name"
-                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
-                  id="name"
-                  onChange={(e) => setName(e.currentTarget.value)}
-                />
-              </div>
-              <div className="flex flex-col gap-1">
-                <label
-                  htmlFor="pass"
-                  className="text-sm text-detailColor dark:text-white"
-                >
-                  Password
-                </label>
-                <Input
-                  placeholder="Your email address"
-                  type="password"
-                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
-                  id="pass"
-                  onChange={(e) => setPassword(e.currentTarget.value)}
-                />
-              </div>
-              <div className="flex flex-row gap-3">
-                <Checkbox id="remember" text="Remember me" />
-              </div>
-              <Button
-                onClick={() => login(name, password)}
-                className="w-full rounded-lg bg-detailColor py-3 text-2xs font-bold text-white dark:bg-detailBg"
-              >
-                SIGN UP
-              </Button>
+              <form onSubmit={login}>
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor="name"
+                    className="text-sm text-detailColor dark:text-white"
+                  >
+                    Name
+                  </label>
+                  <Input
+                    placeholder="User name"
+                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
+                    id="name"
+                    name="name"
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor="pass"
+                    className="text-sm text-detailColor dark:text-white"
+                  >
+                    Password
+                  </label>
+                  <Input
+                    placeholder="Your password"
+                    type="password"
+                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
+                    id="pass"
+                    name="pass"
+                  />
+                </div>
+                <div className="flex flex-col gap-2 pt-3">
+                  <div className="flex flex-row gap-3">
+                    <Checkbox id="remember" text="Remember me" />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full rounded-lg bg-detailColor py-3 text-2xs font-bold text-white dark:bg-detailBg"
+                  >
+                    SIGN UP
+                  </button>
+                </div>
+              </form>
               <span className="text-center text-sm text-placeholderColor">
                 Don't have an account?{" "}
                 <Link
