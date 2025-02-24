@@ -96,7 +96,7 @@ export const SignIn = () => {
                   </label>
                   <Input
                     placeholder="User name"
-                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
+                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
                     id="name"
                     name="name"
                   />
@@ -111,7 +111,7 @@ export const SignIn = () => {
                   <Input
                     placeholder="Your password"
                     type="password"
-                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
+                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
                     id="pass"
                     name="pass"
                   />

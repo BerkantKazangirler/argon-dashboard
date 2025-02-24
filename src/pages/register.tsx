@@ -1,20 +1,47 @@
-import { Input, Button, AppleSvg, Checkbox } from "@/components";
+import { Button, AppleSvg, Checkbox, Input } from "@/components";
+import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+
+export type FormValues = {
+  name?: string;
+  email?: string;
+  password?: string;
+};
+
+const Schema = z.object({
+  name: z.string({
+    required_error: "Boş Bırakma",
+  }),
+  email: z
+    .string({
+      required_error: "Mail gir",
+    })
+    .email({
+      message: "Mail gir",
+    }),
+  password: z
+    .string({
+      required_error: "Şifre gir",
+    })
+    .min(3, { message: "Şifren 3 rakamdan fazla olsun" })
+    .max(20, { message: "Şifren 20 rakamdan az olsun" }),
+});
 
 export const Register = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({
+    resolver: zodResolver(Schema),
+  });
+  const onSubmit = handleSubmit((data) => toastify(JSON.stringify(data)));
+
   function toastify(text: string) {
     toast(text);
-  }
-
-  function login(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const name = formData.get("name");
-    const mail = formData.get("mail");
-    const pass = formData.get("pass");
-
-    toastify(`Ad: ${name}, Mail: ${mail}, Şifre: ${pass}`);
   }
 
   return (
@@ -87,7 +114,7 @@ export const Register = () => {
               <span className="text-center text-lg font-bold text-placeholderColor">
                 or
               </span>
-              <form onSubmit={login}>
+              <form onSubmit={onSubmit}>
                 <div className="flex flex-col gap-1">
                   <label
                     htmlFor="name"
@@ -96,11 +123,17 @@ export const Register = () => {
                     Name
                   </label>
                   <Input
+                    {...register("name")}
                     placeholder="User name"
-                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
+                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
                     id="name"
-                    name="name"
                   />
+
+                  {errors?.name && (
+                    <p className="text-sm font-bold text-red-400">
+                      {errors.name.message}
+                    </p>
+                  )}
                 </div>
                 <div className="flex flex-col gap-1">
                   <label
@@ -109,13 +142,18 @@ export const Register = () => {
                   >
                     Email
                   </label>
-                  <Input
+                  <input
+                    {...register("email")}
                     placeholder="Your email address"
-                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
+                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
                     id="mail"
-                    type="mail"
-                    name="mail"
+                    type="email"
                   />
+                  {errors?.email && (
+                    <p className="text-sm font-bold text-red-400">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
                 <div className="flex flex-col gap-1">
                   <label
@@ -124,13 +162,18 @@ export const Register = () => {
                   >
                     Password
                   </label>
-                  <Input
+                  <input
+                    {...register("password")}
                     placeholder="Your password"
                     type="password"
-                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg"
+                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
                     id="pass"
-                    name="pass"
                   />
+                  {errors?.password && (
+                    <p className="text-sm font-bold text-red-400">
+                      {errors.password.message}
+                    </p>
+                  )}
                 </div>
                 <div className="flex flex-col gap-2 pt-3">
                   <div className="flex flex-row gap-3">
