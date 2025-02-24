@@ -22,9 +22,28 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 export const NavBar = () => {
   const [darkMod, setDarkMod] = useState(true);
+
+  const Schema = z.object({
+    card: z.string().min(1),
+    expiration: z.string().min(1),
+    cvv: z.string().min(1),
+  });
+
+  interface Form {
+    card?: string;
+    expiration?: string;
+    cvv?: string;
+  }
+
+  const { control } = useForm<Form>({
+    resolver: zodResolver(Schema),
+  });
 
   const location = useLocation();
 
@@ -46,8 +65,10 @@ export const NavBar = () => {
       <div className="flex flex-row gap-2">
         <div className="relative my-auto hidden h-9 flex-row items-center lg:flex">
           <Input
+            name=""
+            control={control}
             placeholder="Type Here..."
-            className="h-full w-52 rounded-lg indent-7 text-xs text-black dark:bg-darkDetail dark:text-white"
+            className="h-full w-52 rounded-lg py-2 indent-7 text-xs text-black dark:bg-darkDetail dark:text-white"
           />
           <SvgSearch className="absolute mx-2 size-3 fill-detailColor dark:fill-white" />
         </div>

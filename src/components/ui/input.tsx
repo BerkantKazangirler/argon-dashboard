@@ -21,7 +21,9 @@ export const Input = ({
       control={control}
       render={({ field, fieldState }) => (
         <div className="flex flex-col gap-1">
-          <label>{label}</label>
+          <label className="text-sm text-detailColor dark:text-white">
+            {label}
+          </label>
           <input
             className={cn(
               "bg-black indent-2 text-sm outline-slate-800",

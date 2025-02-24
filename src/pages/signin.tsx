@@ -1,19 +1,36 @@
 import { Input, Button, Checkbox } from "@/components";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { z } from "zod";
+
+const Schema = z.object({
+  name: z.string({
+    required_error: "Boş Bırakma",
+  }),
+  password: z
+    .string({
+      required_error: "Şifre gir",
+    })
+    .min(3, { message: "Şifren 3 rakamdan fazla olsun" })
+    .max(20, { message: "Şifren 20 rakamdan az olsun" }),
+});
+
+interface Form {
+  name?: string;
+  password?: string;
+}
 
 export const SignIn = () => {
+  const { control, handleSubmit } = useForm<Form>({
+    resolver: zodResolver(Schema),
+  });
+
+  const onSubmit = handleSubmit((data) => toastify(JSON.stringify(data)));
+
   function toastify(text: string) {
     toast(text);
-  }
-
-  function login(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const name = formData.get("name");
-    const pass = formData.get("pass");
-
-    toastify(`Ad: ${name}, Şifre: ${pass}`);
   }
 
   return (
@@ -86,36 +103,22 @@ export const SignIn = () => {
               <span className="text-center text-lg font-bold text-placeholderColor">
                 or
               </span>
-              <form onSubmit={login}>
-                <div className="flex flex-col gap-1">
-                  <label
-                    htmlFor="name"
-                    className="text-sm text-detailColor dark:text-white"
-                  >
-                    Name
-                  </label>
-                  <Input
-                    placeholder="User name"
-                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
-                    id="name"
-                    name="name"
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <label
-                    htmlFor="pass"
-                    className="text-sm text-detailColor dark:text-white"
-                  >
-                    Password
-                  </label>
-                  <Input
-                    placeholder="Your password"
-                    type="password"
-                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
-                    id="pass"
-                    name="pass"
-                  />
-                </div>
+              <form onSubmit={onSubmit}>
+                <Input
+                  label="Name"
+                  control={control}
+                  placeholder="User name"
+                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
+                  name="name"
+                />
+                <Input
+                  control={control}
+                  label="Password"
+                  placeholder="Your password"
+                  type="password"
+                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
+                  name="password"
+                />
                 <div className="flex flex-col gap-2 pt-3">
                   <div className="flex flex-row gap-3">
                     <Checkbox id="remember" text="Remember me" />

@@ -31,12 +31,7 @@ const Schema = z.object({
 });
 
 export const Register = () => {
-  const {
-    control,
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormValues>({
+  const { control, handleSubmit } = useForm<FormValues>({
     resolver: zodResolver(Schema),
   });
   const onSubmit = handleSubmit((data) => toastify(JSON.stringify(data)));
@@ -116,55 +111,35 @@ export const Register = () => {
                 or
               </span>
               <form onSubmit={onSubmit}>
-                <div className="flex flex-col gap-1">
-                  <label
-                    htmlFor="name"
-                    className="text-sm text-detailColor dark:text-white"
-                  >
-                    Name
-                  </label>
-                  <Input
-                    name="name"
-                    control={control}
-                    placeholder="User name"
-                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
-                    id="name"
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <label
-                    htmlFor="mail"
-                    className="text-sm text-detailColor dark:text-white"
-                  >
-                    Email
-                  </label>
-                  <input
-                    name="email"
-                    control={control}
-                    placeholder="Your email address"
-                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
-                    id="mail"
-                    type="email"
-                  />
-                </div>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <label
-                    htmlFor="pass"
-                    className="text-sm text-detailColor dark:text-white"
-                  >
-                    Password
-                  </label>
-                  <Input
-                    name="password"
-                    control={control}
-                    placeholder="Your password"
-                    type="password"
-                    className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
-                    id="pass"
-                  />
-                </div>
-                </div>
+                <Input
+                  name="name"
+                  label="Name"
+                  control={control}
+                  placeholder="User name"
+                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
+                  id="name"
+                />
+
+                <Input
+                  label="Email"
+                  name="email"
+                  control={control}
+                  placeholder="Your email address"
+                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
+                  id="mail"
+                  type="email"
+                />
+
+                <Input
+                  label="Password"
+                  name="password"
+                  control={control}
+                  placeholder="Your password"
+                  type="password"
+                  className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
+                  id="pass"
+                />
+
                 <div className="flex flex-col gap-2 pt-3">
                   <div className="flex flex-row gap-3">
                     <Checkbox id="remember" text="Remember me" />
