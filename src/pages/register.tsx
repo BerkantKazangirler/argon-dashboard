@@ -32,6 +32,7 @@ const Schema = z.object({
 
 export const Register = () => {
   const {
+    control,
     register,
     handleSubmit,
     formState: { errors },
@@ -123,17 +124,12 @@ export const Register = () => {
                     Name
                   </label>
                   <Input
-                    {...register("name")}
+                    name="name"
+                    control={control}
                     placeholder="User name"
                     className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
                     id="name"
                   />
-
-                  {errors?.name && (
-                    <p className="text-sm font-bold text-red-400">
-                      {errors.name.message}
-                    </p>
-                  )}
                 </div>
                 <div className="flex flex-col gap-1">
                   <label
@@ -143,17 +139,14 @@ export const Register = () => {
                     Email
                   </label>
                   <input
-                    {...register("email")}
+                    name="email"
+                    control={control}
                     placeholder="Your email address"
                     className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
                     id="mail"
                     type="email"
                   />
-                  {errors?.email && (
-                    <p className="text-sm font-bold text-red-400">
-                      {errors.email.message}
-                    </p>
-                  )}
+                </div>
                 </div>
                 <div className="flex flex-col gap-1">
                   <label
@@ -162,18 +155,15 @@ export const Register = () => {
                   >
                     Password
                   </label>
-                  <input
-                    {...register("password")}
+                  <Input
+                    name="password"
+                    control={control}
                     placeholder="Your password"
                     type="password"
                     className="w-full rounded-lg border border-inputBorder bg-white py-3 indent-2 text-sm text-black dark:border-none dark:bg-darkBottomBg dark:text-white"
                     id="pass"
                   />
-                  {errors?.password && (
-                    <p className="text-sm font-bold text-red-400">
-                      {errors.password.message}
-                    </p>
-                  )}
+                </div>
                 </div>
                 <div className="flex flex-col gap-2 pt-3">
                   <div className="flex flex-row gap-3">

@@ -8,8 +8,27 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+const Schema = z.object({
+  card: z.string().min(1),
+  expiration: z.string().min(1),
+  cvv: z.string().min(1),
+});
+
+interface Form {
+  card?: string;
+  expiration?: string;
+  cvv?: string;
+}
 
 export const Method = () => {
+  const { control } = useForm<Form>({
+    resolver: zodResolver(Schema),
+  });
+
   return (
     <div className="flex w-full flex-col gap-5 rounded-2.5xl bg-white p-4 drop-shadow-xl xl:w-full dark:bg-darkDetail">
       <div className="flex flex-row justify-between">
@@ -26,35 +45,26 @@ export const Method = () => {
               <DialogTitle>Add Card</DialogTitle>
               <DialogDescription>Add new card to the system.</DialogDescription>
             </DialogHeader>
-            <div className="grid gap-4 py-4">
-              <div className="grid grid-cols-4 items-center gap-4">
-                <label htmlFor="number" className="text-xs">
-                  Card Number
-                </label>
-                <Input
-                  id="number"
-                  className="col-span-3 bg-black indent-2 text-sm outline-slate-800"
-                />
-              </div>
-              <div className="grid grid-cols-4 items-center gap-4">
-                <label htmlFor="validthru" className="text-xs">
-                  Valid Thru
-                </label>
-                <Input
-                  id="validthru"
-                  className="col-span-3 bg-black indent-2 text-sm outline-slate-800"
-                />
-              </div>
-              <div className="grid grid-cols-4 items-center gap-4">
-                <label htmlFor="cvv" className="text-xs">
-                  CVV
-                </label>
-                <Input
-                  id="validthru"
-                  type="password"
-                  className="col-span-3 bg-black indent-2 text-sm outline-slate-800"
-                />
-              </div>
+            <div className="flex gap-4 py-4">
+              <Input
+                label="Card Number"
+                name="card"
+                control={control}
+                className="col-span-3 bg-black indent-2 text-sm outline-slate-800"
+              />
+              <Input
+                label="Valid Thru"
+                name="expiration"
+                control={control}
+                className="col-span-3 bg-black indent-2 text-sm outline-slate-800"
+              />
+              <Input
+                label="CVV"
+                name="cvv"
+                control={control}
+                type="password"
+                className="col-span-3 bg-black indent-2 text-sm outline-slate-800"
+              />
             </div>
             <DialogFooter>
               <Button className="rounded-lg bg-slate-900 px-3 py-1 text-sm">

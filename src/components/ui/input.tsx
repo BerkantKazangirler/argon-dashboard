@@ -1,20 +1,41 @@
-import classNames from "classnames";
-import { Controller, useForm } from "react-hook-form";
+import cn from "classnames";
+import { Control, Controller } from "react-hook-form";
+
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  icon?: boolean;
+  label?: string;
+  name: string;
+  control: Control<unknown>;
+  className?: string;
 }
 
-export const Input = ({ className, ...rest }: InputProps) => {
-  // return <input className={classNames(className)} {...rest} />;
-  const { control } = useForm();
-
+export const Input = ({
+  label,
+  control,
+  name,
+  className,
+  ...rest
+}: InputProps) => {
   return (
     <Controller
-      name="name"
+      name={name as never}
       control={control}
-      rules={{ required: true }}
-      render={({ field }) => (
-        <input className={classNames(className)} {...rest} {...field} />
+      render={({ field, fieldState }) => (
+        <div className="flex flex-col gap-1">
+          <label>{label}</label>
+          <input
+            className={cn(
+              "bg-black indent-2 text-sm outline-slate-800",
+              className,
+            )}
+            {...rest}
+            {...field}
+          />
+          {fieldState.error && (
+            <span className="text-xs text-red-500">
+              {fieldState.error.message}
+            </span>
+          )}
+        </div>
       )}
     />
   );
