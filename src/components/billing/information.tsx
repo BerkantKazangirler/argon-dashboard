@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, SvgEdit, SvgTrash } from "@/components";
 
 import { billingInformationProps } from "@/components/type";
-import { request } from "@/utils/fetchdata";
+import { request } from "@/utils/fetch-data";
 
 export const Information = () => {
   const [cardData, setCardData] = useState<Array<billingInformationProps>>([]);

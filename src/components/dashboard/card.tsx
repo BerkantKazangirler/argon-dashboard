@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { cardDatasProps } from "@/components/type";
-import { request } from "@/utils/fetchdata";
-import { formatBouncerate } from "@/utils/formatbouncerate";
+import { request } from "@/utils/fetch-data";
+import { formatBouncerate } from "@/utils/format-bouncerate";
 
 export const Card = () => {
   const [cardData, setCardData] = useState<Array<cardDatasProps>>([]);

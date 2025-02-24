@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/chart";
 import { useEffect, useState } from "react";
 import { salesOverviewProps } from "@/components/type";
-import { request } from "@/utils/fetchdata";
+import { request } from "@/utils/fetch-data";
 
 const chartConfig = {
   desktop: {

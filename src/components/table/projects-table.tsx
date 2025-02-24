@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { projectsDataProps } from "@/components/type";
 import { CheckBoxSvg, VertSvg } from "@/components";
-import { request } from "@/utils/fetchdata";
-import { formatBouncerate } from "@/utils/formatbouncerate";
+import { request } from "@/utils/fetch-data";
+import { formatBouncerate } from "@/utils/format-bouncerate";
 import {
   DropdownMenu,
   DropdownMenuContent,

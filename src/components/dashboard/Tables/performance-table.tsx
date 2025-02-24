@@ -1,6 +1,6 @@
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 import { useEffect, useState } from "react";
-import { request } from "@/utils/fetchdata";
+import { request } from "@/utils/fetch-data";
 import { performanceProps } from "@/components/type";
 import { CardContent } from "@/components/ui/card";
 import {

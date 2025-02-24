@@ -6,7 +6,7 @@ import {
   OverviewSvg,
   MultiDocumentSvg,
 } from "@/components";
-import { request } from "@/utils/fetchdata";
+import { request } from "@/utils/fetch-data";
 
 export const Profile = () => {
   const [profileData, setProfileData] = useState<Array<any>>([]);

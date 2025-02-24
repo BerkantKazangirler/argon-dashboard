@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { userDataProps } from "@/components/type";
-import { request } from "@/utils/fetchdata";
+import { request } from "@/utils/fetch-data";
 import { Button } from "@/components";
 
 export const Conversations = () => {

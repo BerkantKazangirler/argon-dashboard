@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { authorsDataProps } from "@/components/type";
-import { request } from "@/utils/fetchdata";
+import { request } from "@/utils/fetch-data";
 import {
   DropdownMenu,
   DropdownMenuContent,

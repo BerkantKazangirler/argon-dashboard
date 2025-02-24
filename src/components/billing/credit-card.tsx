@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { paymentMethodProps } from "@/components/type";
-import { request } from "@/utils/fetchdata";
-import { formatCardNumber, formatCVV } from "@/utils/formatcardnumber";
+import { request } from "@/utils/fetch-data";
+import { formatCardNumber, formatCVV } from "@/utils/format-cardnumber";
 
 export const CreditCard = () => {
   const [cardData, setCardData] = useState<Array<paymentMethodProps>>([]);
