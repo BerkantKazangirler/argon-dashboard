@@ -47,6 +47,8 @@ export { AppleSvg } from "./icons/apple";
 export { LowerSvg } from "./icons/lower";
 export { SvgBilling } from "./icons/billing";
 export { CalendarSvg } from "./icons/calendar";
+export { HamburgerLinesSvg } from "./icons/hamburgermenu";
+export { CloseSvg } from "./icons/close";
 
 export { AuthorTable } from "./table/author-table";
 export { ProjectsTable } from "./table/projects-table";
@@ -57,6 +59,7 @@ export { SignNav } from "./register/sign-nav";
 export { Bg } from "./bg";
 export { NavBar } from "./ui/navbar";
 export { Sidebar } from "./ui/sidebar";
+export { HamburgerMenu } from "./ui/hamburger-menu";
 
 export { SaleTable } from "./dashboard/Tables/sale-table";
 export { TraficTable } from "./dashboard/Tables/trafic-table";

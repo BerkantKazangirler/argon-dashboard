@@ -6,6 +6,8 @@ import {
   SvgNotifications,
   SvgSearch,
   Button,
+  HamburgerLinesSvg,
+  HamburgerMenu,
 } from "@/components";
 import { Link, useLocation } from "react-router-dom";
 import {
@@ -25,9 +27,11 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import cn from "classnames";
 
 export const NavBar = () => {
   const [darkMod, setDarkMod] = useState(true);
+  const [hamburgermenu, setHamburgerMenu] = useState(false);
 
   const Schema = z.object({
     card: z.string().min(1),
@@ -63,6 +67,10 @@ export const NavBar = () => {
         </span>
       </div>
       <div className="flex flex-row gap-2">
+        <HamburgerLinesSvg
+          onClick={() => setHamburgerMenu(true)}
+          className="my-auto flex size-4 lg:hidden"
+        />
         <div className="relative my-auto hidden h-9 flex-row items-center lg:flex">
           <Input
             name=""
@@ -75,7 +83,7 @@ export const NavBar = () => {
         <div className="flex flex-row gap-4">
           <Link
             to={"auth/sign"}
-            className="flex flex-row items-center gap-1 hover:cursor-pointer"
+            className="hidden flex-row items-center gap-1 hover:cursor-pointer lg:flex"
           >
             <SvgPerson className="size-3" />
             <span className="text-xs font-semibold">Sign In</span>
@@ -153,6 +161,17 @@ export const NavBar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
+      </div>
+      <div
+        className={cn(
+          "fixed -mx-10 -mt-5 flex h-full w-full flex-row justify-between bg-slate-200 bg-opacity-50 p-4 backdrop-blur-md transition-all hover:cursor-pointer dark:bg-slate-900",
+          {
+            "-z-50 opacity-0": !hamburgermenu,
+            "z-50 opacity-100": hamburgermenu,
+          },
+        )}
+      >
+        <HamburgerMenu setHamburgerMenu={setHamburgerMenu} />
       </div>
     </div>
   );
